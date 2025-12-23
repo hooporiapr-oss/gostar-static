@@ -6,86 +6,133 @@
 <title>About GoStar Digital - Cognitive Wellness Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-}
-
 :root {
-    --primary: #1A7F8E;
-    --primary-light: #2A9FAF;
-    --primary-dark: #156570;
-    --secondary: #E8A848;
-    --secondary-light: #F0BC6A;
-    --accent: #FDF8F0;
-    --bg-dark: #1a1a2e;
-    --bg-card: #16213e;
-    --text-light: #ffffff;
-    --text-dark: #2d3748;
-    --text-muted: #718096;
+    --bg-primary: #0D0D0D;
+    --bg-secondary: #1A1A1A;
+    --bg-card: #242424;
+    --bg-card-alt: #2D2D2D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --text-muted: #808080;
+    --accent-gold: #FFD93D;
+    --accent-gold-dark: #E6C235;
+    --accent-teal: #00D9A5;
+    --accent-teal-dark: #00B386;
+    --accent-blue: #4DA8FF;
+    --accent-coral: #FF6B6B;
+    --accent-purple: #A855F7;
+    --gradient-gold: linear-gradient(135deg, #FFD93D 0%, #FF9F1C 100%);
+    --gradient-teal: linear-gradient(135deg, #00D9A5 0%, #00B386 100%);
+    --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF4757 100%);
+    --success: #22C55E;
+    --danger: #EF4444;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    color: var(--text-dark);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.7;
-    overflow-x: hidden;
-    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Language Toggle */
-body[data-lang="es"] .lang-en { display: none; }
-body[data-lang="en"] .lang-es { display: none; }
-body[data-lang="es"] .lang-es { display: inline; }
-body[data-lang="en"] .lang-en { display: inline; }
-body[data-lang="es"] .lang-es-block { display: block; }
-body[data-lang="en"] .lang-es-block { display: none; }
-body[data-lang="es"] .lang-en-block { display: none; }
-body[data-lang="en"] .lang-en-block { display: block; }
+body[data-lang="es"] .lang-en { display: none !important; }
+body[data-lang="en"] .lang-es { display: none !important; }
+body[data-lang="es"] .lang-es { display: inline !important; }
+body[data-lang="en"] .lang-en { display: inline !important; }
+body[data-lang="es"] .lang-es-block { display: block !important; }
+body[data-lang="en"] .lang-es-block { display: none !important; }
+body[data-lang="es"] .lang-en-block { display: none !important; }
+body[data-lang="en"] .lang-en-block { display: block !important; }
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(13, 13, 13, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-home {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-home:hover {
+    color: var(--accent-gold);
+}
 
 .lang-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
     display: flex;
-    gap: 6px;
-    z-index: 1000;
+    gap: 4px;
+    background: var(--bg-card);
+    padding: 4px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .lang-btn {
-    padding: 8px 14px;
-    border: 2px solid white;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    border-radius: 20px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .lang-btn:hover {
-    background: rgba(255,255,255,0.3);
+    color: var(--text-primary);
 }
 
 .lang-btn.active {
-    background: white;
-    color: var(--primary);
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+/* Sections */
+section {
+    padding: 100px 24px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
-    color: white;
-    padding: 120px 20px 80px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding-top: 120px;
     position: relative;
     overflow: hidden;
 }
@@ -93,221 +140,184 @@ body[data-lang="en"] .lang-en-block { display: block; }
 .hero::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(26, 127, 142, 0.1) 0%, transparent 70%);
-    animation: pulse-bg 10s ease-in-out infinite;
-}
-
-@keyframes pulse-bg {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.1); opacity: 0.8; }
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 30% 20%, rgba(255, 217, 61, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(0, 217, 165, 0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
 }
 
 .hero-icon {
-    font-size: 5rem;
-    margin-bottom: 20px;
-    animation: float 3s ease-in-out infinite;
+    font-size: 72px;
+    margin-bottom: 24px;
+    display: inline-block;
+    animation: pulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(77, 168, 255, 0.4));
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(40px, 8vw, 64px);
     font-weight: 900;
-    margin-bottom: 10px;
-    color: var(--secondary);
+    letter-spacing: -2px;
+    margin-bottom: 16px;
+    line-height: 1.1;
 }
 
-.hero .tagline {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-light);
-    margin-bottom: 25px;
+.hero h1 .highlight {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero .subtitle {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.8);
+    font-size: clamp(18px, 3vw, 24px);
+    color: var(--accent-teal);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero .description {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: var(--text-secondary);
     max-width: 700px;
-    margin: 0 auto 40px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.hero-cta {
-    display: inline-block;
-    padding: 18px 50px;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
-    color: var(--bg-dark);
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-
-.hero-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(232, 168, 72, 0.4);
-}
-
-.hero-cta-secondary {
-    display: inline-block;
-    padding: 18px 50px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-
-.hero-cta-secondary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(26, 127, 142, 0.4);
-}
-
-/* Navigation */
-.nav-home {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.nav-home:hover {
-    background: rgba(255,255,255,0.3);
-}
-
-/* Sections */
-section {
-    padding: 80px 20px;
-}
-
-.container {
-    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 15px;
-    word-wrap: break-word;
+    line-height: 1.8;
+}
+
+/* Section Titles */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    margin-bottom: 16px;
+    padding: 8px 20px;
+    background: rgba(0, 217, 165, 0.1);
+    border-radius: 30px;
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(32px, 6vw, 48px);
     font-weight: 900;
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--primary);
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.section-title .accent {
+    color: var(--accent-gold);
 }
 
 .section-subtitle {
-    font-size: 1.2rem;
-    text-align: center;
-    color: var(--text-muted);
-    max-width: 700px;
-    margin: 0 auto 50px;
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Mission Section */
 .mission {
-    background: var(--accent);
+    background: var(--bg-secondary);
 }
 
-.mission-statement {
-    font-size: 2rem;
+.mission-quote {
+    font-size: clamp(24px, 5vw, 36px);
     font-weight: 800;
     text-align: center;
-    color: var(--primary-dark);
-    max-width: 800px;
+    line-height: 1.4;
+    max-width: 900px;
     margin: 0 auto;
-    line-height: 1.5;
 }
 
-.mission-statement span {
-    color: var(--secondary);
+.mission-quote .highlight {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-/* The Challenge Section */
+/* Challenge Section */
 .challenge {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-}
-
-.challenge .section-title {
-    color: white;
-}
-
-.challenge .section-subtitle {
-    color: rgba(255,255,255,0.8);
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
 .challenge-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .challenge-card {
-    background: rgba(255,255,255,0.1);
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 20px;
-    padding: 35px;
+    padding: 32px 24px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .challenge-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.challenge-card .icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.challenge-card:nth-child(1) { border-color: rgba(255, 217, 61, 0.3); }
+.challenge-card:nth-child(2) { border-color: rgba(0, 217, 165, 0.3); }
+.challenge-card:nth-child(3) { border-color: rgba(77, 168, 255, 0.3); }
+.challenge-card:nth-child(4) { border-color: rgba(168, 85, 247, 0.3); }
+
+.challenge-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: block;
 }
+
+.challenge-card:nth-child(1) .challenge-icon { filter: drop-shadow(0 0 15px rgba(255, 217, 61, 0.5)); }
+.challenge-card:nth-child(2) .challenge-icon { filter: drop-shadow(0 0 15px rgba(0, 217, 165, 0.5)); }
+.challenge-card:nth-child(3) .challenge-icon { filter: drop-shadow(0 0 15px rgba(77, 168, 255, 0.5)); }
+.challenge-card:nth-child(4) .challenge-icon { filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.5)); }
 
 .challenge-card h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    color: var(--secondary);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
+.challenge-card:nth-child(1) h3 { color: var(--accent-gold); }
+.challenge-card:nth-child(2) h3 { color: var(--accent-teal); }
+.challenge-card:nth-child(3) h3 { color: var(--accent-blue); }
+.challenge-card:nth-child(4) h3 { color: var(--accent-purple); }
+
 .challenge-card p {
-    color: rgba(255,255,255,0.9);
+    font-size: 15px;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
 /* Metronome Section */
 .metronome {
-    background: white;
+    background: var(--bg-primary);
 }
 
 .metronome-content {
@@ -318,131 +328,149 @@ section {
 }
 
 .metronome-visual {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
-    border-radius: 30px;
-    padding: 50px;
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 48px;
     text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
-.metronome-demo {
+.demo-tiles {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .demo-tile {
-    width: 70px;
-    height: 70px;
-    border-radius: 15px;
-    animation: pulse-tile 2s ease-in-out infinite;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    animation: tile-pulse 2.5s ease-in-out infinite;
 }
 
-.demo-tile:nth-child(1) { background: #e53e3e; animation-delay: 0s; }
-.demo-tile:nth-child(2) { background: #3182ce; animation-delay: 0.5s; }
-.demo-tile:nth-child(3) { background: #38a169; animation-delay: 1s; }
-.demo-tile:nth-child(4) { background: #d69e2e; animation-delay: 1.5s; }
+.demo-tile:nth-child(1) { background: #EF4444; animation-delay: 0s; }
+.demo-tile:nth-child(2) { background: #3B82F6; animation-delay: 0.5s; }
+.demo-tile:nth-child(3) { background: #22C55E; animation-delay: 1s; }
+.demo-tile:nth-child(4) { background: #F59E0B; animation-delay: 1.5s; }
 
-@keyframes pulse-tile {
-    0%, 100% { transform: scale(1); opacity: 0.7; }
-    50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 30px currentColor; }
+@keyframes tile-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 30px currentColor; }
 }
 
-.metronome-beats {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
+.beats {
+    font-size: 32px;
+    color: var(--text-secondary);
+    letter-spacing: 8px;
 }
 
-.metronome-beats span {
+.beats span {
     display: inline-block;
-    animation: beat 2s ease-in-out infinite;
+    animation: beat-pulse 2.5s ease-in-out infinite;
 }
 
-.metronome-beats span:nth-child(1) { animation-delay: 0s; }
-.metronome-beats span:nth-child(2) { animation-delay: 0.5s; }
-.metronome-beats span:nth-child(3) { animation-delay: 1s; }
-.metronome-beats span:nth-child(4) { animation-delay: 1.5s; }
+.beats span:nth-child(1) { animation-delay: 0s; }
+.beats span:nth-child(2) { animation-delay: 0.5s; }
+.beats span:nth-child(3) { animation-delay: 1s; }
+.beats span:nth-child(4) { animation-delay: 1.5s; }
 
-@keyframes beat {
+@keyframes beat-pulse {
     0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+    50% { opacity: 1; transform: scale(1.3); color: var(--accent-gold); }
 }
 
 .metronome-text h3 {
-    font-size: 2rem;
+    font-size: clamp(28px, 4vw, 36px);
     font-weight: 900;
-    color: var(--primary);
     margin-bottom: 20px;
+    color: var(--accent-gold);
 }
 
 .metronome-text p {
-    margin-bottom: 20px;
-    color: var(--text-dark);
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.8;
 }
 
-.metronome-features {
+.metronome-text strong {
+    color: var(--text-primary);
+}
+
+.feature-list {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 32px;
 }
 
-.metronome-features li {
-    padding: 12px 0;
-    padding-left: 40px;
+.feature-list li {
+    padding: 14px 0;
+    padding-left: 36px;
     position: relative;
+    font-size: 16px;
     font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.metronome-features li::before {
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li::before {
     content: '🎵';
     position: absolute;
     left: 0;
-    font-size: 1.2rem;
+    font-size: 18px;
 }
 
 /* Benefits Section */
 .benefits {
-    background: var(--accent);
+    background: var(--bg-secondary);
 }
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 .benefit-card {
-    background: white;
+    background: var(--bg-card);
     border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    padding: 36px 28px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.4s ease;
 }
 
 .benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+    border-color: rgba(255, 217, 61, 0.2);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.2);
 }
 
-.benefit-card .icon {
-    font-size: 3rem;
+.benefit-icon {
+    font-size: 40px;
     margin-bottom: 20px;
+    display: block;
 }
 
 .benefit-card h3 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--primary);
-    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
 }
 
 .benefit-card p {
-    color: var(--text-muted);
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
 }
 
 /* Story Section */
 .story {
-    background: white;
+    background: var(--bg-primary);
 }
 
 .story-content {
@@ -457,55 +485,51 @@ section {
 }
 
 .story-icon {
-    font-size: 8rem;
+    font-size: 120px;
+    display: block;
     margin-bottom: 20px;
+    filter: drop-shadow(0 0 40px rgba(255, 159, 28, 0.4));
 }
 
 .story-quote {
-    font-size: 1.3rem;
+    font-size: 20px;
     font-style: italic;
-    color: var(--primary);
+    color: var(--accent-teal);
     font-weight: 600;
 }
 
 .story-text h3 {
-    font-size: 2rem;
+    font-size: clamp(28px, 4vw, 36px);
     font-weight: 900;
-    color: var(--primary);
-    margin-bottom: 25px;
+    color: var(--accent-gold);
+    margin-bottom: 24px;
 }
 
 .story-text p {
+    font-size: 17px;
+    color: var(--text-secondary);
     margin-bottom: 20px;
-    color: var(--text-dark);
+    line-height: 1.8;
 }
 
 .story-highlight {
-    background: var(--accent);
-    border-left: 4px solid var(--secondary);
-    padding: 25px;
-    border-radius: 0 15px 15px 0;
-    margin: 30px 0;
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-teal);
+    padding: 24px;
+    border-radius: 0 16px 16px 0;
+    margin: 32px 0;
 }
 
 .story-highlight p {
     font-weight: 700;
-    color: var(--primary-dark);
+    color: var(--text-primary);
     margin: 0;
+    font-size: 18px;
 }
 
 /* Transformation Section */
 .transformation {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
-    color: white;
-}
-
-.transformation .section-title {
-    color: var(--secondary);
-}
-
-.transformation .section-subtitle {
-    color: rgba(255,255,255,0.8);
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
 .transform-grid {
@@ -513,7 +537,8 @@ section {
     grid-template-columns: 1fr auto 1fr;
     gap: 40px;
     align-items: center;
-    margin-top: 50px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .transform-column {
@@ -521,45 +546,55 @@ section {
 }
 
 .transform-column h4 {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin-bottom: 25px;
-    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    padding: 10px 24px;
+    border-radius: 30px;
+    display: inline-block;
 }
 
 .transform-column.before h4 {
-    color: #fc8181;
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
 }
 
 .transform-column.after h4 {
-    color: var(--success, #68d391);
+    background: rgba(34, 197, 94, 0.2);
+    color: var(--success);
 }
 
 .transform-item {
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
+    padding: 16px 24px;
+    margin: 12px 0;
+    border-radius: 12px;
     font-weight: 600;
+    font-size: 16px;
 }
 
-.transform-column.before .transform-item {
-    background: rgba(252, 129, 129, 0.2);
-    color: #feb2b2;
+.before .transform-item {
+    background: rgba(239, 68, 68, 0.1);
+    color: #FCA5A5;
+    border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
-.transform-column.after .transform-item {
-    background: rgba(104, 211, 145, 0.2);
-    color: #9ae6b4;
+.after .transform-item {
+    background: rgba(34, 197, 94, 0.1);
+    color: #86EFAC;
+    border: 1px solid rgba(34, 197, 94, 0.2);
 }
 
 .transform-arrow {
-    font-size: 3rem;
-    color: var(--secondary);
+    font-size: 48px;
+    color: var(--accent-gold);
+    filter: drop-shadow(0 0 20px rgba(255, 217, 61, 0.4));
 }
 
 /* Family Section */
 .family {
-    background: var(--accent);
+    background: var(--bg-secondary);
 }
 
 .family-content {
@@ -567,21 +602,24 @@ section {
 }
 
 .notification-demo {
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 500px;
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 480px;
     margin: 40px auto;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .notification {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: white;
+    background: var(--gradient-teal);
+    border-radius: 16px;
     padding: 20px;
-    border-radius: 15px;
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+}
+
+.notification:last-child {
+    margin-bottom: 0;
 }
 
 .notification-header {
@@ -592,122 +630,176 @@ section {
 }
 
 .notification-icon {
-    font-size: 1.5rem;
+    font-size: 20px;
 }
 
 .notification-app {
     font-weight: 800;
-    font-size: 0.9rem;
+    font-size: 13px;
+    color: rgba(0,0,0,0.7);
 }
 
 .notification-time {
     margin-left: auto;
-    font-size: 0.8rem;
-    opacity: 0.8;
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
 }
 
 .notification-body {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--bg-primary);
 }
 
 .family-tagline {
-    font-size: 1.5rem;
+    font-size: clamp(20px, 4vw, 28px);
     font-weight: 800;
-    color: var(--primary);
-    margin-top: 30px;
+    color: var(--accent-teal);
+    margin-top: 40px;
 }
 
 /* CTA Section */
-.cta {
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+.cta-section {
+    background: var(--gradient-gold);
     text-align: center;
-    padding: 100px 20px;
+    padding: 100px 24px;
 }
 
-.cta h2 {
-    font-size: 2.5rem;
+.cta-section h2 {
+    font-size: clamp(32px, 6vw, 48px);
     font-weight: 900;
-    color: var(--bg-dark);
-    margin-bottom: 20px;
+    color: var(--bg-primary);
+    margin-bottom: 16px;
 }
 
-.cta p {
-    font-size: 1.2rem;
-    color: var(--bg-dark);
-    opacity: 0.8;
+.cta-section p {
+    font-size: 20px;
+    color: rgba(0,0,0,0.7);
     margin-bottom: 40px;
 }
 
-.cta-buttons {
+.cta-buttons-bottom {
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.cta-btn {
-    display: inline-block;
-    padding: 20px 60px;
-    background: var(--bg-dark);
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 800;
+.cta-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 48px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 700;
     text-decoration: none;
     border-radius: 50px;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.cta-btn:hover {
+.cta-dark:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
-.cta-btn-secondary {
-    display: inline-block;
-    padding: 20px 60px;
+.cta-outline-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 48px;
     background: transparent;
-    border: 3px solid var(--bg-dark);
-    color: var(--bg-dark);
-    font-size: 1.3rem;
-    font-weight: 800;
+    color: var(--bg-primary);
+    font-size: 18px;
+    font-weight: 700;
     text-decoration: none;
     border-radius: 50px;
+    border: 3px solid var(--bg-primary);
     transition: all 0.3s ease;
 }
 
-.cta-btn-secondary:hover {
-    background: var(--bg-dark);
-    color: white;
-    transform: translateY(-3px);
+.cta-outline-dark:hover {
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 /* Footer */
 footer {
-    background: var(--bg-dark);
-    color: white;
+    background: var(--bg-primary);
     text-align: center;
-    padding: 40px 20px;
+    padding: 48px 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 footer p {
-    color: rgba(255,255,255,0.6);
+    color: var(--text-secondary);
+    font-size: 14px;
 }
 
 footer a {
-    color: var(--secondary);
+    color: var(--accent-gold);
     text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-teal);
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+    .challenge-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .metronome-content,
-    .story-content,
-    .transform-grid {
+    .story-content {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .metronome-visual,
+    .story-visual {
+        order: -1;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 70px 20px;
+    }
+    
+    .hero {
+        min-height: 70vh;
+        padding-top: 100px;
+    }
+    
+    .hero-icon {
+        font-size: 56px;
+    }
+    
+    .challenge-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
     }
     
     .transform-grid {
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
@@ -715,514 +807,225 @@ footer a {
         transform: rotate(90deg);
     }
     
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero .tagline {
-        font-size: 1.2rem;
-    }
-    
-    .metronome-visual {
-        order: -1;
-        padding: 30px;
-    }
-    
-    .story-visual {
-        order: -1;
-    }
-    
     .story-icon {
-        font-size: 5rem;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .challenge-grid {
-        grid-template-columns: 1fr;
+        font-size: 80px;
     }
 }
 
 @media (max-width: 600px) {
-    body {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-    
-    .hero {
-        padding: 80px 15px 50px;
-    }
-    
-    .hero-icon {
-        font-size: 3.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-        margin-bottom: 8px;
-    }
-    
-    .hero .tagline {
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
-    
-    .hero .subtitle {
-        font-size: 0.95rem;
-        margin-bottom: 25px;
-        padding: 0 10px;
-    }
-    
-    .hero-cta,
-    .hero-cta-secondary {
-        padding: 14px 35px;
-        font-size: 1rem;
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    section {
-        padding: 50px 15px;
-    }
-    
-    .container {
-        padding: 0 5px;
-    }
-    
-    .section-title {
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-    }
-    
-    .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        padding: 0 10px;
-    }
-    
-    .mission {
-        padding: 40px 15px;
-    }
-    
-    .mission-statement {
-        font-size: 1.2rem;
-        padding: 0 5px;
-    }
-    
-    .challenge-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .challenge-card {
-        padding: 25px 20px;
-        border-radius: 15px;
-    }
-    
-    .challenge-card .icon {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .challenge-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-    
-    .challenge-card p {
-        font-size: 0.9rem;
-    }
-    
-    .metronome-content {
-        gap: 30px;
-    }
-    
-    .metronome-visual {
-        padding: 25px 15px;
-        border-radius: 20px;
-        margin: 0 -5px;
-    }
-    
-    .demo-tile {
-        width: 55px;
-        height: 55px;
-        border-radius: 12px;
-    }
-    
-    .metronome-demo {
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-    
-    .metronome-beats {
-        font-size: 1.2rem;
-    }
-    
-    .metronome-text h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .metronome-text p {
-        font-size: 0.95rem;
-        margin-bottom: 15px;
-    }
-    
-    .metronome-features {
-        margin-top: 20px;
-    }
-    
-    .metronome-features li {
-        padding: 10px 0;
-        padding-left: 35px;
-        font-size: 0.9rem;
-    }
-    
-    .metronome-features li::before {
-        font-size: 1rem;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .benefit-card {
-        padding: 25px 20px;
-        border-radius: 15px;
-    }
-    
-    .benefit-card .icon {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .benefit-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-    
-    .benefit-card p {
-        font-size: 0.9rem;
-    }
-    
-    .story-content {
-        gap: 30px;
-    }
-    
-    .story-icon {
-        font-size: 4rem;
-        margin-bottom: 15px;
-    }
-    
-    .story-quote {
-        font-size: 1.1rem;
-    }
-    
-    .story-text h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .story-text p {
-        font-size: 0.95rem;
-        margin-bottom: 15px;
-    }
-    
-    .story-highlight {
-        padding: 20px 15px;
-        margin: 20px 0;
-    }
-    
-    .story-highlight p {
-        font-size: 0.95rem;
-    }
-    
-    .transform-grid {
-        gap: 15px;
-        margin-top: 30px;
-    }
-    
-    .transform-column h4 {
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
-    
-    .transform-item {
-        padding: 12px 15px;
-        margin: 8px 0;
-        font-size: 0.95rem;
-        border-radius: 8px;
-    }
-    
-    .transform-arrow {
-        font-size: 2rem;
-        margin: 5px 0;
-    }
-    
-    .notification-demo {
-        padding: 20px 15px;
-        border-radius: 15px;
-        margin: 25px 10px;
-        max-width: 100%;
-    }
-    
-    .notification {
-        padding: 15px;
-        border-radius: 12px;
-        margin-bottom: 12px;
-    }
-    
-    .notification-header {
-        gap: 8px;
-        margin-bottom: 8px;
-    }
-    
-    .notification-icon {
-        font-size: 1.2rem;
-    }
-    
-    .notification-app {
-        font-size: 0.8rem;
-    }
-    
-    .notification-time {
-        font-size: 0.7rem;
-    }
-    
-    .notification-body {
-        font-size: 0.95rem;
-    }
-    
-    .family-tagline {
-        font-size: 1.1rem;
-        margin-top: 20px;
-        padding: 0 10px;
-    }
-    
-    .cta {
-        padding: 60px 15px;
-    }
-    
-    .cta h2 {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-    }
-    
-    .cta p {
-        font-size: 1rem;
-        margin-bottom: 25px;
-    }
-    
-    .cta-btn,
-    .cta-btn-secondary {
-        padding: 16px 40px;
-        font-size: 1.1rem;
-        width: 100%;
-        max-width: 280px;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    footer {
-        padding: 30px 15px;
-    }
-    
-    footer p {
-        font-size: 0.85rem;
-    }
-    
-    .lang-toggle {
-        top: 10px;
-        right: 10px;
-    }
-    
-    .lang-btn {
-        padding: 6px 10px;
-        font-size: 0.75rem;
+    .nav {
+        padding: 12px 16px;
     }
     
     .nav-home {
-        top: 10px;
-        left: 10px;
+        font-size: 14px;
+    }
+    
+    .lang-btn {
         padding: 6px 12px;
-        font-size: 0.75rem;
+        font-size: 12px;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    .section-label {
+        font-size: 11px;
+        padding: 6px 16px;
+    }
+    
+    .mission-quote {
+        font-size: 22px;
+    }
+    
+    .challenge-card,
+    .benefit-card {
+        padding: 28px 20px;
+    }
+    
+    .metronome-visual {
+        padding: 32px 20px;
+    }
+    
+    .demo-tile {
+        width: 52px;
+        height: 52px;
+    }
+    
+    .beats {
+        font-size: 24px;
+    }
+    
+    .notification-demo {
+        padding: 20px;
+        margin: 30px 16px;
+    }
+    
+    .cta-section {
+        padding: 70px 20px;
+    }
+    
+    .cta-buttons-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-dark,
+    .cta-outline-dark {
+        width: 100%;
+        max-width: 300px;
+        padding: 18px 36px;
+        font-size: 16px;
     }
 }
 
 @media (max-width: 380px) {
     .hero h1 {
-        font-size: 1.7rem;
-    }
-    
-    .hero .tagline {
-        font-size: 0.9rem;
+        font-size: 32px;
     }
     
     .section-title {
-        font-size: 1.4rem;
+        font-size: 28px;
     }
     
-    .mission-statement {
-        font-size: 1.1rem;
+    .metronome-text h3,
+    .story-text h3 {
+        font-size: 24px;
     }
     
     .demo-tile {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .challenge-card,
-    .benefit-card {
-        padding: 20px 15px;
-    }
-    
-    .cta h2 {
-        font-size: 1.5rem;
-    }
-    
-    .family-tagline {
-        font-size: 1rem;
+        width: 44px;
+        height: 44px;
     }
 }
 </style>
 </head>
 <body data-lang="en">
 
-<a href="index.html" class="nav-home">
-    <span class="lang-en">← Home</span>
-    <span class="lang-es">← Inicio</span>
-</a>
+<nav class="nav">
+    <a href="index.html" class="nav-home">
+        <span>←</span>
+        <span class="lang-en">Home</span>
+        <span class="lang-es">Inicio</span>
+    </a>
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+</nav>
 
-<div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('es')">ES</button>
-</div>
-
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero">
     <div class="hero-content">
         <div class="hero-icon">🧠</div>
-        <h1>GoStar Digital</h1>
-        <p class="tagline">
+        <h1>
+            <span class="lang-en">Go<span class="highlight">Star</span> Digital</span>
+            <span class="lang-es">Go<span class="highlight">Star</span> Digital</span>
+        </h1>
+        <p class="subtitle">
             <span class="lang-en">Metronome Sequence Memory Training</span>
             <span class="lang-es">Entrenamiento de Memoria con Secuencias de Metrónomo</span>
         </p>
-        <p class="subtitle">
+        <p class="description">
             <span class="lang-en">Train your memory like a pro. Every day. With rhythm, purpose, and measurable progress.</span>
             <span class="lang-es">Entrena tu memoria como un profesional. Cada día. Con ritmo, propósito y progreso medible.</span>
         </p>
-        <div class="hero-buttons">
-            <a href="https://gostar.digital/play" class="hero-cta">
-                <span class="lang-en">Play Now</span>
-                <span class="lang-es">Jugar Ahora</span>
-            </a>
-            <a href="https://gostar.digital/facility" class="hero-cta-secondary">
-                <span class="lang-en">Facility Login</span>
-                <span class="lang-es">Acceso Instalación</span>
-            </a>
-        </div>
     </div>
 </section>
 
-<!-- Mission Section -->
+<!-- Mission -->
 <section class="mission">
     <div class="container">
-        <p class="mission-statement">
-            <span class="lang-en">"We're <span>turning nursing homes into training arenas</span> — where every resident is an athlete, every day is game day, and every family becomes a team of cheerleaders."</span>
-            <span class="lang-es">"Estamos <span>convirtiendo hogares de ancianos en arenas de entrenamiento</span> — donde cada residente es un atleta, cada día es día de juego, y cada familia se convierte en un equipo de animadores."</span>
+        <p class="mission-quote">
+            <span class="lang-en">"We're <span class="highlight">turning nursing homes into training arenas</span> — where every resident is an athlete, every day is game day, and every family becomes a team of cheerleaders."</span>
+            <span class="lang-es">"Estamos <span class="highlight">convirtiendo hogares de ancianos en arenas de entrenamiento</span> — donde cada residente es un atleta, cada día es día de juego, y cada familia se convierte en un equipo de animadores."</span>
         </p>
     </div>
 </section>
 
-<!-- The Challenge Section -->
+<!-- Challenge -->
 <section class="challenge">
     <div class="container">
-        <h2 class="section-title">
-            <span class="lang-en">The Sequence Memory Challenge</span>
-            <span class="lang-es">El Desafío de Memoria de Secuencias</span>
-        </h2>
-        <p class="section-subtitle">
-            <span class="lang-en">A complete cognitive training experience in 4 quarters</span>
-            <span class="lang-es">Una experiencia completa de entrenamiento cognitivo en 4 cuartos</span>
-        </p>
+        <div class="section-header">
+            <div class="section-label">
+                <span class="lang-en">The Game</span>
+                <span class="lang-es">El Juego</span>
+            </div>
+            <h2 class="section-title">
+                <span class="lang-en">Sequence Memory <span class="accent">Challenge</span></span>
+                <span class="lang-es">El Desafío de <span class="accent">Memoria</span></span>
+            </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">A complete cognitive training experience in 4 quarters</span>
+                <span class="lang-es">Una experiencia completa de entrenamiento cognitivo en 4 cuartos</span>
+            </p>
+        </div>
         
         <div class="challenge-grid">
             <div class="challenge-card">
-                <div class="icon">🎯</div>
+                <span class="challenge-icon">🎯</span>
                 <h3>
                     <span class="lang-en">4 Quarters</span>
                     <span class="lang-es">4 Cuartos</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Each session progresses through 4 quarters of increasing challenge. Warm up, build momentum, face the challenge, and finish strong in clutch time.</span>
-                    <span class="lang-es">Cada sesión progresa a través de 4 cuartos de dificultad creciente. Calienta, toma impulso, enfrenta el desafío y termina fuerte en tiempo decisivo.</span>
+                    <span class="lang-en">Warm up, build momentum, face the challenge, and finish strong in clutch time.</span>
+                    <span class="lang-es">Calienta, toma impulso, enfrenta el desafío y termina fuerte en tiempo decisivo.</span>
                 </p>
             </div>
             
             <div class="challenge-card">
-                <div class="icon">🎨</div>
+                <span class="challenge-icon">🎨</span>
                 <h3>
                     <span class="lang-en">Multiple Modes</span>
                     <span class="lang-es">Múltiples Modos</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Train with Colors, Numbers, Animals, or Speed mode. Same brain exercise, different themes — the game never gets repetitive.</span>
-                    <span class="lang-es">Entrena con Colores, Números, Animales o modo Velocidad. El mismo ejercicio cerebral, diferentes temas — el juego nunca se vuelve repetitivo.</span>
+                    <span class="lang-en">Colors, Numbers, Animals, or Speed mode. Same brain exercise, different themes.</span>
+                    <span class="lang-es">Colores, Números, Animales o modo Velocidad. El mismo ejercicio, diferentes temas.</span>
                 </p>
             </div>
             
             <div class="challenge-card">
-                <div class="icon">🌱</div>
+                <span class="challenge-icon">🌱</span>
                 <h3>
                     <span class="lang-en">3 Difficulty Levels</span>
-                    <span class="lang-es">3 Niveles de Dificultad</span>
+                    <span class="lang-es">3 Niveles</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Gentle mode for memory care residents. Standard for everyday training. Pro for those ready to push their limits.</span>
-                    <span class="lang-es">Modo Suave para residentes de cuidado de memoria. Normal para entrenamiento diario. Pro para quienes están listos para superar sus límites.</span>
+                    <span class="lang-en">Gentle for memory care. Standard for daily training. Pro for pushing limits.</span>
+                    <span class="lang-es">Suave para cuidado de memoria. Normal para diario. Pro para superar límites.</span>
                 </p>
             </div>
             
             <div class="challenge-card">
-                <div class="icon">🏆</div>
+                <span class="challenge-icon">🏆</span>
                 <h3>
-                    <span class="lang-en">Track Your Progress</span>
-                    <span class="lang-es">Sigue Tu Progreso</span>
+                    <span class="lang-en">Track Progress</span>
+                    <span class="lang-es">Sigue el Progreso</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Personal bests, daily streaks, quarter-by-quarter scoring. Watch yourself improve over time with measurable results.</span>
-                    <span class="lang-es">Mejores puntuaciones personales, rachas diarias, puntuación por cuarto. Observa tu mejora con el tiempo con resultados medibles.</span>
+                    <span class="lang-en">Personal bests, daily streaks, quarter-by-quarter scoring.</span>
+                    <span class="lang-es">Mejores marcas, rachas diarias, puntuación por cuarto.</span>
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Metronome Section -->
+<!-- Metronome -->
 <section class="metronome">
     <div class="container">
         <div class="metronome-content">
             <div class="metronome-visual">
-                <div class="metronome-demo">
+                <div class="demo-tiles">
                     <div class="demo-tile"></div>
                     <div class="demo-tile"></div>
                     <div class="demo-tile"></div>
                     <div class="demo-tile"></div>
                 </div>
-                <div class="metronome-beats">
+                <div class="beats">
                     <span>♩</span> <span>♩</span> <span>♩</span> <span>♩</span>
                 </div>
             </div>
@@ -1236,12 +1039,8 @@ footer a {
                     <span class="lang-en">This isn't just a memory game. It's <strong>rhythm-based cognitive training</strong>. Each tile plays a musical tone. Each sequence becomes a melody. Your brain doesn't just see the pattern — it <em>hears</em> it, <em>feels</em> it, and <em>responds</em> to it.</span>
                     <span class="lang-es">Esto no es solo un juego de memoria. Es <strong>entrenamiento cognitivo basado en ritmo</strong>. Cada ficha toca un tono musical. Cada secuencia se convierte en una melodía. Tu cerebro no solo ve el patrón — lo <em>escucha</em>, lo <em>siente</em> y <em>responde</em> a él.</span>
                 </p>
-                <p>
-                    <span class="lang-en">The countdown builds anticipation. The tempo sets your pace. The success chime celebrates your wins. Every element is designed to engage your brain on multiple levels.</span>
-                    <span class="lang-es">La cuenta regresiva crea anticipación. El tempo establece tu ritmo. El sonido de éxito celebra tus victorias. Cada elemento está diseñado para involucrar tu cerebro en múltiples niveles.</span>
-                </p>
                 
-                <ul class="metronome-features">
+                <ul class="feature-list">
                     <li>
                         <span class="lang-en">3-2-1-GO! countdown prepares your focus</span>
                         <span class="lang-es">¡3-2-1-YA! la cuenta regresiva prepara tu enfoque</span>
@@ -1251,8 +1050,8 @@ footer a {
                         <span class="lang-es">Tonos musicales (C-E-G-C) crean melodías memorables</span>
                     </li>
                     <li>
-                        <span class="lang-en">3 tempo settings: Relaxed (60 BPM), Steady (90 BPM), Upbeat (120 BPM)</span>
-                        <span class="lang-es">3 configuraciones de tempo: Relajado (60 BPM), Estable (90 BPM), Rápido (120 BPM)</span>
+                        <span class="lang-en">3 tempo settings: Relaxed, Steady, Upbeat</span>
+                        <span class="lang-es">3 configuraciones de tempo: Relajado, Estable, Rápido</span>
                     </li>
                     <li>
                         <span class="lang-en">Victory arpeggio rewards every completed sequence</span>
@@ -1264,100 +1063,102 @@ footer a {
     </div>
 </section>
 
-<!-- Benefits Section -->
+<!-- Benefits -->
 <section class="benefits">
     <div class="container">
-        <h2 class="section-title">
-            <span class="lang-en">Benefits of Daily Training</span>
-            <span class="lang-es">Beneficios del Entrenamiento Diario</span>
-        </h2>
-        <p class="section-subtitle">
-            <span class="lang-en">Cognitive wellness isn't a destination — it's a daily practice</span>
-            <span class="lang-es">El bienestar cognitivo no es un destino — es una práctica diaria</span>
-        </p>
+        <div class="section-header">
+            <div class="section-label">
+                <span class="lang-en">Why It Works</span>
+                <span class="lang-es">Por Qué Funciona</span>
+            </div>
+            <h2 class="section-title">
+                <span class="lang-en">Benefits of <span class="accent">Daily Training</span></span>
+                <span class="lang-es">Beneficios del <span class="accent">Entrenamiento Diario</span></span>
+            </h2>
+        </div>
         
         <div class="benefits-grid">
             <div class="benefit-card">
-                <div class="icon">🧠</div>
+                <span class="benefit-icon">🧠</span>
                 <h3>
                     <span class="lang-en">Working Memory Exercise</span>
                     <span class="lang-es">Ejercicio de Memoria de Trabajo</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Sequence recall directly exercises the brain's working memory — the cognitive system responsible for temporarily holding and processing information.</span>
-                    <span class="lang-es">El recuerdo de secuencias ejercita directamente la memoria de trabajo del cerebro — el sistema cognitivo responsable de retener y procesar información temporalmente.</span>
+                    <span class="lang-en">Sequence recall directly exercises the brain's working memory system.</span>
+                    <span class="lang-es">El recuerdo de secuencias ejercita directamente el sistema de memoria de trabajo.</span>
                 </p>
             </div>
             
             <div class="benefit-card">
-                <div class="icon">🎵</div>
+                <span class="benefit-icon">🎵</span>
                 <h3>
                     <span class="lang-en">Multi-Sensory Engagement</span>
                     <span class="lang-es">Compromiso Multi-Sensorial</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Visual patterns combined with audio cues engage multiple brain pathways simultaneously, creating stronger memory connections.</span>
-                    <span class="lang-es">Los patrones visuales combinados con señales de audio involucran múltiples vías cerebrales simultáneamente, creando conexiones de memoria más fuertes.</span>
+                    <span class="lang-en">Visual patterns combined with audio cues engage multiple brain pathways.</span>
+                    <span class="lang-es">Patrones visuales con señales de audio involucran múltiples vías cerebrales.</span>
                 </p>
             </div>
             
             <div class="benefit-card">
-                <div class="icon">📈</div>
+                <span class="benefit-icon">📈</span>
                 <h3>
                     <span class="lang-en">Measurable Progress</span>
                     <span class="lang-es">Progreso Medible</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Track personal bests, maintain streaks, and watch quarter-by-quarter improvements. Data-driven motivation for continuous growth.</span>
-                    <span class="lang-es">Sigue tus mejores puntuaciones personales, mantén rachas y observa mejoras cuarto a cuarto. Motivación basada en datos para crecimiento continuo.</span>
+                    <span class="lang-en">Track personal bests, maintain streaks, and watch improvements over time.</span>
+                    <span class="lang-es">Sigue tus mejores marcas, mantén rachas y observa mejoras con el tiempo.</span>
                 </p>
             </div>
             
             <div class="benefit-card">
-                <div class="icon">😊</div>
+                <span class="benefit-icon">😊</span>
                 <h3>
                     <span class="lang-en">Positive Reinforcement</span>
                     <span class="lang-es">Refuerzo Positivo</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Success sounds, encouraging messages, and celebration screens create a rewarding experience that residents want to return to daily.</span>
-                    <span class="lang-es">Sonidos de éxito, mensajes alentadores y pantallas de celebración crean una experiencia gratificante a la que los residentes quieren regresar diariamente.</span>
+                    <span class="lang-en">Success sounds and celebration screens create a rewarding experience.</span>
+                    <span class="lang-es">Sonidos de éxito y pantallas de celebración crean una experiencia gratificante.</span>
                 </p>
             </div>
             
             <div class="benefit-card">
-                <div class="icon">🔄</div>
+                <span class="benefit-icon">🔄</span>
                 <h3>
                     <span class="lang-en">Consistent Routine</span>
                     <span class="lang-es">Rutina Consistente</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Daily streak tracking encourages routine formation — a key factor in cognitive health and overall wellbeing for seniors.</span>
-                    <span class="lang-es">El seguimiento de rachas diarias fomenta la formación de rutinas — un factor clave en la salud cognitiva y el bienestar general de los adultos mayores.</span>
+                    <span class="lang-en">Daily streak tracking encourages routine formation for seniors.</span>
+                    <span class="lang-es">El seguimiento de rachas diarias fomenta la formación de rutinas.</span>
                 </p>
             </div>
             
             <div class="benefit-card">
-                <div class="icon">❤️</div>
+                <span class="benefit-icon">❤️</span>
                 <h3>
                     <span class="lang-en">Family Connection</span>
                     <span class="lang-es">Conexión Familiar</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Share scores with family members, celebrate achievements together, and transform worry into cheering.</span>
-                    <span class="lang-es">Comparte puntuaciones con familiares, celebren logros juntos y transformen la preocupación en celebración.</span>
+                    <span class="lang-en">Share scores with family and celebrate achievements together.</span>
+                    <span class="lang-es">Comparte puntuaciones con familiares y celebren logros juntos.</span>
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Story Section -->
+<!-- Story -->
 <section class="story">
     <div class="container">
         <div class="story-content">
             <div class="story-visual">
-                <div class="story-icon">🏀</div>
+                <span class="story-icon">🏀</span>
                 <p class="story-quote">
                     <span class="lang-en">"Memory is the playbook of life."</span>
                     <span class="lang-es">"La memoria es el libro de jugadas de la vida."</span>
@@ -1374,8 +1175,8 @@ footer a {
                     <span class="lang-es">GoStar fue fundado por un ex jugador profesional de baloncesto que entendió una verdad fundamental: <strong>la memoria es la base de todo.</strong></span>
                 </p>
                 <p>
-                    <span class="lang-en">"Coaches would test us on plays constantly. The best players weren't always the most athletic — they were the ones who could remember, react, and execute. Every practice, every game, we trained our memory through repetition and rhythm."</span>
-                    <span class="lang-es">"Los entrenadores nos probaban constantemente con jugadas. Los mejores jugadores no siempre eran los más atléticos — eran los que podían recordar, reaccionar y ejecutar. Cada práctica, cada juego, entrenábamos nuestra memoria a través de la repetición y el ritmo."</span>
+                    <span class="lang-en">"The best players weren't always the most athletic — they were the ones who could remember, react, and execute. Every practice, every game, we trained our memory through repetition and rhythm."</span>
+                    <span class="lang-es">"Los mejores jugadores no siempre eran los más atléticos — eran los que podían recordar, reaccionar y ejecutar. Cada práctica, cada juego, entrenábamos nuestra memoria a través de la repetición y el ritmo."</span>
                 </p>
                 
                 <div class="story-highlight">
@@ -1384,27 +1185,24 @@ footer a {
                         <span class="lang-es">Esa misma disciplina — el metrónomo de la práctica, el ritmo de los ejercicios, la alegría de la mejora — ahora impulsa el enfoque de GoStar hacia el bienestar cognitivo.</span>
                     </p>
                 </div>
-                
-                <p>
-                    <span class="lang-en">We believe seniors deserve the same quality of training that elite athletes receive. Not just activities to pass time — but purposeful, measurable, rhythmic training that builds cognitive strength every single day.</span>
-                    <span class="lang-es">Creemos que los adultos mayores merecen la misma calidad de entrenamiento que reciben los atletas de élite. No solo actividades para pasar el tiempo — sino entrenamiento con propósito, medible y rítmico que construye fortaleza cognitiva cada día.</span>
-                </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Transformation Section -->
+<!-- Transformation -->
 <section class="transformation">
     <div class="container">
-        <h2 class="section-title">
-            <span class="lang-en">The Transformation</span>
-            <span class="lang-es">La Transformación</span>
-        </h2>
-        <p class="section-subtitle">
-            <span class="lang-en">From passive care to active training</span>
-            <span class="lang-es">Del cuidado pasivo al entrenamiento activo</span>
-        </p>
+        <div class="section-header">
+            <div class="section-label">
+                <span class="lang-en">The Shift</span>
+                <span class="lang-es">El Cambio</span>
+            </div>
+            <h2 class="section-title">
+                <span class="lang-en">The <span class="accent">Transformation</span></span>
+                <span class="lang-es">La <span class="accent">Transformación</span></span>
+            </h2>
+        </div>
         
         <div class="transform-grid">
             <div class="transform-column before">
@@ -1466,18 +1264,20 @@ footer a {
     </div>
 </section>
 
-<!-- Family Section -->
+<!-- Family -->
 <section class="family">
     <div class="container">
         <div class="family-content">
-            <h2 class="section-title">
-                <span class="lang-en">Families Become Cheerleaders</span>
-                <span class="lang-es">Las Familias se Convierten en Animadores</span>
-            </h2>
-            <p class="section-subtitle">
-                <span class="lang-en">Transform concern into celebration with shareable progress</span>
-                <span class="lang-es">Transforma la preocupación en celebración con progreso compartible</span>
-            </p>
+            <div class="section-header">
+                <div class="section-label">
+                    <span class="lang-en">Stay Connected</span>
+                    <span class="lang-es">Mantente Conectado</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="lang-en">Families Become <span class="accent">Cheerleaders</span></span>
+                    <span class="lang-es">Las Familias se Convierten en <span class="accent">Animadores</span></span>
+                </h2>
+            </div>
             
             <div class="notification-demo">
                 <div class="notification">
@@ -1490,8 +1290,8 @@ footer a {
                         </span>
                     </div>
                     <div class="notification-body">
-                        <span class="lang-en">🏆 Maria scored 52 points today! Her 7-day winning streak continues!</span>
-                        <span class="lang-es">🏆 ¡María anotó 52 puntos hoy! ¡Su racha ganadora de 7 días continúa!</span>
+                        <span class="lang-en">🏆 Maria scored 52 points today! 7-day streak!</span>
+                        <span class="lang-es">🏆 ¡María anotó 52 puntos hoy! ¡Racha de 7 días!</span>
                     </div>
                 </div>
                 
@@ -1506,36 +1306,36 @@ footer a {
                     </div>
                     <div class="notification-body">
                         <span class="lang-en">🎉 NEW PERSONAL BEST! Carlos hit 64 points!</span>
-                        <span class="lang-es">🎉 ¡NUEVO RÉCORD PERSONAL! ¡Carlos alcanzó 64 puntos!</span>
+                        <span class="lang-es">🎉 ¡NUEVO RÉCORD! ¡Carlos alcanzó 64 puntos!</span>
                     </div>
                 </div>
             </div>
             
             <p class="family-tagline">
-                <span class="lang-en">From "Is mom okay?" to "Did you see mom's score today?!"</span>
-                <span class="lang-es">De "¿Mamá está bien?" a "¡¿Viste la puntuación de mamá hoy?!"</span>
+                <span class="lang-en">From "Is mom okay?" to "Did you see mom's score?!"</span>
+                <span class="lang-es">De "¿Mamá está bien?" a "¡¿Viste la puntuación de mamá?!"</span>
             </p>
         </div>
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta">
+<!-- CTA -->
+<section class="cta-section">
     <div class="container">
         <h2>
             <span class="lang-en">Ready to Start Training?</span>
-            <span class="lang-es">¿Listo para Comenzar a Entrenar?</span>
+            <span class="lang-es">¿Listo para Comenzar?</span>
         </h2>
         <p>
             <span class="lang-en">Experience the Metronome Sequence Memory Challenge</span>
-            <span class="lang-es">Experimenta el Desafío de Memoria de Secuencias con Metrónomo</span>
+            <span class="lang-es">Experimenta el Desafío de Memoria con Metrónomo</span>
         </p>
-        <div class="cta-buttons">
-            <a href="https://gostar.digital/play" class="cta-btn">
-                <span class="lang-en">Play Now</span>
-                <span class="lang-es">Jugar Ahora</span>
+        <div class="cta-buttons-bottom">
+            <a href="https://gostar.digital/play" class="cta-dark">
+                <span class="lang-en">▶ Play Now</span>
+                <span class="lang-es">▶ Jugar Ahora</span>
             </a>
-            <a href="https://gostar.digital/facility" class="cta-btn-secondary">
+            <a href="https://gostar.digital/facility" class="cta-outline-dark">
                 <span class="lang-en">Facility Login</span>
                 <span class="lang-es">Acceso Instalación</span>
             </a>
@@ -1546,8 +1346,20 @@ footer a {
 <!-- Footer -->
 <footer>
     <p>
-        <span class="lang-en">© 2025 GoStar Digital LLC · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="mailto:info@gostardigital.com">Contact</a></span>
-        <span class="lang-es">© 2025 GoStar Digital LLC · <a href="privacy.html">Política de Privacidad</a> · <a href="terms.html">Términos de Uso</a> · <a href="mailto:info@gostardigital.com">Contacto</a></span>
+        <span class="lang-en">© 2025 GoStar Digital LLC</span>
+        <span class="lang-es">© 2025 GoStar Digital LLC</span>
+        <a href="privacy.html">
+            <span class="lang-en">Privacy</span>
+            <span class="lang-es">Privacidad</span>
+        </a>
+        <a href="terms.html">
+            <span class="lang-en">Terms</span>
+            <span class="lang-es">Términos</span>
+        </a>
+        <a href="mailto:info@gostardigital.com">
+            <span class="lang-en">Contact</span>
+            <span class="lang-es">Contacto</span>
+        </a>
     </p>
 </footer>
 
@@ -1560,15 +1372,22 @@ function setLang(lang) {
     document.body.setAttribute('data-lang', lang);
     var btns = document.querySelectorAll('.lang-btn');
     for (var i = 0; i < btns.length; i++) {
-        btns[i].className = btns[i].textContent === lang.toUpperCase() ? 'lang-btn active' : 'lang-btn';
+        if (btns[i].textContent === lang.toUpperCase()) {
+            btns[i].classList.add('active');
+        } else {
+            btns[i].classList.remove('active');
+        }
     }
 }
 
-// Initialize
 document.body.setAttribute('data-lang', currentLang);
 var btns = document.querySelectorAll('.lang-btn');
 for (var i = 0; i < btns.length; i++) {
-    btns[i].className = btns[i].textContent === currentLang.toUpperCase() ? 'lang-btn active' : 'lang-btn';
+    if (btns[i].textContent === currentLang.toUpperCase()) {
+        btns[i].classList.add('active');
+    } else {
+        btns[i].classList.remove('active');
+    }
 }
 </script>
 
