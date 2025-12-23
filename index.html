@@ -193,6 +193,30 @@ h1 {
     box-shadow: 0 15px 40px rgba(26, 127, 142, 0.4);
 }
 
+.cta-trial {
+    background: linear-gradient(135deg, var(--success) 0%, #48bb78 100%);
+    color: var(--bg-dark);
+    border: none;
+    position: relative;
+}
+
+.cta-trial:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(104, 211, 145, 0.4);
+}
+
+.trial-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff6b6b;
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
 /* Features */
 .features {
     display: grid;
@@ -312,6 +336,11 @@ footer a:hover {
         </p>
         
         <div class="cta-buttons">
+            <a href="https://gostar.digital/trial" class="cta-btn cta-trial">
+                <span class="lang-en">Start Free Trial</span>
+                <span class="lang-es">Prueba Gratis</span>
+                <span class="trial-badge">7 DAYS</span>
+            </a>
             <a href="https://gostar.digital/play" class="cta-btn cta-primary">
                 <span class="lang-en">Play Now</span>
                 <span class="lang-es">Jugar Ahora</span>
