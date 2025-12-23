@@ -6,70 +6,78 @@
 <title>GoStar Digital - Cognitive Wellness Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --primary: #1A7F8E;
-    --primary-light: #2A9FAF;
-    --primary-dark: #156570;
-    --secondary: #E8A848;
-    --secondary-light: #F0BC6A;
-    --bg-dark: #1a1a2e;
-    --bg-card: #16213e;
-    --text-light: #ffffff;
-    --success: #68d391;
+    --bg-primary: #0D0D0D;
+    --bg-secondary: #1A1A1A;
+    --bg-card: #242424;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --accent-gold: #FFD93D;
+    --accent-gold-dark: #E6C235;
+    --accent-teal: #00D9A5;
+    --accent-blue: #4DA8FF;
+    --accent-coral: #FF6B6B;
+    --gradient-gold: linear-gradient(135deg, #FFD93D 0%, #FF9F1C 100%);
+    --gradient-teal: linear-gradient(135deg, #00D9A5 0%, #00B386 100%);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
-    color: var(--text-light);
-    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Language Toggle */
-body[data-lang="es"] .lang-en { display: none; }
-body[data-lang="en"] .lang-es { display: none; }
-body[data-lang="es"] .lang-es { display: inline; }
-body[data-lang="en"] .lang-en { display: inline; }
+body[data-lang="es"] .lang-en { display: none !important; }
+body[data-lang="en"] .lang-es { display: none !important; }
+body[data-lang="es"] .lang-es { display: inline !important; }
+body[data-lang="en"] .lang-en { display: inline !important; }
 
 .lang-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
     display: flex;
-    gap: 6px;
+    gap: 4px;
     z-index: 1000;
+    background: var(--bg-card);
+    padding: 4px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .lang-btn {
-    padding: 8px 14px;
-    border: 2px solid rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.1);
-    color: white;
-    border-radius: 20px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
+    padding: 10px 18px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .lang-btn:hover {
-    background: rgba(255,255,255,0.2);
+    color: var(--text-primary);
 }
 
 .lang-btn.active {
-    background: white;
-    color: var(--primary);
-    border-color: white;
+    background: var(--accent-gold);
+    color: var(--bg-primary);
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -77,240 +85,341 @@ body[data-lang="en"] .lang-en { display: inline; }
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 80px 24px 60px;
     position: relative;
     overflow: hidden;
 }
 
+/* Animated background */
 .hero::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(232, 168, 72, 0.1) 0%, transparent 60%);
-    animation: pulse-bg 8s ease-in-out infinite;
-}
-
-@keyframes pulse-bg {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 0.8; }
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(255, 217, 61, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(0, 217, 165, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
+    max-width: 900px;
+    width: 100%;
 }
 
-.logo {
-    font-size: 5rem;
-    margin-bottom: 20px;
-    animation: float 3s ease-in-out infinite;
+.logo-icon {
+    font-size: 80px;
+    margin-bottom: 24px;
+    display: inline-block;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(255, 217, 61, 0.4));
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-12px); }
 }
 
-h1 {
-    font-size: 4rem;
+.brand {
+    font-size: clamp(48px, 10vw, 72px);
     font-weight: 900;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+
+.brand-go {
+    color: var(--text-primary);
+}
+
+.brand-star {
+    background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .tagline {
-    font-size: 1.5rem;
+    font-size: clamp(20px, 4vw, 28px);
     font-weight: 700;
-    color: var(--primary-light);
-    margin-bottom: 15px;
+    color: var(--accent-teal);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 50px;
+    font-size: clamp(16px, 3vw, 20px);
+    color: var(--text-secondary);
+    margin-bottom: 48px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
 }
 
+/* CTA Buttons */
 .cta-buttons {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .cta-btn {
-    padding: 20px 50px;
-    font-size: 1.2rem;
-    font-weight: 800;
-    font-family: 'Nunito', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 36px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
-}
-
-.cta-primary {
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
-    color: var(--bg-dark);
     border: none;
-}
-
-.cta-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(232, 168, 72, 0.4);
-}
-
-.cta-secondary {
-    background: transparent;
-    color: white;
-    border: 3px solid rgba(255,255,255,0.3);
-}
-
-.cta-secondary:hover {
-    border-color: white;
-    background: rgba(255,255,255,0.1);
-}
-
-.cta-tertiary {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: white;
-    border: none;
-}
-
-.cta-tertiary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(26, 127, 142, 0.4);
+    min-width: 180px;
 }
 
 .cta-trial {
-    background: linear-gradient(135deg, var(--success) 0%, #48bb78 100%);
-    color: var(--bg-dark);
-    border: none;
+    background: var(--gradient-teal);
+    color: var(--bg-primary);
     position: relative;
+    box-shadow: 0 4px 20px rgba(0, 217, 165, 0.4);
 }
 
 .cta-trial:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(104, 211, 145, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 217, 165, 0.5);
 }
 
 .trial-badge {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background: #ff6b6b;
+    top: -8px;
+    right: -8px;
+    background: var(--accent-coral);
     color: white;
-    font-size: 0.7rem;
+    font-size: 11px;
     padding: 4px 10px;
     border-radius: 20px;
     font-weight: 700;
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.4);
 }
 
-/* Features */
+.cta-primary {
+    background: var(--gradient-gold);
+    color: var(--bg-primary);
+    box-shadow: 0 4px 20px rgba(255, 217, 61, 0.3);
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 217, 61, 0.4);
+}
+
+.cta-secondary {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.cta-secondary:hover {
+    border-color: var(--accent-gold);
+    background: rgba(255, 217, 61, 0.1);
+}
+
+.cta-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--accent-teal);
+}
+
+.cta-outline:hover {
+    background: var(--accent-teal);
+    color: var(--bg-primary);
+}
+
+/* Features Section */
 .features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .feature {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 32px 24px;
     text-align: center;
-    padding: 30px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
     transition: all 0.3s ease;
 }
 
 .feature:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    border-color: rgba(255, 217, 61, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: block;
 }
+
+.feature:nth-child(1) .feature-icon { filter: drop-shadow(0 0 20px rgba(255, 217, 61, 0.5)); }
+.feature:nth-child(2) .feature-icon { filter: drop-shadow(0 0 20px rgba(0, 217, 165, 0.5)); }
+.feature:nth-child(3) .feature-icon { filter: drop-shadow(0 0 20px rgba(77, 168, 255, 0.5)); }
 
 .feature h3 {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--secondary);
-    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
 }
 
+.feature:nth-child(1) h3 { color: var(--accent-gold); }
+.feature:nth-child(2) h3 { color: var(--accent-teal); }
+.feature:nth-child(3) h3 { color: var(--accent-blue); }
+
 .feature p {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 40px 20px;
-    color: rgba(255,255,255,0.5);
-    font-size: 0.9rem;
+    padding: 60px 24px;
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer p {
+    color: var(--text-secondary);
+    font-size: 14px;
 }
 
 footer a {
-    color: var(--secondary);
+    color: var(--accent-gold);
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: var(--accent-teal);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 /* Responsive */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .features {
         grid-template-columns: 1fr;
-    }
-    
-    h1 {
-        font-size: 3rem;
-    }
-    
-    .tagline {
-        font-size: 1.2rem;
-    }
-    
-    .cta-btn {
-        padding: 18px 40px;
-        font-size: 1.1rem;
+        max-width: 400px;
     }
 }
 
-@media (max-width: 500px) {
-    h1 {
-        font-size: 2.5rem;
+@media (max-width: 600px) {
+    .hero {
+        padding: 100px 20px 50px;
     }
     
-    .logo {
-        font-size: 4rem;
+    .logo-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    
+    .brand {
+        letter-spacing: -1px;
+    }
+    
+    .tagline {
+        margin-bottom: 12px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 36px;
+        padding: 0 10px;
     }
     
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 12px;
+        margin-bottom: 60px;
     }
     
     .cta-btn {
         width: 100%;
-        max-width: 280px;
-        text-align: center;
+        max-width: 300px;
+        padding: 16px 32px;
+    }
+    
+    .feature {
+        padding: 28px 20px;
+    }
+    
+    .feature-icon {
+        font-size: 40px;
+    }
+    
+    .feature h3 {
+        font-size: 18px;
+    }
+    
+    .feature p {
+        font-size: 14px;
+    }
+    
+    .lang-toggle {
+        top: 12px;
+        right: 12px;
+    }
+    
+    .lang-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+    
+    footer {
+        padding: 40px 20px;
+    }
+    
+    .footer-links {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .brand {
+        font-size: 40px;
+    }
+    
+    .tagline {
+        font-size: 18px;
+    }
+    
+    .cta-btn {
+        font-size: 15px;
+        padding: 14px 28px;
     }
 }
 </style>
@@ -324,15 +433,20 @@ footer a:hover {
 
 <section class="hero">
     <div class="hero-content">
-        <div class="logo">⭐</div>
-        <h1>GoStar Digital</h1>
+        <div class="logo-icon">⭐</div>
+        
+        <h1 class="brand">
+            <span class="brand-go">Go</span><span class="brand-star">Star</span>
+        </h1>
+        
         <p class="tagline">
             <span class="lang-en">Train Your Memory. Shine Every Day.</span>
             <span class="lang-es">Entrena Tu Memoria. Brilla Cada Día.</span>
         </p>
+        
         <p class="subtitle">
-            <span class="lang-en">Metronome-powered cognitive training that transforms nursing homes into training arenas and residents into athletes.</span>
-            <span class="lang-es">Entrenamiento cognitivo potenciado por metrónomo que transforma hogares de ancianos en arenas de entrenamiento y residentes en atletas.</span>
+            <span class="lang-en">Rhythm-powered cognitive training that transforms senior care into an arena of daily victories.</span>
+            <span class="lang-es">Entrenamiento cognitivo potenciado por ritmo que transforma el cuidado de ancianos en una arena de victorias diarias.</span>
         </p>
         
         <div class="cta-buttons">
@@ -341,54 +455,57 @@ footer a:hover {
                 <span class="lang-es">Prueba Gratis</span>
                 <span class="trial-badge">7 DAYS</span>
             </a>
+            
             <a href="https://gostar.digital/play" class="cta-btn cta-primary">
-                <span class="lang-en">Play Now</span>
-                <span class="lang-es">Jugar Ahora</span>
+                <span class="lang-en">▶ Play Now</span>
+                <span class="lang-es">▶ Jugar</span>
             </a>
-            <a href="https://gostar.digital/facility" class="cta-btn cta-tertiary">
+            
+            <a href="https://gostar.digital/facility" class="cta-btn cta-secondary">
                 <span class="lang-en">Facility Login</span>
                 <span class="lang-es">Acceso Instalación</span>
             </a>
-            <a href="about.html" class="cta-btn cta-secondary">
+            
+            <a href="about.html" class="cta-btn cta-outline">
                 <span class="lang-en">Learn More</span>
-                <span class="lang-es">Más Información</span>
+                <span class="lang-es">Más Info</span>
             </a>
         </div>
         
         <div class="features">
             <div class="feature">
-                <div class="feature-icon">🎵</div>
+                <span class="feature-icon">🎵</span>
                 <h3>
                     <span class="lang-en">Metronome Training</span>
-                    <span class="lang-es">Entrenamiento con Metrónomo</span>
+                    <span class="lang-es">Entrenamiento Rítmico</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Rhythm-based cognitive exercise with musical tones and tempo control.</span>
-                    <span class="lang-es">Ejercicio cognitivo basado en ritmo con tonos musicales y control de tempo.</span>
+                    <span class="lang-en">Rhythm-based cognitive exercise with musical tones and adjustable tempo.</span>
+                    <span class="lang-es">Ejercicio cognitivo basado en ritmo con tonos musicales y tempo ajustable.</span>
                 </p>
             </div>
             
             <div class="feature">
-                <div class="feature-icon">📈</div>
+                <span class="feature-icon">📈</span>
                 <h3>
                     <span class="lang-en">Track Progress</span>
                     <span class="lang-es">Sigue el Progreso</span>
                 </h3>
                 <p>
                     <span class="lang-en">Daily streaks, personal bests, and quarter-by-quarter scoring.</span>
-                    <span class="lang-es">Rachas diarias, mejores puntuaciones y puntuación por cuartos.</span>
+                    <span class="lang-es">Rachas diarias, récords personales y puntuación por cuartos.</span>
                 </p>
             </div>
             
             <div class="feature">
-                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <span class="feature-icon">👨‍👩‍👧‍👦</span>
                 <h3>
                     <span class="lang-en">Family Connection</span>
                     <span class="lang-es">Conexión Familiar</span>
                 </h3>
                 <p>
                     <span class="lang-en">Turn worry into cheering. Celebrate wins together.</span>
-                    <span class="lang-es">Transforma la preocupación en celebración. Celebren juntos.</span>
+                    <span class="lang-es">Transforma la preocupación en celebración.</span>
                 </p>
             </div>
         </div>
@@ -396,10 +513,22 @@ footer a:hover {
 </section>
 
 <footer>
-    <p>
-        <span class="lang-en">© 2025 GoStar Digital LLC · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:info@gostardigital.com">Contact</a></span>
-        <span class="lang-es">© 2025 GoStar Digital LLC · <a href="privacy.html">Privacidad</a> · <a href="terms.html">Términos</a> · <a href="mailto:info@gostardigital.com">Contacto</a></span>
-    </p>
+    <div class="footer-links">
+        <span class="lang-en">© 2025 GoStar Digital LLC</span>
+        <span class="lang-es">© 2025 GoStar Digital LLC</span>
+        <a href="privacy.html">
+            <span class="lang-en">Privacy</span>
+            <span class="lang-es">Privacidad</span>
+        </a>
+        <a href="terms.html">
+            <span class="lang-en">Terms</span>
+            <span class="lang-es">Términos</span>
+        </a>
+        <a href="mailto:info@gostardigital.com">
+            <span class="lang-en">Contact</span>
+            <span class="lang-es">Contacto</span>
+        </a>
+    </div>
 </footer>
 
 <script>
@@ -411,15 +540,22 @@ function setLang(lang) {
     document.body.setAttribute('data-lang', lang);
     var btns = document.querySelectorAll('.lang-btn');
     for (var i = 0; i < btns.length; i++) {
-        btns[i].className = btns[i].textContent === lang.toUpperCase() ? 'lang-btn active' : 'lang-btn';
+        if (btns[i].textContent === lang.toUpperCase()) {
+            btns[i].classList.add('active');
+        } else {
+            btns[i].classList.remove('active');
+        }
     }
 }
 
-// Initialize
 document.body.setAttribute('data-lang', currentLang);
 var btns = document.querySelectorAll('.lang-btn');
 for (var i = 0; i < btns.length; i++) {
-    btns[i].className = btns[i].textContent === currentLang.toUpperCase() ? 'lang-btn active' : 'lang-btn';
+    if (btns[i].textContent === currentLang.toUpperCase()) {
+        btns[i].classList.add('active');
+    } else {
+        btns[i].classList.remove('active');
+    }
 }
 </script>
 
