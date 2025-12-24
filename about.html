@@ -342,21 +342,71 @@ section {
     margin-bottom: 24px;
 }
 
-.demo-tile {
+.demo-star {
     width: 64px;
     height: 64px;
-    border-radius: 16px;
-    animation: tile-pulse 2.5s ease-in-out infinite;
+    animation: star-pulse 2.5s ease-in-out infinite;
 }
 
-.demo-tile:nth-child(1) { background: #EF4444; animation-delay: 0s; }
-.demo-tile:nth-child(2) { background: #3B82F6; animation-delay: 0.5s; }
-.demo-tile:nth-child(3) { background: #22C55E; animation-delay: 1s; }
-.demo-tile:nth-child(4) { background: #F59E0B; animation-delay: 1.5s; }
+.demo-star svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    transition: all 0.3s ease;
+}
 
-@keyframes tile-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 30px currentColor; }
+.demo-star:nth-child(1) svg { fill: #EF4444; }
+.demo-star:nth-child(2) svg { fill: #3B82F6; }
+.demo-star:nth-child(3) svg { fill: #22C55E; }
+.demo-star:nth-child(4) svg { fill: #F59E0B; }
+
+.demo-star:nth-child(1) { animation-delay: 0s; }
+.demo-star:nth-child(2) { animation-delay: 0.5s; }
+.demo-star:nth-child(3) { animation-delay: 1s; }
+.demo-star:nth-child(4) { animation-delay: 1.5s; }
+
+@keyframes star-pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.6; 
+    }
+    50% { 
+        transform: scale(1.2); 
+        opacity: 1; 
+    }
+}
+
+.demo-star:nth-child(1) svg {
+    animation: glow-red 2.5s ease-in-out infinite;
+}
+.demo-star:nth-child(2) svg {
+    animation: glow-blue 2.5s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+.demo-star:nth-child(3) svg {
+    animation: glow-green 2.5s ease-in-out infinite;
+    animation-delay: 1s;
+}
+.demo-star:nth-child(4) svg {
+    animation: glow-yellow 2.5s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes glow-red {
+    0%, 100% { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+    50% { filter: drop-shadow(0 0 20px #EF4444) drop-shadow(0 0 40px #EF4444); }
+}
+@keyframes glow-blue {
+    0%, 100% { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+    50% { filter: drop-shadow(0 0 20px #3B82F6) drop-shadow(0 0 40px #3B82F6); }
+}
+@keyframes glow-green {
+    0%, 100% { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+    50% { filter: drop-shadow(0 0 20px #22C55E) drop-shadow(0 0 40px #22C55E); }
+}
+@keyframes glow-yellow {
+    0%, 100% { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+    50% { filter: drop-shadow(0 0 20px #F59E0B) drop-shadow(0 0 40px #F59E0B); }
 }
 
 .beats {
@@ -909,7 +959,7 @@ footer {
         padding: 32px 20px;
     }
     
-    .demo-tile {
+    .demo-star {
         width: 52px;
         height: 52px;
     }
@@ -967,7 +1017,7 @@ footer {
         font-size: 24px;
     }
     
-    .demo-tile {
+    .demo-star {
         width: 44px;
         height: 44px;
     }
@@ -1097,10 +1147,18 @@ footer {
         <div class="metronome-content">
             <div class="metronome-visual">
                 <div class="demo-tiles">
-                    <div class="demo-tile"></div>
-                    <div class="demo-tile"></div>
-                    <div class="demo-tile"></div>
-                    <div class="demo-tile"></div>
+                    <div class="demo-star">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
+                    </div>
+                    <div class="demo-star">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
+                    </div>
+                    <div class="demo-star">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
+                    </div>
+                    <div class="demo-star">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
+                    </div>
                 </div>
                 <div class="beats">
                     <span>♩</span> <span>♩</span> <span>♩</span> <span>♩</span>
