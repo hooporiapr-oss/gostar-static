@@ -4,238 +4,389 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Use - GoStar Digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 :root {
-    --primary: #1A7F8E;
-    --secondary: #E8A848;
-    --bg-dark: #1a1a2e;
-    --bg-card: #16213e;
-    --text-light: #ffffff;
+    --bg-primary: #0D0D0D;
+    --bg-secondary: #1A1A1A;
+    --bg-card: #242424;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
+    --accent-gold: #FFD93D;
+    --accent-teal: #00D9A5;
 }
+
 body {
-    font-family: 'Nunito', sans-serif;
-    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
-    color: var(--text-light);
-    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
+
+/* Language Toggle */
+body[data-lang="es"] .lang-en { display: none !important; }
+body[data-lang="en"] .lang-es { display: none !important; }
+body[data-lang="es"] .lang-es { display: block !important; }
+body[data-lang="en"] .lang-en { display: block !important; }
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-home {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-home:hover {
+    color: var(--accent-gold);
+}
+
+.lang-toggle {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-card);
+    padding: 4px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+}
+
+.lang-btn.active {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 120px 24px 60px;
 }
+
 h1 {
-    font-size: 2.5rem;
+    font-size: clamp(32px, 6vw, 48px);
     font-weight: 900;
-    color: var(--secondary);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    color: var(--accent-gold);
 }
-.date {
-    color: rgba(255,255,255,0.6);
+
+.updated {
+    color: var(--text-secondary);
+    font-size: 14px;
     margin-bottom: 40px;
 }
+
 h2 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--primary);
-    margin: 30px 0 15px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 40px 0 16px;
+    color: var(--accent-teal);
 }
-h2:first-of-type {
-    border-top: none;
-    padding-top: 0;
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
 }
-p, li {
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 15px;
-}
+
 ul {
-    margin-left: 25px;
-    margin-bottom: 20px;
+    color: var(--text-secondary);
+    margin: 16px 0;
+    padding-left: 24px;
 }
+
+li {
+    margin-bottom: 8px;
+}
+
 a {
-    color: var(--secondary);
+    color: var(--accent-gold);
     text-decoration: none;
 }
+
 a:hover {
-    text-decoration: underline;
+    color: var(--accent-teal);
 }
-.back-link {
-    display: inline-block;
-    margin-bottom: 30px;
-    color: var(--primary);
-    font-weight: 700;
+
+.disclaimer {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-gold);
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
+    margin: 24px 0;
 }
-.lang-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+
+.disclaimer p {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 48px 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-copyright {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.footer-links {
     display: flex;
-    gap: 6px;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
 }
-.lang-btn {
-    padding: 8px 14px;
-    border: 2px solid rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.1);
-    color: white;
-    border-radius: 20px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    cursor: pointer;
+
+.footer-links a {
+    color: var(--accent-gold);
+    font-weight: 500;
+    font-size: 14px;
 }
-.lang-btn.active {
-    background: white;
-    color: var(--primary);
+
+@media (max-width: 600px) {
+    .nav {
+        padding: 12px 16px;
+    }
+    
+    .container {
+        padding: 100px 20px 40px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
 }
-body[data-lang="es"] .lang-en { display: none; }
-body[data-lang="en"] .lang-es { display: none; }
-body[data-lang="es"] .lang-es { display: block; }
-body[data-lang="en"] .lang-en { display: block; }
 </style>
 </head>
 <body data-lang="en">
 
-<div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('es')">ES</button>
-</div>
+<nav class="nav">
+    <a href="index.html" class="nav-home">
+        <span>←</span>
+        <span class="lang-en" style="display:inline">Home</span>
+        <span class="lang-es" style="display:none">Inicio</span>
+    </a>
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+</nav>
 
-<div class="container">
-    <a href="index.html" class="back-link">← Back to Home</a>
-    
+<main class="container">
     <div class="lang-en">
         <h1>Terms of Use</h1>
-        <p class="date">Effective Date: December 23, 2025</p>
+        <p class="updated">Last updated: December 2025</p>
+        
+        <p>Welcome to GoStar Digital. By accessing or using our cognitive wellness platform, you agree to be bound by these Terms of Use.</p>
+        
+        <div class="disclaimer">
+            <p>⚠️ GoStar Digital is a cognitive wellness and entertainment platform. It is NOT a medical device and does not diagnose, treat, cure, or prevent any disease or medical condition.</p>
+        </div>
         
         <h2>Acceptance of Terms</h2>
-        <p>By accessing or using GoStar Digital LLC's ("GoStar") cognitive wellness training applications and services, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our services.</p>
+        <p>By creating an account or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and our Privacy Policy.</p>
         
-        <h2>Description of Services</h2>
-        <p>GoStar provides cognitive wellness training applications designed to support mental fitness through engaging, rhythm-based memory exercises. Our services include:</p>
+        <h2>Service Description</h2>
+        <p>GoStar Digital provides:</p>
         <ul>
-            <li>Sequence memory training games</li>
-            <li>Progress tracking and streak maintenance</li>
-            <li>Multiple difficulty levels and game modes</li>
-            <li>Bilingual support (English and Spanish)</li>
+            <li>Cognitive training games using rhythm-based sequence memory exercises</li>
+            <li>Progress tracking and performance analytics</li>
+            <li>Facility management tools for licensed care providers</li>
+            <li>Family connection features for authorized users</li>
         </ul>
         
-        <h2>Use of Services</h2>
-        <p>You agree to use our services only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+        <h2>Facility Licensing</h2>
+        <p>Care facilities using GoStar Digital must:</p>
         <ul>
-            <li>Use the services in any way that violates applicable laws or regulations</li>
-            <li>Attempt to interfere with or disrupt the services</li>
-            <li>Copy, modify, or distribute our content without permission</li>
-            <li>Use the services to collect information about other users</li>
+            <li>Maintain a valid license key</li>
+            <li>Use the platform only for intended wellness purposes</li>
+            <li>Ensure proper supervision of residents using the platform</li>
+            <li>Comply with all applicable healthcare regulations</li>
+        </ul>
+        
+        <h2>User Accounts</h2>
+        <p>Users are responsible for:</p>
+        <ul>
+            <li>Maintaining the confidentiality of account credentials</li>
+            <li>All activities that occur under their account</li>
+            <li>Notifying us of any unauthorized use</li>
         </ul>
         
         <h2>Healthcare Disclaimer</h2>
-        <p><strong>Important:</strong> GoStar's cognitive training applications are designed for wellness and entertainment purposes. They are NOT medical devices and should NOT be used to diagnose, treat, cure, or prevent any disease or medical condition. Our services do not replace professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare providers regarding any medical conditions or concerns.</p>
-        
-        <h2>Facility Licensing</h2>
-        <p>Senior living facilities, nursing homes, and healthcare organizations may obtain licenses to use GoStar services. Licensed facilities agree to:</p>
+        <p>GoStar Digital is designed for cognitive wellness and entertainment purposes only. Our platform:</p>
         <ul>
-            <li>Use services only within their licensed locations</li>
-            <li>Maintain appropriate supervision during resident use</li>
-            <li>Not redistribute or resell access to the services</li>
-            <li>Pay applicable licensing fees as agreed</li>
+            <li>Does not provide medical advice or diagnosis</li>
+            <li>Should not replace professional healthcare</li>
+            <li>Is not intended to treat dementia, Alzheimer's, or any cognitive condition</li>
+            <li>Should be used as a supplement to, not a replacement for, professional care</li>
         </ul>
         
         <h2>Intellectual Property</h2>
-        <p>All content, features, and functionality of GoStar services are owned by GoStar Digital LLC and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
+        <p>All content, features, and functionality of GoStar Digital are owned by GoStar Digital LLC and are protected by intellectual property laws.</p>
         
         <h2>Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, GoStar Digital LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.</p>
+        <p>GoStar Digital LLC shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our platform.</p>
         
-        <h2>Modifications to Terms</h2>
-        <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes by posting the updated terms on our website. Continued use of our services after changes constitutes acceptance of the modified terms.</p>
+        <h2>Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. Continued use of the platform after changes constitutes acceptance of the new Terms.</p>
         
-        <h2>Governing Law</h2>
-        <p>These Terms shall be governed by and construed in accordance with the laws of Puerto Rico, without regard to conflict of law principles.</p>
-        
-        <h2>Contact Information</h2>
-        <p>For questions about these Terms of Use, please contact us at:<br>
-        <a href="mailto:info@gostardigital.com">info@gostardigital.com</a></p>
-        
-        <p>GoStar Digital LLC<br>
-        San Juan, Puerto Rico</p>
+        <h2>Contact Us</h2>
+        <p>For questions about these Terms, please contact us at:</p>
+        <p><a href="mailto:info@gostar.email">info@gostar.email</a></p>
     </div>
     
-    <div class="lang-es">
+    <div class="lang-es" style="display:none">
         <h1>Términos de Uso</h1>
-        <p class="date">Fecha de Vigencia: 23 de diciembre de 2025</p>
+        <p class="updated">Última actualización: Diciembre 2025</p>
+        
+        <p>Bienvenido a GoStar Digital. Al acceder o usar nuestra plataforma de bienestar cognitivo, usted acepta estar sujeto a estos Términos de Uso.</p>
+        
+        <div class="disclaimer">
+            <p>⚠️ GoStar Digital es una plataforma de bienestar cognitivo y entretenimiento. NO es un dispositivo médico y no diagnostica, trata, cura ni previene ninguna enfermedad o condición médica.</p>
+        </div>
         
         <h2>Aceptación de Términos</h2>
-        <p>Al acceder o usar las aplicaciones y servicios de entrenamiento cognitivo de GoStar Digital LLC ("GoStar"), usted acepta estar sujeto a estos Términos de Uso. Si no está de acuerdo con estos términos, por favor no use nuestros servicios.</p>
+        <p>Al crear una cuenta o usar nuestros servicios, usted reconoce que ha leído, entendido y acepta estar sujeto a estos Términos de Uso y nuestra Política de Privacidad.</p>
         
-        <h2>Descripción de Servicios</h2>
-        <p>GoStar proporciona aplicaciones de entrenamiento cognitivo diseñadas para apoyar la aptitud mental a través de ejercicios de memoria atractivos y basados en ritmo. Nuestros servicios incluyen:</p>
+        <h2>Descripción del Servicio</h2>
+        <p>GoStar Digital proporciona:</p>
         <ul>
-            <li>Juegos de entrenamiento de memoria de secuencias</li>
-            <li>Seguimiento de progreso y mantenimiento de rachas</li>
-            <li>Múltiples niveles de dificultad y modos de juego</li>
-            <li>Soporte bilingüe (inglés y español)</li>
+            <li>Juegos de entrenamiento cognitivo usando ejercicios de memoria secuencial basados en ritmo</li>
+            <li>Seguimiento del progreso y análisis de rendimiento</li>
+            <li>Herramientas de gestión para instalaciones de cuidado licenciadas</li>
+            <li>Funciones de conexión familiar para usuarios autorizados</li>
         </ul>
-        
-        <h2>Uso de Servicios</h2>
-        <p>Usted acepta usar nuestros servicios solo para propósitos legales y de acuerdo con estos Términos. Usted acepta no:</p>
-        <ul>
-            <li>Usar los servicios de cualquier manera que viole leyes o regulaciones aplicables</li>
-            <li>Intentar interferir con o interrumpir los servicios</li>
-            <li>Copiar, modificar o distribuir nuestro contenido sin permiso</li>
-            <li>Usar los servicios para recopilar información sobre otros usuarios</li>
-        </ul>
-        
-        <h2>Descargo de Responsabilidad Médica</h2>
-        <p><strong>Importante:</strong> Las aplicaciones de entrenamiento cognitivo de GoStar están diseñadas para propósitos de bienestar y entretenimiento. NO son dispositivos médicos y NO deben usarse para diagnosticar, tratar, curar o prevenir ninguna enfermedad o condición médica. Nuestros servicios no reemplazan el consejo médico profesional, diagnóstico o tratamiento. Siempre consulte con proveedores de salud calificados sobre cualquier condición médica o preocupación.</p>
         
         <h2>Licencias para Instalaciones</h2>
-        <p>Las instalaciones de vida para personas mayores, hogares de ancianos y organizaciones de salud pueden obtener licencias para usar los servicios de GoStar. Las instalaciones con licencia aceptan:</p>
+        <p>Las instalaciones de cuidado que usan GoStar Digital deben:</p>
         <ul>
-            <li>Usar los servicios solo dentro de sus ubicaciones con licencia</li>
-            <li>Mantener supervisión apropiada durante el uso por residentes</li>
-            <li>No redistribuir o revender acceso a los servicios</li>
-            <li>Pagar las tarifas de licencia aplicables según lo acordado</li>
+            <li>Mantener una clave de licencia válida</li>
+            <li>Usar la plataforma solo para propósitos de bienestar previstos</li>
+            <li>Asegurar supervisión adecuada de residentes que usan la plataforma</li>
+            <li>Cumplir con todas las regulaciones de salud aplicables</li>
+        </ul>
+        
+        <h2>Cuentas de Usuario</h2>
+        <p>Los usuarios son responsables de:</p>
+        <ul>
+            <li>Mantener la confidencialidad de las credenciales de la cuenta</li>
+            <li>Todas las actividades que ocurran bajo su cuenta</li>
+            <li>Notificarnos de cualquier uso no autorizado</li>
+        </ul>
+        
+        <h2>Aviso de Salud</h2>
+        <p>GoStar Digital está diseñado solo para propósitos de bienestar cognitivo y entretenimiento. Nuestra plataforma:</p>
+        <ul>
+            <li>No proporciona consejo médico ni diagnóstico</li>
+            <li>No debe reemplazar la atención médica profesional</li>
+            <li>No está destinada a tratar demencia, Alzheimer ni ninguna condición cognitiva</li>
+            <li>Debe usarse como complemento, no como reemplazo, del cuidado profesional</li>
         </ul>
         
         <h2>Propiedad Intelectual</h2>
-        <p>Todo el contenido, características y funcionalidad de los servicios de GoStar son propiedad de GoStar Digital LLC y están protegidos por derechos de autor, marcas registradas y otras leyes de propiedad intelectual. No puede reproducir, distribuir o crear obras derivadas sin nuestro permiso expreso por escrito.</p>
+        <p>Todo el contenido, características y funcionalidad de GoStar Digital son propiedad de GoStar Digital LLC y están protegidos por leyes de propiedad intelectual.</p>
         
         <h2>Limitación de Responsabilidad</h2>
-        <p>En la máxima medida permitida por la ley, GoStar Digital LLC no será responsable de ningún daño indirecto, incidental, especial, consecuente o punitivo que resulte de su uso o incapacidad de usar nuestros servicios.</p>
+        <p>GoStar Digital LLC no será responsable por daños indirectos, incidentales, especiales o consecuentes derivados de su uso de nuestra plataforma.</p>
         
-        <h2>Modificaciones a los Términos</h2>
-        <p>Nos reservamos el derecho de modificar estos Términos en cualquier momento. Notificaremos a los usuarios de cambios significativos publicando los términos actualizados en nuestro sitio web. El uso continuado de nuestros servicios después de los cambios constituye aceptación de los términos modificados.</p>
+        <h2>Cambios a los Términos</h2>
+        <p>Nos reservamos el derecho de modificar estos Términos en cualquier momento. El uso continuado de la plataforma después de cambios constituye aceptación de los nuevos Términos.</p>
         
-        <h2>Ley Aplicable</h2>
-        <p>Estos Términos se regirán e interpretarán de acuerdo con las leyes de Puerto Rico, sin tener en cuenta los principios de conflicto de leyes.</p>
-        
-        <h2>Información de Contacto</h2>
-        <p>Para preguntas sobre estos Términos de Uso, por favor contáctenos en:<br>
-        <a href="mailto:info@gostardigital.com">info@gostardigital.com</a></p>
-        
-        <p>GoStar Digital LLC<br>
-        San Juan, Puerto Rico</p>
+        <h2>Contáctenos</h2>
+        <p>Para preguntas sobre estos Términos, contáctenos en:</p>
+        <p><a href="mailto:info@gostar.email">info@gostar.email</a></p>
     </div>
-</div>
+</main>
+
+<footer>
+    <p class="footer-copyright">© 2025 GoStar Digital LLC</p>
+    <div class="footer-links">
+        <a href="privacy.html">
+            <span class="lang-en" style="display:inline">Privacy</span>
+            <span class="lang-es" style="display:none">Privacidad</span>
+        </a>
+        <a href="terms.html">
+            <span class="lang-en" style="display:inline">Terms</span>
+            <span class="lang-es" style="display:none">Términos</span>
+        </a>
+        <a href="mailto:info@gostar.email">
+            <span class="lang-en" style="display:inline">Contact</span>
+            <span class="lang-es" style="display:none">Contacto</span>
+        </a>
+    </div>
+</footer>
 
 <script>
 var currentLang = localStorage.getItem('gostar-lang') || 'en';
+
 function setLang(lang) {
     currentLang = lang;
     localStorage.setItem('gostar-lang', lang);
     document.body.setAttribute('data-lang', lang);
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        btn.className = btn.textContent === lang.toUpperCase() ? 'lang-btn active' : 'lang-btn';
-    });
+    
+    var enEls = document.querySelectorAll('.lang-en');
+    var esEls = document.querySelectorAll('.lang-es');
+    
+    for (var i = 0; i < enEls.length; i++) {
+        enEls[i].style.display = lang === 'en' ? (enEls[i].tagName === 'SPAN' ? 'inline' : 'block') : 'none';
+    }
+    for (var j = 0; j < esEls.length; j++) {
+        esEls[j].style.display = lang === 'es' ? (esEls[j].tagName === 'SPAN' ? 'inline' : 'block') : 'none';
+    }
+    
+    var btns = document.querySelectorAll('.lang-btn');
+    for (var k = 0; k < btns.length; k++) {
+        if (btns[k].textContent === lang.toUpperCase()) {
+            btns[k].classList.add('active');
+        } else {
+            btns[k].classList.remove('active');
+        }
+    }
 }
-document.body.setAttribute('data-lang', currentLang);
-document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.className = btn.textContent === currentLang.toUpperCase() ? 'lang-btn active' : 'lang-btn';
-});
+
+setLang(currentLang);
 </script>
+
 </body>
 </html>
