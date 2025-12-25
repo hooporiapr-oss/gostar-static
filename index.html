@@ -166,6 +166,8 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 100px;
+    position: relative;
+    z-index: 10;
 }
 
 .cta-btn {
@@ -183,6 +185,8 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     cursor: pointer;
     border: none;
     min-width: 180px;
+    position: relative;
+    z-index: 10;
 }
 
 .cta-primary {
@@ -224,6 +228,9 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     border: 2px solid rgba(255,255,255,0.15);
     pointer-events: auto;
     cursor: pointer;
+    display: inline-flex;
+    position: relative;
+    z-index: 10;
 }
 
 .cta-contact:hover {
@@ -231,10 +238,17 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     color: var(--accent-gold);
 }
 
+/* Ensure all links are clickable */
+a {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
 /* Footer Links */
 footer a {
     pointer-events: auto;
     cursor: pointer;
+    display: inline-block;
 }
 
 /* Stats Bar */
@@ -445,6 +459,8 @@ footer a {
     padding: 100px 24px;
     text-align: center;
     background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+    z-index: 1;
 }
 
 .cta-section .section-title {
@@ -505,6 +521,8 @@ footer {
     padding: 48px 24px;
     background: var(--bg-secondary);
     border-top: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    z-index: 10;
 }
 
 .footer-copyright {
@@ -962,10 +980,7 @@ footer {
             <span class="lang-en">🆓 Start Free 7-Day Trial</span>
             <span class="lang-es">🆓 Prueba Gratis 7 Días</span>
         </a>
-        <a href="mailto:info@gostar.email" class="cta-btn cta-contact">
-            <span class="lang-en">✉️ info@gostar.email</span>
-            <span class="lang-es">✉️ info@gostar.email</span>
-        </a>
+        <a href="mailto:info@gostar.email" class="cta-btn cta-contact">✉️ info@gostar.email</a>
     </div>
 </section>
 
