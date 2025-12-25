@@ -546,6 +546,24 @@ footer {
     color: var(--accent-gold);
 }
 
+.email-copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--accent-teal);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.email-copy-btn:hover {
+    background: rgba(0, 217, 165, 0.1);
+    color: var(--accent-gold);
+}
+
 .footer-links {
     display: flex;
     justify-content: center;
@@ -980,7 +998,7 @@ footer {
             <span class="lang-en">🆓 Start Free 7-Day Trial</span>
             <span class="lang-es">🆓 Prueba Gratis 7 Días</span>
         </a>
-        <a href="mailto:info@gostar.email" class="cta-btn cta-contact">✉️ info@gostar.email</a>
+        <button class="cta-btn cta-contact" onclick="copyEmail()">✉️ info@gostar.email</button>
     </div>
 </section>
 
@@ -996,7 +1014,7 @@ footer {
 <footer>
     <p class="footer-copyright">© 2025 GoStar Digital LLC</p>
     <p class="footer-email">
-        <a href="mailto:info@gostar.email">info@gostar.email</a>
+        <button class="email-copy-btn" onclick="copyEmail()">📋 info@gostar.email</button>
     </p>
     <div class="footer-links">
         <a href="about.html">
@@ -1028,6 +1046,17 @@ function setLang(lang) {
         } else {
             btns[i].classList.remove('active');
         }
+    }
+}
+
+function copyEmail() {
+    var email = 'info@gostar.email';
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).then(function() {
+            alert(currentLang === 'es' ? '✅ Correo copiado: ' + email : '✅ Email copied: ' + email);
+        });
+    } else {
+        prompt(currentLang === 'es' ? 'Copia este correo:' : 'Copy this email:', email);
     }
 }
 
