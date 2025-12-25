@@ -222,11 +222,19 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     background: transparent;
     color: var(--text-secondary);
     border: 2px solid rgba(255,255,255,0.15);
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .cta-contact:hover {
     border-color: var(--accent-gold);
     color: var(--accent-gold);
+}
+
+/* Footer Links */
+footer a {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 /* Stats Bar */
@@ -502,7 +510,22 @@ footer {
 .footer-copyright {
     color: var(--text-secondary);
     font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-email {
     margin-bottom: 16px;
+}
+
+.footer-email a {
+    color: var(--accent-teal);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.footer-email a:hover {
+    color: var(--accent-gold);
 }
 
 .footer-links {
@@ -940,8 +963,8 @@ footer {
             <span class="lang-es">🆓 Prueba Gratis 7 Días</span>
         </a>
         <a href="mailto:info@gostar.email" class="cta-btn cta-contact">
-            <span class="lang-en">✉️ Contact Us</span>
-            <span class="lang-es">✉️ Contáctenos</span>
+            <span class="lang-en">✉️ info@gostar.email</span>
+            <span class="lang-es">✉️ info@gostar.email</span>
         </a>
     </div>
 </section>
@@ -957,6 +980,9 @@ footer {
 
 <footer>
     <p class="footer-copyright">© 2025 GoStar Digital LLC</p>
+    <p class="footer-email">
+        <a href="mailto:info@gostar.email">info@gostar.email</a>
+    </p>
     <div class="footer-links">
         <a href="about.html">
             <span class="lang-en">About</span>
@@ -969,10 +995,6 @@ footer {
         <a href="terms.html">
             <span class="lang-en">Terms</span>
             <span class="lang-es">Términos</span>
-        </a>
-        <a href="mailto:info@gostar.email">
-            <span class="lang-en">Contact</span>
-            <span class="lang-es">Contacto</span>
         </a>
     </div>
 </footer>
