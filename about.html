@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About GoStar Digital - Cognitive Wellness Training</title>
+<title>About GoStar Digital - Mental Fitness. Measurable Results.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,22 +14,16 @@
     --bg-primary: #0D0D0D;
     --bg-secondary: #1A1A1A;
     --bg-card: #242424;
-    --bg-card-alt: #2D2D2D;
     --text-primary: #FFFFFF;
     --text-secondary: #B3B3B3;
     --text-muted: #808080;
     --accent-gold: #FFD93D;
-    --accent-gold-dark: #E6C235;
     --accent-teal: #00D9A5;
-    --accent-teal-dark: #00B386;
     --accent-blue: #4DA8FF;
     --accent-coral: #FF6B6B;
     --accent-purple: #A855F7;
     --gradient-gold: linear-gradient(135deg, #FFD93D 0%, #FF9F1C 100%);
     --gradient-teal: linear-gradient(135deg, #00D9A5 0%, #00B386 100%);
-    --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF4757 100%);
-    --success: #22C55E;
-    --danger: #EF4444;
 }
 
 html { scroll-behavior: smooth; }
@@ -40,7 +34,6 @@ body {
     color: var(--text-primary);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Language Toggle */
@@ -48,15 +41,6 @@ body[data-lang="es"] .lang-en { display: none !important; }
 body[data-lang="en"] .lang-es { display: none !important; }
 body[data-lang="es"] .lang-es { display: inline !important; }
 body[data-lang="en"] .lang-en { display: inline !important; }
-body[data-lang="es"] .lang-es-block { display: block !important; }
-body[data-lang="en"] .lang-es-block { display: none !important; }
-body[data-lang="es"] .lang-en-block { display: none !important; }
-body[data-lang="en"] .lang-en-block { display: block !important; }
-
-/* Block-level language elements */
-h2.lang-en, h2.lang-es { display: none; }
-body[data-lang="en"] h2.lang-en { display: block !important; }
-body[data-lang="es"] h2.lang-es { display: block !important; }
 
 /* Navigation */
 .nav {
@@ -80,7 +64,7 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
     gap: 8px;
     color: var(--text-primary);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
     transition: color 0.3s ease;
 }
@@ -164,13 +148,7 @@ section {
     font-size: 72px;
     margin-bottom: 24px;
     display: inline-block;
-    animation: pulse 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 30px rgba(77, 168, 255, 0.4));
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    filter: drop-shadow(0 0 30px rgba(255, 217, 61, 0.4));
 }
 
 .hero h1 {
@@ -191,7 +169,7 @@ section {
 .hero .subtitle {
     font-size: clamp(18px, 3vw, 24px);
     color: var(--accent-teal);
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
@@ -203,7 +181,7 @@ section {
     line-height: 1.8;
 }
 
-/* Section Titles */
+/* Section Headers */
 .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -247,10 +225,10 @@ section {
 }
 
 .mission-quote {
-    font-size: clamp(24px, 5vw, 36px);
-    font-weight: 800;
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: 900;
     text-align: center;
-    line-height: 1.4;
+    line-height: 1.3;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -262,77 +240,19 @@ section {
     background-clip: text;
 }
 
-/* Challenge Section */
-.challenge {
-    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-}
-
-.challenge-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.challenge-card {
-    background: var(--bg-card);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 32px 24px;
-    text-align: center;
-    transition: all 0.4s ease;
-}
-
-.challenge-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.challenge-card:nth-child(1) { border-color: rgba(255, 217, 61, 0.3); }
-.challenge-card:nth-child(2) { border-color: rgba(0, 217, 165, 0.3); }
-.challenge-card:nth-child(3) { border-color: rgba(77, 168, 255, 0.3); }
-.challenge-card:nth-child(4) { border-color: rgba(168, 85, 247, 0.3); }
-
-.challenge-icon {
-    font-size: 48px;
-    margin-bottom: 16px;
-    display: block;
-}
-
-.challenge-card:nth-child(1) .challenge-icon { filter: drop-shadow(0 0 15px rgba(255, 217, 61, 0.5)); }
-.challenge-card:nth-child(2) .challenge-icon { filter: drop-shadow(0 0 15px rgba(0, 217, 165, 0.5)); }
-.challenge-card:nth-child(3) .challenge-icon { filter: drop-shadow(0 0 15px rgba(77, 168, 255, 0.5)); }
-.challenge-card:nth-child(4) .challenge-icon { filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.5)); }
-
-.challenge-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.challenge-card:nth-child(1) h3 { color: var(--accent-gold); }
-.challenge-card:nth-child(2) h3 { color: var(--accent-teal); }
-.challenge-card:nth-child(3) h3 { color: var(--accent-blue); }
-.challenge-card:nth-child(4) h3 { color: var(--accent-purple); }
-
-.challenge-card p {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-/* Metronome Section */
-.metronome {
+/* Philosophy Section */
+.philosophy {
     background: var(--bg-primary);
 }
 
-.metronome-content {
+.philosophy-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
 }
 
-.metronome-visual {
+.philosophy-visual {
     background: var(--bg-card);
     border-radius: 24px;
     padding: 48px;
@@ -357,7 +277,6 @@ section {
     width: 100%;
     height: 100%;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-    transition: all 0.3s ease;
 }
 
 .demo-star:nth-child(1) svg { fill: #EF4444; }
@@ -371,31 +290,14 @@ section {
 .demo-star:nth-child(4) { animation-delay: 1.5s; }
 
 @keyframes star-pulse {
-    0%, 100% { 
-        transform: scale(1); 
-        opacity: 0.6; 
-    }
-    50% { 
-        transform: scale(1.2); 
-        opacity: 1; 
-    }
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; }
 }
 
-.demo-star:nth-child(1) svg {
-    animation: glow-red 2.5s ease-in-out infinite;
-}
-.demo-star:nth-child(2) svg {
-    animation: glow-blue 2.5s ease-in-out infinite;
-    animation-delay: 0.5s;
-}
-.demo-star:nth-child(3) svg {
-    animation: glow-green 2.5s ease-in-out infinite;
-    animation-delay: 1s;
-}
-.demo-star:nth-child(4) svg {
-    animation: glow-yellow 2.5s ease-in-out infinite;
-    animation-delay: 1.5s;
-}
+.demo-star:nth-child(1) svg { animation: glow-red 2.5s ease-in-out infinite; }
+.demo-star:nth-child(2) svg { animation: glow-blue 2.5s ease-in-out infinite 0.5s; }
+.demo-star:nth-child(3) svg { animation: glow-green 2.5s ease-in-out infinite 1s; }
+.demo-star:nth-child(4) svg { animation: glow-yellow 2.5s ease-in-out infinite 1.5s; }
 
 @keyframes glow-red {
     0%, 100% { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
@@ -435,21 +337,21 @@ section {
     50% { opacity: 1; transform: scale(1.3); color: var(--accent-gold); }
 }
 
-.metronome-text h3 {
+.philosophy-text h3 {
     font-size: clamp(28px, 4vw, 36px);
     font-weight: 900;
     margin-bottom: 20px;
     color: var(--accent-gold);
 }
 
-.metronome-text p {
+.philosophy-text p {
     font-size: 17px;
     color: var(--text-secondary);
     margin-bottom: 16px;
     line-height: 1.8;
 }
 
-.metronome-text strong {
+.philosophy-text strong {
     color: var(--text-primary);
 }
 
@@ -473,54 +375,71 @@ section {
 }
 
 .feature-list li::before {
-    content: '🎵';
+    content: '⭐';
     position: absolute;
     left: 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-/* Benefits Section */
-.benefits {
+/* Domains Section */
+.domains {
     background: var(--bg-secondary);
 }
 
-.benefits-grid {
+.domains-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 }
 
-.benefit-card {
+.domain-card {
     background: var(--bg-card);
-    border-radius: 20px;
-    padding: 36px 28px;
     border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.4s ease;
+    border-radius: 20px;
+    padding: 32px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.benefit-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 217, 61, 0.2);
-    box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+.domain-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.benefit-icon {
-    font-size: 40px;
-    margin-bottom: 20px;
+.domain-card:nth-child(1) { border-color: rgba(255, 217, 61, 0.3); }
+.domain-card:nth-child(2) { border-color: rgba(0, 217, 165, 0.3); }
+.domain-card:nth-child(3) { border-color: rgba(77, 168, 255, 0.3); }
+.domain-card:nth-child(4) { border-color: rgba(255, 107, 107, 0.3); }
+.domain-card:nth-child(5) { border-color: rgba(168, 85, 247, 0.3); }
+
+.domain-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
     display: block;
 }
 
-.benefit-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 12px;
+.domain-card:nth-child(1) .domain-icon { filter: drop-shadow(0 0 15px rgba(255, 217, 61, 0.5)); }
+.domain-card:nth-child(2) .domain-icon { filter: drop-shadow(0 0 15px rgba(0, 217, 165, 0.5)); }
+.domain-card:nth-child(3) .domain-icon { filter: drop-shadow(0 0 15px rgba(77, 168, 255, 0.5)); }
+.domain-card:nth-child(4) .domain-icon { filter: drop-shadow(0 0 15px rgba(255, 107, 107, 0.5)); }
+.domain-card:nth-child(5) .domain-icon { filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.5)); }
+
+.domain-card h3 {
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 8px;
 }
 
-.benefit-card p {
-    font-size: 15px;
+.domain-card:nth-child(1) h3 { color: var(--accent-gold); }
+.domain-card:nth-child(2) h3 { color: var(--accent-teal); }
+.domain-card:nth-child(3) h3 { color: var(--accent-blue); }
+.domain-card:nth-child(4) h3 { color: var(--accent-coral); }
+.domain-card:nth-child(5) h3 { color: var(--accent-purple); }
+
+.domain-card p {
+    font-size: 13px;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.5;
 }
 
 /* Story Section */
@@ -546,11 +465,10 @@ section {
     filter: drop-shadow(0 0 40px rgba(255, 159, 28, 0.4));
 }
 
-.story-quote {
-    font-size: 20px;
-    font-style: italic;
+.story-badge {
+    font-size: 18px;
+    font-weight: 700;
     color: var(--accent-teal);
-    font-weight: 600;
 }
 
 .story-text h3 {
@@ -584,7 +502,7 @@ section {
 
 /* Transformation Section */
 .transformation {
-    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    background: var(--bg-secondary);
 }
 
 .transform-grid {
@@ -601,126 +519,95 @@ section {
 }
 
 .transform-column h4 {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 24px;
-    padding: 10px 24px;
-    border-radius: 30px;
-    display: inline-block;
+    padding-bottom: 12px;
+    border-bottom: 2px solid;
 }
 
 .transform-column.before h4 {
-    background: rgba(239, 68, 68, 0.2);
-    color: var(--danger);
+    color: var(--text-muted);
+    border-color: var(--text-muted);
 }
 
 .transform-column.after h4 {
-    background: rgba(34, 197, 94, 0.2);
-    color: var(--success);
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
 }
 
 .transform-item {
-    padding: 16px 24px;
-    margin: 12px 0;
-    border-radius: 12px;
+    padding: 16px 0;
+    font-size: 18px;
     font-weight: 600;
-    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.before .transform-item {
-    background: rgba(239, 68, 68, 0.1);
-    color: #FCA5A5;
-    border: 1px solid rgba(239, 68, 68, 0.2);
+.transform-column.before .transform-item {
+    color: var(--text-muted);
 }
 
-.after .transform-item {
-    background: rgba(34, 197, 94, 0.1);
-    color: #86EFAC;
-    border: 1px solid rgba(34, 197, 94, 0.2);
+.transform-column.after .transform-item {
+    color: var(--text-primary);
 }
 
 .transform-arrow {
     font-size: 48px;
-    color: var(--accent-gold);
-    filter: drop-shadow(0 0 20px rgba(255, 217, 61, 0.4));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Family Section */
-.family {
-    background: var(--bg-secondary);
-}
-
-.family-content {
-    text-align: center;
-}
-
-.notification-demo {
-    background: var(--bg-card);
-    border-radius: 24px;
-    padding: 32px;
-    max-width: 480px;
-    margin: 40px auto;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.notification {
-    background: var(--gradient-teal);
-    border-radius: 16px;
-    padding: 20px;
-    text-align: left;
-    margin-bottom: 16px;
-}
-
-.notification:last-child {
-    margin-bottom: 0;
-}
-
-.notification-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.notification-icon {
-    font-size: 20px;
-}
-
-.notification-app {
-    font-weight: 800;
-    font-size: 13px;
-    color: rgba(0,0,0,0.7);
-}
-
-.notification-time {
-    margin-left: auto;
-    font-size: 12px;
-    color: rgba(0,0,0,0.5);
-}
-
-.notification-body {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--bg-primary);
-}
-
-.family-tagline {
-    font-size: clamp(20px, 4vw, 28px);
-    font-weight: 800;
     color: var(--accent-teal);
-    margin-top: 40px;
+}
+
+/* Science Section */
+.science {
+    background: var(--bg-primary);
+}
+
+.science-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.science-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 36px 28px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.3s ease;
+}
+
+.science-card:hover {
+    border-color: rgba(0, 217, 165, 0.3);
+}
+
+.science-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.science-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.science-card:nth-child(1) h3 { color: var(--accent-gold); }
+.science-card:nth-child(2) h3 { color: var(--accent-teal); }
+.science-card:nth-child(3) h3 { color: var(--accent-blue); }
+
+.science-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
 }
 
 /* CTA Section */
 .cta-section {
     background: var(--gradient-gold);
     text-align: center;
-    padding: 100px 24px;
+    padding: 80px 24px;
 }
 
 .cta-section h2 {
@@ -731,15 +618,16 @@ section {
 }
 
 .cta-section p {
-    font-size: 20px;
-    color: rgba(0,0,0,0.7);
-    margin-bottom: 40px;
+    font-size: 18px;
+    color: var(--bg-primary);
+    opacity: 0.8;
+    margin-bottom: 32px;
 }
 
 .cta-buttons-bottom {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
@@ -747,49 +635,50 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 48px;
+    gap: 8px;
+    padding: 16px 36px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    border-radius: 50px;
+    text-decoration: none;
     background: var(--bg-primary);
     color: var(--text-primary);
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 50px;
     transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
 }
 
 .cta-dark:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .cta-outline-dark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 48px;
+    gap: 8px;
+    padding: 16px 36px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    border-radius: 50px;
+    text-decoration: none;
     background: transparent;
     color: var(--bg-primary);
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 50px;
-    border: 3px solid var(--bg-primary);
+    border: 2px solid var(--bg-primary);
     transition: all 0.3s ease;
 }
 
 .cta-outline-dark:hover {
     background: var(--bg-primary);
-    color: var(--text-primary);
+    color: var(--accent-gold);
 }
 
 /* Motto Section */
 .motto {
     text-align: center;
     padding: 80px 24px;
-    background: var(--bg-secondary);
-    border-top: 1px solid rgba(255,255,255,0.05);
+    background: var(--bg-primary);
 }
 
 .motto-text {
@@ -797,52 +686,24 @@ section {
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 1.1;
-    animation: pulse-glow 3s ease-in-out infinite;
 }
 
-.motto-lets {
+.motto-lets, .motto-star, .motto-palante {
     background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.motto-go {
+.motto-go, .motto-pa {
     color: var(--text-primary);
-}
-
-.motto-star {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.motto-palante {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.motto-pa {
-    color: var(--text-primary);
-}
-
-@keyframes pulse-glow {
-    0%, 100% { 
-        filter: drop-shadow(0 0 20px rgba(255, 217, 61, 0.3));
-    }
-    50% { 
-        filter: drop-shadow(0 0 40px rgba(255, 217, 61, 0.6));
-    }
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 48px 24px;
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -872,125 +733,69 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 1000px) {
-    .challenge-grid {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1100px) {
+    .domains-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
-    
-    .metronome-content,
+}
+
+@media (max-width: 900px) {
+    .philosophy-grid,
     .story-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
     
-    .metronome-visual,
-    .story-visual {
-        order: -1;
-    }
-    
-    .benefits-grid {
+    .domains-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 70px 20px;
-    }
     
-    .hero {
-        min-height: 70vh;
-        padding-top: 100px;
-    }
-    
-    .hero-icon {
-        font-size: 56px;
-    }
-    
-    .challenge-grid {
+    .science-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 500px;
         margin: 0 auto;
     }
     
     .transform-grid {
         grid-template-columns: 1fr;
-        gap: 0;
-    }
-    
-    .transform-column {
-        padding: 0;
+        gap: 24px;
     }
     
     .transform-arrow {
         transform: rotate(90deg);
-        padding: 30px 0;
-        margin: 10px 0;
-    }
-    
-    .story-icon {
-        font-size: 80px;
     }
 }
 
 @media (max-width: 600px) {
+    section {
+        padding: 60px 20px;
+    }
+    
+    .hero {
+        padding-top: 100px;
+    }
+    
+    .domains-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
     .nav {
         padding: 12px 16px;
     }
     
-    .nav-home {
-        font-size: 14px;
-    }
-    
-    .lang-btn {
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-    
-    .section-header {
-        margin-bottom: 40px;
-    }
-    
-    .section-label {
-        font-size: 11px;
-        padding: 6px 16px;
-    }
-    
-    .mission-quote {
-        font-size: 22px;
-    }
-    
-    .challenge-card,
-    .benefit-card {
-        padding: 28px 20px;
-    }
-    
-    .metronome-visual {
+    .philosophy-visual {
         padding: 32px 20px;
     }
     
     .demo-star {
-        width: 52px;
-        height: 52px;
+        width: 48px;
+        height: 48px;
     }
     
-    .beats {
-        font-size: 24px;
-    }
-    
-    .notification-demo {
-        padding: 20px;
-        margin: 30px 16px;
-    }
-    
-    .cta-section {
-        padding: 70px 20px;
+    .story-icon {
+        font-size: 80px;
     }
     
     .cta-buttons-bottom {
@@ -1001,45 +806,7 @@ footer {
     .cta-dark,
     .cta-outline-dark {
         width: 100%;
-        max-width: 300px;
-        padding: 18px 36px;
-        font-size: 16px;
-    }
-    
-    .motto {
-        padding: 60px 20px;
-    }
-    
-    footer {
-        padding: 36px 20px;
-    }
-    
-    .footer-links {
-        gap: 24px;
-    }
-}
-
-@media (max-width: 380px) {
-    .hero h1 {
-        font-size: 32px;
-    }
-    
-    .section-title {
-        font-size: 28px;
-    }
-    
-    .metronome-text h3,
-    .story-text h3 {
-        font-size: 24px;
-    }
-    
-    .demo-star {
-        width: 44px;
-        height: 44px;
-    }
-    
-    .motto-text {
-        font-size: 40px;
+        max-width: 280px;
     }
 }
 </style>
@@ -1048,9 +815,8 @@ footer {
 
 <nav class="nav">
     <a href="index.html" class="nav-home">
-        <span>←</span>
-        <span class="lang-en">Home</span>
-        <span class="lang-es">Inicio</span>
+        <span>⭐</span>
+        <span>GoStar</span>
     </a>
     <div class="lang-toggle">
         <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -1063,16 +829,16 @@ footer {
     <div class="hero-content">
         <div class="hero-icon">🧠</div>
         <h1>
-            <span class="lang-en">Go<span class="highlight">Star</span> Digital</span>
-            <span class="lang-es">Go<span class="highlight">Star</span> Digital</span>
+            <span class="lang-en">The <span class="highlight">Science</span> of Mental Fitness</span>
+            <span class="lang-es">La <span class="highlight">Ciencia</span> de la Aptitud Mental</span>
         </h1>
         <p class="subtitle">
-            <span class="lang-en">Metronome Sequence Memory Training</span>
-            <span class="lang-es">Entrenamiento de Memoria con Secuencias de Metrónomo</span>
+            <span class="lang-en">Mental Fitness. Measurable Results.</span>
+            <span class="lang-es">Aptitud Mental. Resultados Medibles.</span>
         </p>
         <p class="description">
-            <span class="lang-en">Train your memory like a pro. Every day. With rhythm, purpose, and measurable progress.</span>
-            <span class="lang-es">Entrena tu memoria como un profesional. Cada día. Con ritmo, propósito y progreso medible.</span>
+            <span class="lang-en">GoStar combines rhythm-based training, cognitive science, and performance tracking to deliver measurable improvements in mental fitness.</span>
+            <span class="lang-es">GoStar combina entrenamiento basado en ritmo, ciencia cognitiva y seguimiento de rendimiento para ofrecer mejoras medibles en aptitud mental.</span>
         </p>
     </div>
 </section>
@@ -1081,132 +847,69 @@ footer {
 <section class="mission">
     <div class="container">
         <p class="mission-quote">
-            <span class="lang-en">"We're <span class="highlight">turning nursing homes into training arenas</span> — where every resident is an athlete, every day is game day, and every family becomes a team of cheerleaders."</span>
-            <span class="lang-es">"Estamos <span class="highlight">convirtiendo hogares de ancianos en arenas de entrenamiento</span> — donde cada residente es un atleta, cada día es día de juego, y cada familia se convierte en un equipo de animadores."</span>
+            <span class="lang-en">"The mind is a muscle. <span class="highlight">Train it like one.</span>"</span>
+            <span class="lang-es">"La mente es un músculo. <span class="highlight">Entrénala como tal.</span>"</span>
         </p>
     </div>
 </section>
 
-<!-- Challenge -->
-<section class="challenge">
+<!-- Philosophy -->
+<section class="philosophy">
     <div class="container">
-        <div class="section-header">
-            <div class="section-label">
-                <span class="lang-en">The Game</span>
-                <span class="lang-es">El Juego</span>
-            </div>
-            <h2 class="section-title">
-                <span class="lang-en">Sequence Memory <span class="accent">Challenge</span></span>
-                <span class="lang-es">El Desafío de <span class="accent">Memoria</span></span>
-            </h2>
-            <p class="section-subtitle">
-                <span class="lang-en">A complete cognitive training experience in 4 quarters</span>
-                <span class="lang-es">Una experiencia completa de entrenamiento cognitivo en 4 cuartos</span>
-            </p>
-        </div>
-        
-        <div class="challenge-grid">
-            <div class="challenge-card">
-                <span class="challenge-icon">🎯</span>
-                <h3>
-                    <span class="lang-en">4 Quarters</span>
-                    <span class="lang-es">4 Cuartos</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Warm up, build momentum, face the challenge, and finish strong in clutch time.</span>
-                    <span class="lang-es">Calienta, toma impulso, enfrenta el desafío y termina fuerte en tiempo decisivo.</span>
-                </p>
-            </div>
-            
-            <div class="challenge-card">
-                <span class="challenge-icon">🎨</span>
-                <h3>
-                    <span class="lang-en">Multiple Modes</span>
-                    <span class="lang-es">Múltiples Modos</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Colors, Numbers, Animals, or Speed mode. Same brain exercise, different themes.</span>
-                    <span class="lang-es">Colores, Números, Animales o modo Velocidad. El mismo ejercicio, diferentes temas.</span>
-                </p>
-            </div>
-            
-            <div class="challenge-card">
-                <span class="challenge-icon">🌱</span>
-                <h3>
-                    <span class="lang-en">3 Difficulty Levels</span>
-                    <span class="lang-es">3 Niveles</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Gentle for memory care. Standard for daily training. Pro for pushing limits.</span>
-                    <span class="lang-es">Suave para cuidado de memoria. Normal para diario. Pro para superar límites.</span>
-                </p>
-            </div>
-            
-            <div class="challenge-card">
-                <span class="challenge-icon">🏆</span>
-                <h3>
-                    <span class="lang-en">Track Progress</span>
-                    <span class="lang-es">Sigue el Progreso</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Personal bests, daily streaks, quarter-by-quarter scoring.</span>
-                    <span class="lang-es">Mejores marcas, rachas diarias, puntuación por cuarto.</span>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Metronome -->
-<section class="metronome">
-    <div class="container">
-        <div class="metronome-content">
-            <div class="metronome-visual">
+        <div class="philosophy-grid">
+            <div class="philosophy-visual">
                 <div class="demo-tiles">
                     <div class="demo-star">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
+                        <svg viewBox="0 0 100 100"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
                     </div>
                     <div class="demo-star">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
+                        <svg viewBox="0 0 100 100"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
                     </div>
                     <div class="demo-star">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
+                        <svg viewBox="0 0 100 100"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
                     </div>
                     <div class="demo-star">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
+                        <svg viewBox="0 0 100 100"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/></svg>
                     </div>
                 </div>
                 <div class="beats">
-                    <span>♩</span> <span>♩</span> <span>♩</span> <span>♩</span>
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
                 </div>
             </div>
             
-            <div class="metronome-text">
+            <div class="philosophy-text">
                 <h3>
-                    <span class="lang-en">The Metronome Difference</span>
-                    <span class="lang-es">La Diferencia del Metrónomo</span>
+                    <span class="lang-en">The Rhythm Advantage</span>
+                    <span class="lang-es">La Ventaja del Ritmo</span>
                 </h3>
                 <p>
-                    <span class="lang-en">This isn't just a memory game. It's <strong>rhythm-based cognitive training</strong>. Each tile plays a musical tone. Each sequence becomes a melody. Your brain doesn't just see the pattern — it <em>hears</em> it, <em>feels</em> it, and <em>responds</em> to it.</span>
-                    <span class="lang-es">Esto no es solo un juego de memoria. Es <strong>entrenamiento cognitivo basado en ritmo</strong>. Cada ficha toca un tono musical. Cada secuencia se convierte en una melodía. Tu cerebro no solo ve el patrón — lo <em>escucha</em>, lo <em>siente</em> y <em>responde</em> a él.</span>
+                    <span class="lang-en">Every GoStar game is built on a metronome foundation. <strong>Rhythm synchronizes brain activity</strong>, creating the optimal state for memory formation and recall.</span>
+                    <span class="lang-es">Cada juego de GoStar está construido sobre una base de metrónomo. <strong>El ritmo sincroniza la actividad cerebral</strong>, creando el estado óptimo para la formación y recuperación de memoria.</span>
+                </p>
+                <p>
+                    <span class="lang-en">Athletes know this instinctively — practice with rhythm, perform with precision. GoStar brings that same discipline to cognitive training.</span>
+                    <span class="lang-es">Los atletas lo saben instintivamente — practica con ritmo, ejecuta con precisión. GoStar lleva esa misma disciplina al entrenamiento cognitivo.</span>
                 </p>
                 
                 <ul class="feature-list">
                     <li>
-                        <span class="lang-en">3-2-1-GO! countdown prepares your focus</span>
-                        <span class="lang-es">¡3-2-1-YA! la cuenta regresiva prepara tu enfoque</span>
+                        <span class="lang-en">60-140 BPM adjustable tempo</span>
+                        <span class="lang-es">Tempo ajustable de 60-140 BPM</span>
                     </li>
                     <li>
-                        <span class="lang-en">Musical tones (C-E-G-C) create memorable melodies</span>
-                        <span class="lang-es">Tonos musicales (C-E-G-C) crean melodías memorables</span>
+                        <span class="lang-en">Musical tones guide attention</span>
+                        <span class="lang-es">Tonos musicales guían la atención</span>
                     </li>
                     <li>
-                        <span class="lang-en">3 tempo settings: Relaxed, Steady, Upbeat</span>
-                        <span class="lang-es">3 configuraciones de tempo: Relajado, Estable, Rápido</span>
+                        <span class="lang-en">Progressive difficulty scaling</span>
+                        <span class="lang-es">Escalado progresivo de dificultad</span>
                     </li>
                     <li>
-                        <span class="lang-en">Victory arpeggio rewards every completed sequence</span>
-                        <span class="lang-es">Arpegio de victoria recompensa cada secuencia completada</span>
+                        <span class="lang-en">4-quarter game structure</span>
+                        <span class="lang-es">Estructura de juego en 4 cuartos</span>
                     </li>
                 </ul>
             </div>
@@ -1214,90 +917,82 @@ footer {
     </div>
 </section>
 
-<!-- Benefits -->
-<section class="benefits">
+<!-- Cognitive Domains -->
+<section class="domains">
     <div class="container">
         <div class="section-header">
             <div class="section-label">
-                <span class="lang-en">Why It Works</span>
-                <span class="lang-es">Por Qué Funciona</span>
+                <span class="lang-en">Complete Training</span>
+                <span class="lang-es">Entrenamiento Completo</span>
             </div>
             <h2 class="section-title">
-                <span class="lang-en">Benefits of <span class="accent">Daily Training</span></span>
-                <span class="lang-es">Beneficios del <span class="accent">Entrenamiento Diario</span></span>
+                <span class="lang-en">Five <span class="accent">Cognitive Domains</span></span>
+                <span class="lang-es">Cinco <span class="accent">Dominios Cognitivos</span></span>
             </h2>
+            <p class="section-subtitle">
+                <span class="lang-en">Each game targets a specific area of mental fitness.</span>
+                <span class="lang-es">Cada juego apunta a un área específica de aptitud mental.</span>
+            </p>
         </div>
         
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <span class="benefit-icon">🧠</span>
+        <div class="domains-grid">
+            <div class="domain-card">
+                <span class="domain-icon">⭐</span>
                 <h3>
-                    <span class="lang-en">Working Memory Exercise</span>
-                    <span class="lang-es">Ejercicio de Memoria de Trabajo</span>
+                    <span class="lang-en">Sequential Recall</span>
+                    <span class="lang-es">Memoria Secuencial</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Sequence recall directly exercises the brain's working memory system.</span>
-                    <span class="lang-es">El recuerdo de secuencias ejercita directamente el sistema de memoria de trabajo.</span>
+                    <span class="lang-en">Remember ordered information. Critical for following instructions and routines.</span>
+                    <span class="lang-es">Recuerda información ordenada. Crítico para seguir instrucciones y rutinas.</span>
                 </p>
             </div>
             
-            <div class="benefit-card">
-                <span class="benefit-icon">🎵</span>
+            <div class="domain-card">
+                <span class="domain-icon">🛤️</span>
                 <h3>
-                    <span class="lang-en">Multi-Sensory Engagement</span>
-                    <span class="lang-es">Compromiso Multi-Sensorial</span>
+                    <span class="lang-en">Spatial Memory</span>
+                    <span class="lang-es">Memoria Espacial</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Visual patterns combined with audio cues engage multiple brain pathways.</span>
-                    <span class="lang-es">Patrones visuales con señales de audio involucran múltiples vías cerebrales.</span>
+                    <span class="lang-en">Navigate environments and remember locations. Essential for independence.</span>
+                    <span class="lang-es">Navega entornos y recuerda ubicaciones. Esencial para la independencia.</span>
                 </p>
             </div>
             
-            <div class="benefit-card">
-                <span class="benefit-icon">📈</span>
+            <div class="domain-card">
+                <span class="domain-icon">⚡</span>
                 <h3>
-                    <span class="lang-en">Measurable Progress</span>
-                    <span class="lang-es">Progreso Medible</span>
+                    <span class="lang-en">Processing Speed</span>
+                    <span class="lang-es">Velocidad Mental</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Track personal bests, maintain streaks, and watch improvements over time.</span>
-                    <span class="lang-es">Sigue tus mejores marcas, mantén rachas y observa mejoras con el tiempo.</span>
+                    <span class="lang-en">Think and react quickly. Important for safety and quick decisions.</span>
+                    <span class="lang-es">Piensa y reacciona rápidamente. Importante para seguridad y decisiones rápidas.</span>
                 </p>
             </div>
             
-            <div class="benefit-card">
-                <span class="benefit-icon">😊</span>
+            <div class="domain-card">
+                <span class="domain-icon">🛑</span>
                 <h3>
-                    <span class="lang-en">Positive Reinforcement</span>
-                    <span class="lang-es">Refuerzo Positivo</span>
+                    <span class="lang-en">Impulse Control</span>
+                    <span class="lang-es">Control de Impulso</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Success sounds and celebration screens create a rewarding experience.</span>
-                    <span class="lang-es">Sonidos de éxito y pantallas de celebración crean una experiencia gratificante.</span>
+                    <span class="lang-en">Resist automatic responses. Key for thoughtful decision-making.</span>
+                    <span class="lang-es">Resiste respuestas automáticas. Clave para tomar decisiones reflexivas.</span>
                 </p>
             </div>
             
-            <div class="benefit-card">
-                <span class="benefit-icon">🔄</span>
+            <div class="domain-card">
+                <span class="domain-icon">🔀</span>
                 <h3>
-                    <span class="lang-en">Consistent Routine</span>
-                    <span class="lang-es">Rutina Consistente</span>
+                    <span class="lang-en">Cognitive Flexibility</span>
+                    <span class="lang-es">Flexibilidad Cognitiva</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Daily streak tracking encourages routine formation for seniors.</span>
-                    <span class="lang-es">El seguimiento de rachas diarias fomenta la formación de rutinas.</span>
-                </p>
-            </div>
-            
-            <div class="benefit-card">
-                <span class="benefit-icon">❤️</span>
-                <h3>
-                    <span class="lang-en">Family Connection</span>
-                    <span class="lang-es">Conexión Familiar</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Share scores with family and celebrate achievements together.</span>
-                    <span class="lang-es">Comparte puntuaciones con familiares y celebren logros juntos.</span>
+                    <span class="lang-en">Switch between tasks smoothly. Vital for adapting to new situations.</span>
+                    <span class="lang-es">Cambia entre tareas fluidamente. Vital para adaptarse a nuevas situaciones.</span>
                 </p>
             </div>
         </div>
@@ -1310,16 +1005,16 @@ footer {
         <div class="story-content">
             <div class="story-visual">
                 <span class="story-icon">🏀</span>
-                <p class="story-quote">
-                    <span class="lang-en">"Memory is the playbook of life."</span>
-                    <span class="lang-es">"La memoria es el libro de jugadas de la vida."</span>
-                </p>
+                <span class="story-badge">
+                    <span class="lang-en">Former Pro Athlete</span>
+                    <span class="lang-es">Ex Atleta Profesional</span>
+                </span>
             </div>
             
             <div class="story-text">
                 <h3>
-                    <span class="lang-en">From the Court to Cognitive Care</span>
-                    <span class="lang-es">De la Cancha al Cuidado Cognitivo</span>
+                    <span class="lang-en">From the Court to Cognitive Training</span>
+                    <span class="lang-es">De la Cancha al Entrenamiento Cognitivo</span>
                 </h3>
                 <p>
                     <span class="lang-en">GoStar was founded by a former professional basketball player who understood one fundamental truth: <strong>memory is the foundation of everything.</strong></span>
@@ -1350,8 +1045,8 @@ footer {
                 <span class="lang-es">El Cambio</span>
             </div>
             <h2 class="section-title">
-                <span class="lang-en">The <span class="accent">Transformation</span></span>
-                <span class="lang-es">La <span class="accent">Transformación</span></span>
+                <span class="lang-en">The GoStar <span class="accent">Mindset</span></span>
+                <span class="lang-es">La Mentalidad <span class="accent">GoStar</span></span>
             </h2>
         </div>
         
@@ -1362,8 +1057,8 @@ footer {
                     <span class="lang-es">Antes</span>
                 </h4>
                 <div class="transform-item">
-                    <span class="lang-en">Residents</span>
-                    <span class="lang-es">Residentes</span>
+                    <span class="lang-en">Participants</span>
+                    <span class="lang-es">Participantes</span>
                 </div>
                 <div class="transform-item">
                     <span class="lang-en">Activities</span>
@@ -1374,12 +1069,8 @@ footer {
                     <span class="lang-es">Pasar el Tiempo</span>
                 </div>
                 <div class="transform-item">
-                    <span class="lang-en">Decline</span>
-                    <span class="lang-es">Declive</span>
-                </div>
-                <div class="transform-item">
-                    <span class="lang-en">Family Worry</span>
-                    <span class="lang-es">Preocupación Familiar</span>
+                    <span class="lang-en">Uncertain Progress</span>
+                    <span class="lang-es">Progreso Incierto</span>
                 </div>
             </div>
             
@@ -1403,69 +1094,64 @@ footer {
                     <span class="lang-es">Construyendo Rachas</span>
                 </div>
                 <div class="transform-item">
-                    <span class="lang-en">Progress</span>
-                    <span class="lang-es">Progreso</span>
-                </div>
-                <div class="transform-item">
-                    <span class="lang-en">Family Cheering</span>
-                    <span class="lang-es">Familia Celebrando</span>
+                    <span class="lang-en">Measurable Results</span>
+                    <span class="lang-es">Resultados Medibles</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Family -->
-<section class="family">
+<!-- Science -->
+<section class="science">
     <div class="container">
-        <div class="family-content">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="lang-en">Stay Connected</span>
-                    <span class="lang-es">Mantente Conectado</span>
-                </div>
-                <h2 class="section-title">
-                    <span class="lang-en">Families Become <span class="accent">Cheerleaders</span></span>
-                    <span class="lang-es">Las Familias se Convierten en <span class="accent">Animadores</span></span>
-                </h2>
+        <div class="section-header">
+            <div class="section-label">
+                <span class="lang-en">Evidence-Based</span>
+                <span class="lang-es">Basado en Evidencia</span>
+            </div>
+            <h2 class="section-title">
+                <span class="lang-en">Built on <span class="accent">Science</span></span>
+                <span class="lang-es">Construido sobre <span class="accent">Ciencia</span></span>
+            </h2>
+        </div>
+        
+        <div class="science-grid">
+            <div class="science-card">
+                <span class="science-icon">🎵</span>
+                <h3>
+                    <span class="lang-en">Rhythmic Entrainment</span>
+                    <span class="lang-es">Sincronización Rítmica</span>
+                </h3>
+                <p>
+                    <span class="lang-en">External rhythms synchronize neural oscillations, enhancing attention and memory encoding. The metronome isn't decoration — it's science.</span>
+                    <span class="lang-es">Los ritmos externos sincronizan las oscilaciones neuronales, mejorando la atención y la codificación de memoria. El metrónomo no es decoración — es ciencia.</span>
+                </p>
             </div>
             
-            <div class="notification-demo">
-                <div class="notification">
-                    <div class="notification-header">
-                        <span class="notification-icon">🧠</span>
-                        <span class="notification-app">GoStar</span>
-                        <span class="notification-time">
-                            <span class="lang-en">now</span>
-                            <span class="lang-es">ahora</span>
-                        </span>
-                    </div>
-                    <div class="notification-body">
-                        <span class="lang-en">🏆 Maria scored 52 points today! 7-day streak!</span>
-                        <span class="lang-es">🏆 ¡María anotó 52 puntos hoy! ¡Racha de 7 días!</span>
-                    </div>
-                </div>
-                
-                <div class="notification">
-                    <div class="notification-header">
-                        <span class="notification-icon">🧠</span>
-                        <span class="notification-app">GoStar</span>
-                        <span class="notification-time">
-                            <span class="lang-en">2h ago</span>
-                            <span class="lang-es">hace 2h</span>
-                        </span>
-                    </div>
-                    <div class="notification-body">
-                        <span class="lang-en">🎉 NEW PERSONAL BEST! Carlos hit 64 points!</span>
-                        <span class="lang-es">🎉 ¡NUEVO RÉCORD! ¡Carlos alcanzó 64 puntos!</span>
-                    </div>
-                </div>
+            <div class="science-card">
+                <span class="science-icon">📈</span>
+                <h3>
+                    <span class="lang-en">Progressive Overload</span>
+                    <span class="lang-es">Sobrecarga Progresiva</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Just like physical training, cognitive improvement requires gradually increasing challenge. Four difficulty levels ensure continuous growth.</span>
+                    <span class="lang-es">Como el entrenamiento físico, la mejora cognitiva requiere un desafío gradualmente creciente. Cuatro niveles de dificultad aseguran crecimiento continuo.</span>
+                </p>
             </div>
             
-            <p class="family-tagline">
-                <span class="lang-en">From "Is mom okay?" to "Did you see mom's score?!"</span>
-                <span class="lang-es">De "¿Mamá está bien?" a "¡¿Viste la puntuación de mamá?!"</span>
-            </p>
+            <div class="science-card">
+                <span class="science-icon">🎯</span>
+                <h3>
+                    <span class="lang-en">Targeted Training</span>
+                    <span class="lang-es">Entrenamiento Dirigido</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Each game isolates a specific cognitive domain. This targeted approach produces more effective results than general "brain games."</span>
+                    <span class="lang-es">Cada juego aísla un dominio cognitivo específico. Este enfoque dirigido produce resultados más efectivos que los "juegos cerebrales" generales.</span>
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -1478,17 +1164,17 @@ footer {
             <span class="lang-es">¿Listo para Comenzar?</span>
         </h2>
         <p>
-            <span class="lang-en">Experience the Metronome Sequence Memory Challenge</span>
-            <span class="lang-es">Experimenta el Desafío de Memoria con Metrónomo</span>
+            <span class="lang-en">Experience mental fitness training with The Starting Five.</span>
+            <span class="lang-es">Experimenta el entrenamiento de aptitud mental con Los Cinco Titulares.</span>
         </p>
         <div class="cta-buttons-bottom">
             <a href="https://gostar.digital/play" class="cta-dark">
-                <span class="lang-en">▶ Play Now</span>
-                <span class="lang-es">▶ Jugar Ahora</span>
+                <span class="lang-en">▶ Start Training</span>
+                <span class="lang-es">▶ Comenzar</span>
             </a>
-            <a href="https://gostar.digital/facility" class="cta-outline-dark">
-                <span class="lang-en">Facility Login</span>
-                <span class="lang-es">Acceso Instalación</span>
+            <a href="mailto:info@gostar.email" class="cta-outline-dark">
+                <span class="lang-en">Contact Us</span>
+                <span class="lang-es">Contáctenos</span>
             </a>
         </div>
     </div>
