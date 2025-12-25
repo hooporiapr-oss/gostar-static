@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoStar Digital - Cognitive Wellness Training</title>
+<title>GoStar Digital - Mental Fitness. Measurable Results.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
     --accent-teal: #00D9A5;
     --accent-blue: #4DA8FF;
     --accent-coral: #FF6B6B;
+    --accent-purple: #A855F7;
     --gradient-gold: linear-gradient(135deg, #FFD93D 0%, #FF9F1C 100%);
     --gradient-teal: linear-gradient(135deg, #00D9A5 0%, #00B386 100%);
 }
@@ -42,10 +43,9 @@ body[data-lang="en"] .lang-es { display: none !important; }
 body[data-lang="es"] .lang-es { display: inline !important; }
 body[data-lang="en"] .lang-en { display: inline !important; }
 
-/* Block-level language elements */
-h2.lang-en, h2.lang-es { display: none; }
-body[data-lang="en"] h2.lang-en { display: block !important; }
-body[data-lang="es"] h2.lang-es { display: block !important; }
+h2.lang-en, h2.lang-es, p.lang-en, p.lang-es { display: none; }
+body[data-lang="en"] h2.lang-en, body[data-lang="en"] p.lang-en { display: block !important; }
+body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block !important; }
 
 .lang-toggle {
     position: fixed;
@@ -95,7 +95,6 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
     overflow: hidden;
 }
 
-/* Animated background */
 .hero::before {
     content: '';
     position: absolute;
@@ -104,15 +103,15 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse at 20% 20%, rgba(255, 217, 61, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(0, 217, 165, 0.1) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 20%, rgba(255, 217, 61, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(0, 217, 165, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
 }
 
@@ -120,21 +119,15 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
     font-size: 80px;
     margin-bottom: 24px;
     display: inline-block;
-    animation: float 4s ease-in-out infinite;
     filter: drop-shadow(0 0 30px rgba(255, 217, 61, 0.4));
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
-
 .brand {
-    font-size: clamp(48px, 10vw, 72px);
+    font-size: clamp(52px, 12vw, 80px);
     font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 8px;
-    line-height: 1.1;
+    letter-spacing: -3px;
+    margin-bottom: 16px;
+    line-height: 1;
 }
 
 .brand-go {
@@ -149,18 +142,18 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
 }
 
 .tagline {
-    font-size: clamp(20px, 4vw, 28px);
-    font-weight: 700;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 800;
     color: var(--accent-teal);
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
 }
 
 .subtitle {
     font-size: clamp(16px, 3vw, 20px);
     color: var(--text-secondary);
     margin-bottom: 48px;
-    max-width: 600px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.7;
@@ -172,7 +165,7 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .cta-btn {
@@ -190,31 +183,6 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
     cursor: pointer;
     border: none;
     min-width: 180px;
-}
-
-.cta-trial {
-    background: var(--gradient-teal);
-    color: var(--bg-primary);
-    position: relative;
-    box-shadow: 0 4px 20px rgba(0, 217, 165, 0.4);
-}
-
-.cta-trial:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 217, 165, 0.5);
-}
-
-.trial-badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: var(--accent-coral);
-    color: white;
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: 700;
-    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.4);
 }
 
 .cta-primary {
@@ -235,78 +203,233 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
 }
 
 .cta-secondary:hover {
-    border-color: var(--accent-gold);
-    background: rgba(255, 217, 61, 0.1);
+    border-color: var(--accent-teal);
+    background: rgba(0, 217, 165, 0.1);
 }
 
-.cta-outline {
-    background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--accent-teal);
+/* Stats Bar */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 24px;
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    flex-wrap: wrap;
 }
 
-.cta-outline:hover {
-    background: var(--accent-teal);
-    color: var(--bg-primary);
+.stat {
+    text-align: center;
 }
 
-/* Features Section */
-.features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    width: 100%;
-    max-width: 1000px;
+.stat-value {
+    font-size: clamp(36px, 6vw, 48px);
+    font-weight: 900;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Games Section */
+.games-section {
+    padding: 100px 24px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.feature {
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 900;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.game-card {
     background: var(--bg-card);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 24px;
-    padding: 32px 24px;
+    padding: 32px 20px;
     text-align: center;
     transition: all 0.3s ease;
 }
 
-.feature:hover {
+.game-card:hover {
     transform: translateY(-8px);
     border-color: rgba(255, 217, 61, 0.3);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.feature-icon {
+.game-icon {
     font-size: 48px;
     margin-bottom: 16px;
     display: block;
 }
 
-.feature:nth-child(1) .feature-icon { filter: drop-shadow(0 0 20px rgba(255, 217, 61, 0.5)); }
-.feature:nth-child(2) .feature-icon { filter: drop-shadow(0 0 20px rgba(0, 217, 165, 0.5)); }
-.feature:nth-child(3) .feature-icon { filter: drop-shadow(0 0 20px rgba(77, 168, 255, 0.5)); }
+.game-card:nth-child(1) .game-icon { filter: drop-shadow(0 0 15px rgba(255, 217, 61, 0.6)); }
+.game-card:nth-child(2) .game-icon { filter: drop-shadow(0 0 15px rgba(0, 217, 165, 0.6)); }
+.game-card:nth-child(3) .game-icon { filter: drop-shadow(0 0 15px rgba(77, 168, 255, 0.6)); }
+.game-card:nth-child(4) .game-icon { filter: drop-shadow(0 0 15px rgba(255, 107, 107, 0.6)); }
+.game-card:nth-child(5) .game-icon { filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6)); }
 
-.feature h3 {
-    font-size: 20px;
-    font-weight: 700;
+.game-name {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.game-skill {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 100px 24px;
+    background: var(--bg-secondary);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    border-color: rgba(0, 217, 165, 0.3);
+}
+
+.benefit-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.benefit-title {
+    font-size: 22px;
+    font-weight: 800;
     margin-bottom: 12px;
     color: var(--text-primary);
 }
 
-.feature:nth-child(1) h3 { color: var(--accent-gold); }
-.feature:nth-child(2) h3 { color: var(--accent-teal); }
-.feature:nth-child(3) h3 { color: var(--accent-blue); }
+.benefit-card:nth-child(1) .benefit-title { color: var(--accent-gold); }
+.benefit-card:nth-child(2) .benefit-title { color: var(--accent-teal); }
+.benefit-card:nth-child(3) .benefit-title { color: var(--accent-blue); }
 
-.feature p {
+.benefit-desc {
     font-size: 15px;
     color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Audience Section */
+.audience-section {
+    padding: 100px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.audience-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.audience-card:hover {
+    border-color: rgba(255, 217, 61, 0.2);
+}
+
+.audience-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.audience-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.audience-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
     line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 100px 24px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.cta-section .section-title {
+    margin-bottom: 24px;
+}
+
+.cta-section .section-subtitle {
+    margin-bottom: 40px;
 }
 
 /* Motto Section */
 .motto {
     text-align: center;
     padding: 80px 24px;
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -315,7 +438,6 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 1.1;
-    animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .motto-lets {
@@ -347,20 +469,11 @@ body[data-lang="es"] h2.lang-es { display: block !important; }
     color: var(--text-primary);
 }
 
-@keyframes pulse-glow {
-    0%, 100% { 
-        filter: drop-shadow(0 0 20px rgba(255, 217, 61, 0.3));
-    }
-    50% { 
-        filter: drop-shadow(0 0 40px rgba(255, 217, 61, 0.6));
-    }
-}
-
 /* Footer */
 footer {
     text-align: center;
     padding: 48px 24px;
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -390,10 +503,33 @@ footer {
 }
 
 /* Responsive */
+@media (max-width: 1100px) {
+    .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .games-grid .game-card:nth-child(4),
+    .games-grid .game-card:nth-child(5) {
+        grid-column: span 1;
+    }
+}
+
 @media (max-width: 900px) {
-    .features {
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .benefits-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 500px;
+    }
+    
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-bar {
+        gap: 40px;
     }
 }
 
@@ -408,11 +544,7 @@ footer {
     }
     
     .brand {
-        letter-spacing: -1px;
-    }
-    
-    .tagline {
-        margin-bottom: 12px;
+        letter-spacing: -2px;
     }
     
     .subtitle {
@@ -434,20 +566,36 @@ footer {
         padding: 16px 32px;
     }
     
-    .feature {
+    .stats-bar {
+        gap: 30px;
+        padding: 30px 20px;
+    }
+    
+    .stat-value {
+        font-size: 32px;
+    }
+    
+    .games-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .game-card {
         padding: 28px 20px;
     }
     
-    .feature-icon {
-        font-size: 40px;
+    .games-section,
+    .benefits-section,
+    .audience-section,
+    .cta-section {
+        padding: 60px 20px;
     }
     
-    .feature h3 {
-        font-size: 18px;
-    }
-    
-    .feature p {
-        font-size: 14px;
+    .audience-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
     
     .lang-toggle {
@@ -475,11 +623,11 @@ footer {
 
 @media (max-width: 380px) {
     .brand {
-        font-size: 40px;
+        font-size: 44px;
     }
     
     .tagline {
-        font-size: 18px;
+        font-size: 20px;
     }
     
     .cta-btn {
@@ -509,75 +657,249 @@ footer {
         </h1>
         
         <p class="tagline">
-            <span class="lang-en">Train Your Memory. Shine Every Day.</span>
-            <span class="lang-es">Entrena Tu Memoria. Brilla Cada Día.</span>
+            <span class="lang-en">Mental Fitness. Measurable Results.</span>
+            <span class="lang-es">Aptitud Mental. Resultados Medibles.</span>
         </p>
         
         <p class="subtitle">
-            <span class="lang-en">Rhythm-powered cognitive training that transforms senior care into an arena of daily victories.</span>
-            <span class="lang-es">Entrenamiento cognitivo potenciado por ritmo que transforma el cuidado de ancianos en una arena de victorias diarias.</span>
+            <span class="lang-en">Rhythm-powered cognitive performance training for health and wellness communities. Science-backed games that strengthen the mind.</span>
+            <span class="lang-es">Entrenamiento de rendimiento cognitivo impulsado por ritmo para comunidades de salud y bienestar. Juegos respaldados por la ciencia que fortalecen la mente.</span>
         </p>
         
         <div class="cta-buttons">
-            <a href="https://gostar.digital/trial" class="cta-btn cta-trial">
-                <span class="lang-en">Start Free Trial</span>
-                <span class="lang-es">Prueba Gratis</span>
-                <span class="trial-badge">7 DAYS</span>
-            </a>
-            
             <a href="https://gostar.digital/play" class="cta-btn cta-primary">
-                <span class="lang-en">▶ Play Now</span>
-                <span class="lang-es">▶ Jugar</span>
+                <span class="lang-en">▶ Start Training</span>
+                <span class="lang-es">▶ Comenzar</span>
             </a>
             
-            <a href="https://gostar.digital/facility" class="cta-btn cta-secondary">
-                <span class="lang-en">Facility Login</span>
-                <span class="lang-es">Acceso Instalación</span>
-            </a>
-            
-            <a href="about.html" class="cta-btn cta-outline">
+            <a href="about.html" class="cta-btn cta-secondary">
                 <span class="lang-en">Learn More</span>
                 <span class="lang-es">Más Info</span>
             </a>
         </div>
+    </div>
+</section>
+
+<div class="stats-bar">
+    <div class="stat">
+        <div class="stat-value">5</div>
+        <div class="stat-label">
+            <span class="lang-en">Training Games</span>
+            <span class="lang-es">Juegos de Entrenamiento</span>
+        </div>
+    </div>
+    <div class="stat">
+        <div class="stat-value">5</div>
+        <div class="stat-label">
+            <span class="lang-en">Cognitive Domains</span>
+            <span class="lang-es">Dominios Cognitivos</span>
+        </div>
+    </div>
+    <div class="stat">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">
+            <span class="lang-en">Bilingual</span>
+            <span class="lang-es">Bilingüe</span>
+        </div>
+    </div>
+</div>
+
+<section class="games-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            <span class="lang-en">The Starting Five</span>
+            <span class="lang-es">Los Cinco Titulares</span>
+        </h2>
+        <p class="section-subtitle">
+            <span class="lang-en">Five games. Five cognitive skills. One complete training system.</span>
+            <span class="lang-es">Cinco juegos. Cinco habilidades cognitivas. Un sistema completo.</span>
+        </p>
+    </div>
+    
+    <div class="games-grid">
+        <div class="game-card">
+            <span class="game-icon">⭐</span>
+            <h3 class="game-name">Sequence Memory</h3>
+            <p class="game-skill">
+                <span class="lang-en">Sequential Recall</span>
+                <span class="lang-es">Memoria Secuencial</span>
+            </p>
+        </div>
         
-        <div class="features">
-            <div class="feature">
-                <span class="feature-icon">🎵</span>
-                <h3>
-                    <span class="lang-en">Metronome Training</span>
-                    <span class="lang-es">Entrenamiento Rítmico</span>
-                </h3>
+        <div class="game-card">
+            <span class="game-icon">🛤️</span>
+            <h3 class="game-name">Memory StarTrail</h3>
+            <p class="game-skill">
+                <span class="lang-en">Spatial Memory</span>
+                <span class="lang-es">Memoria Espacial</span>
+            </p>
+        </div>
+        
+        <div class="game-card">
+            <span class="game-icon">⚡</span>
+            <h3 class="game-name">KwikStar</h3>
+            <p class="game-skill">
+                <span class="lang-en">Processing Speed</span>
+                <span class="lang-es">Velocidad Mental</span>
+            </p>
+        </div>
+        
+        <div class="game-card">
+            <span class="game-icon">🛑</span>
+            <h3 class="game-name">Go-No-GoStar</h3>
+            <p class="game-skill">
+                <span class="lang-en">Impulse Control</span>
+                <span class="lang-es">Control de Impulso</span>
+            </p>
+        </div>
+        
+        <div class="game-card">
+            <span class="game-icon">🔀</span>
+            <h3 class="game-name">StarStroop</h3>
+            <p class="game-skill">
+                <span class="lang-en">Cognitive Flexibility</span>
+                <span class="lang-es">Flexibilidad Cognitiva</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="benefits-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            <span class="lang-en">Why GoStar?</span>
+            <span class="lang-es">¿Por Qué GoStar?</span>
+        </h2>
+        <p class="section-subtitle">
+            <span class="lang-en">Built for engagement. Designed for results.</span>
+            <span class="lang-es">Diseñado para el compromiso. Creado para resultados.</span>
+        </p>
+    </div>
+    
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <span class="benefit-icon">🎵</span>
+            <h3 class="benefit-title">
+                <span class="lang-en">Rhythm-Powered</span>
+                <span class="lang-es">Potenciado por Ritmo</span>
+            </h3>
+            <p class="benefit-desc">
+                <span class="lang-en">Metronome-based training synchronizes mind and body. Adjustable tempo from 60-140 BPM meets every ability level.</span>
+                <span class="lang-es">El entrenamiento basado en metrónomo sincroniza mente y cuerpo. Tempo ajustable de 60-140 BPM para cada nivel.</span>
+            </p>
+        </div>
+        
+        <div class="benefit-card">
+            <span class="benefit-icon">📊</span>
+            <h3 class="benefit-title">
+                <span class="lang-en">Track Progress</span>
+                <span class="lang-es">Mide el Progreso</span>
+            </h3>
+            <p class="benefit-desc">
+                <span class="lang-en">Quarter-by-quarter scoring, daily streaks, and personal bests. Data that shows improvement over time.</span>
+                <span class="lang-es">Puntuación por cuartos, rachas diarias y récords personales. Datos que muestran mejora a lo largo del tiempo.</span>
+            </p>
+        </div>
+        
+        <div class="benefit-card">
+            <span class="benefit-icon">🌐</span>
+            <h3 class="benefit-title">
+                <span class="lang-en">Fully Bilingual</span>
+                <span class="lang-es">Completamente Bilingüe</span>
+            </h3>
+            <p class="benefit-desc">
+                <span class="lang-en">Seamless English and Spanish throughout. Built for diverse communities where language should never be a barrier.</span>
+                <span class="lang-es">Inglés y español integrados en todo. Creado para comunidades diversas donde el idioma nunca debe ser una barrera.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="audience-section">
+    <div class="section-header">
+        <h2 class="section-title">
+            <span class="lang-en">Built For</span>
+            <span class="lang-es">Creado Para</span>
+        </h2>
+    </div>
+    
+    <div class="audience-grid">
+        <div class="audience-card">
+            <span class="audience-icon">🏢</span>
+            <div class="audience-content">
+                <h4>
+                    <span class="lang-en">Senior Living Communities</span>
+                    <span class="lang-es">Comunidades de Vida Asistida</span>
+                </h4>
                 <p>
-                    <span class="lang-en">Rhythm-based cognitive exercise with musical tones and adjustable tempo.</span>
-                    <span class="lang-es">Ejercicio cognitivo basado en ritmo con tonos musicales y tempo ajustable.</span>
-                </p>
-            </div>
-            
-            <div class="feature">
-                <span class="feature-icon">📈</span>
-                <h3>
-                    <span class="lang-en">Track Progress</span>
-                    <span class="lang-es">Sigue el Progreso</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Daily streaks, personal bests, and quarter-by-quarter scoring.</span>
-                    <span class="lang-es">Rachas diarias, récords personales y puntuación por cuartos.</span>
-                </p>
-            </div>
-            
-            <div class="feature">
-                <span class="feature-icon">👨‍👩‍👧‍👦</span>
-                <h3>
-                    <span class="lang-en">Family Connection</span>
-                    <span class="lang-es">Conexión Familiar</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Turn worry into cheering. Celebrate wins together.</span>
-                    <span class="lang-es">Transforma la preocupación en celebración.</span>
+                    <span class="lang-en">Transform daily activities into engaging mental fitness sessions. Give residents something to look forward to.</span>
+                    <span class="lang-es">Transforma las actividades diarias en sesiones de aptitud mental. Da a los residentes algo que esperar con ilusión.</span>
                 </p>
             </div>
         </div>
+        
+        <div class="audience-card">
+            <span class="audience-icon">🏥</span>
+            <div class="audience-content">
+                <h4>
+                    <span class="lang-en">Rehabilitation Centers</span>
+                    <span class="lang-es">Centros de Rehabilitación</span>
+                </h4>
+                <p>
+                    <span class="lang-en">Support cognitive recovery with structured, measurable training. Track progress with real data.</span>
+                    <span class="lang-es">Apoya la recuperación cognitiva con entrenamiento estructurado y medible. Rastrea el progreso con datos reales.</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="audience-card">
+            <span class="audience-icon">🧠</span>
+            <div class="audience-content">
+                <h4>
+                    <span class="lang-en">Memory Care Communities</span>
+                    <span class="lang-es">Comunidades de Cuidado de Memoria</span>
+                </h4>
+                <p>
+                    <span class="lang-en">Gentle, rhythm-based activities designed for cognitive engagement at every stage.</span>
+                    <span class="lang-es">Actividades suaves basadas en ritmo diseñadas para el compromiso cognitivo en cada etapa.</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="audience-card">
+            <span class="audience-icon">💪</span>
+            <div class="audience-content">
+                <h4>
+                    <span class="lang-en">Wellness Centers</span>
+                    <span class="lang-es">Centros de Bienestar</span>
+                </h4>
+                <p>
+                    <span class="lang-en">Add cognitive training to your wellness offerings. Mental fitness is the new frontier.</span>
+                    <span class="lang-es">Añade entrenamiento cognitivo a tus servicios de bienestar. La aptitud mental es la nueva frontera.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2 class="section-title">
+        <span class="lang-en">Ready to Train?</span>
+        <span class="lang-es">¿Listo para Entrenar?</span>
+    </h2>
+    <p class="section-subtitle">
+        <span class="lang-en">Start building mental fitness today.</span>
+        <span class="lang-es">Comienza a construir aptitud mental hoy.</span>
+    </p>
+    <div class="cta-buttons">
+        <a href="https://gostar.digital/play" class="cta-btn cta-primary">
+            <span class="lang-en">▶ Start Training</span>
+            <span class="lang-es">▶ Comenzar</span>
+        </a>
+        <a href="mailto:info@gostar.email" class="cta-btn cta-secondary">
+            <span class="lang-en">Contact Us</span>
+            <span class="lang-es">Contáctenos</span>
+        </a>
     </div>
 </section>
 
