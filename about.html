@@ -667,6 +667,7 @@ section {
     color: var(--bg-primary);
     border: 2px solid var(--bg-primary);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .cta-outline-dark:hover {
@@ -710,7 +711,29 @@ footer {
 .footer-copyright {
     color: var(--text-secondary);
     font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-email {
     margin-bottom: 16px;
+}
+
+.email-copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--accent-teal);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.email-copy-btn:hover {
+    background: rgba(0, 217, 165, 0.1);
+    color: var(--accent-gold);
 }
 
 .footer-links {
@@ -763,6 +786,18 @@ footer {
     
     .transform-arrow {
         transform: rotate(90deg);
+        margin: 20px 0;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .transform-column.before {
+        padding-bottom: 10px;
+    }
+    
+    .transform-column.after {
+        padding-top: 10px;
     }
 }
 
@@ -1169,13 +1204,16 @@ footer {
         </p>
         <div class="cta-buttons-bottom">
             <a href="https://gostar.digital/play" class="cta-dark">
-                <span class="lang-en">▶ Start Training</span>
-                <span class="lang-es">▶ Comenzar</span>
+                <span class="lang-en">👤 Player Login</span>
+                <span class="lang-es">👤 Acceso Jugador</span>
             </a>
-            <a href="mailto:info@gostar.email" class="cta-outline-dark">
-                <span class="lang-en">Contact Us</span>
-                <span class="lang-es">Contáctenos</span>
+            <a href="https://gostar.digital/facility" class="cta-outline-dark">
+                <span class="lang-en">🏢 Facility Login</span>
+                <span class="lang-es">🏢 Acceso Instalación</span>
             </a>
+        </div>
+        <div class="cta-buttons-bottom" style="margin-top: 16px;">
+            <button class="cta-outline-dark" onclick="copyEmail()">✉️ info@gostar.email</button>
         </div>
     </div>
 </section>
@@ -1193,7 +1231,14 @@ footer {
 <!-- Footer -->
 <footer>
     <p class="footer-copyright">© 2025 GoStar Digital LLC</p>
+    <p class="footer-email">
+        <button class="email-copy-btn" onclick="copyEmail()">📋 info@gostar.email</button>
+    </p>
     <div class="footer-links">
+        <a href="index.html">
+            <span class="lang-en">Home</span>
+            <span class="lang-es">Inicio</span>
+        </a>
         <a href="privacy.html">
             <span class="lang-en">Privacy</span>
             <span class="lang-es">Privacidad</span>
@@ -1201,10 +1246,6 @@ footer {
         <a href="terms.html">
             <span class="lang-en">Terms</span>
             <span class="lang-es">Términos</span>
-        </a>
-        <a href="mailto:info@gostar.email">
-            <span class="lang-en">Contact</span>
-            <span class="lang-es">Contacto</span>
         </a>
     </div>
 </footer>
@@ -1223,6 +1264,17 @@ function setLang(lang) {
         } else {
             btns[i].classList.remove('active');
         }
+    }
+}
+
+function copyEmail() {
+    var email = 'info@gostar.email';
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).then(function() {
+            alert(currentLang === 'es' ? '✅ Correo copiado: ' + email : '✅ Email copied: ' + email);
+        });
+    } else {
+        prompt(currentLang === 'es' ? 'Copia este correo:' : 'Copy this email:', email);
     }
 }
 
