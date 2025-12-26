@@ -122,6 +122,20 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     filter: drop-shadow(0 0 30px rgba(255, 217, 61, 0.4));
 }
 
+.hero-logo {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 40px rgba(255, 217, 61, 0.3));
+}
+
+@media (max-width: 600px) {
+    .hero-logo {
+        max-width: 260px;
+    }
+}
+
 .brand {
     font-size: clamp(52px, 12vw, 80px);
     font-weight: 900;
@@ -731,11 +745,7 @@ footer {
 
 <section class="hero">
     <div class="hero-content">
-        <div class="logo-icon">⭐</div>
-        
-        <h1 class="brand">
-            <span class="brand-go">Go</span><span class="brand-star">Star</span>
-        </h1>
+        <img src="GoStar_Logo.png" alt="GoStar Digital" class="hero-logo">
         
         <p class="tagline">
             <span class="lang-en">Mental Fitness. Measurable Results.</span>
