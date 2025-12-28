@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About GoStar Digital - Mental Fitness. Measurable Results.</title>
+<title>About Metroritmo - GoStar Digital</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@
     --accent-purple: #A855F7;
     --gradient-gold: linear-gradient(135deg, #FFD93D 0%, #FF9F1C 100%);
     --gradient-teal: linear-gradient(135deg, #00D9A5 0%, #00B386 100%);
+    --gradient-purple: linear-gradient(135deg, #A855F7 0%, #00D9A5 100%);
 }
 
 html { scroll-behavior: smooth; }
@@ -134,7 +135,7 @@ section {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse at 30% 20%, rgba(255, 217, 61, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 20%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
         radial-gradient(ellipse at 70% 80%, rgba(0, 217, 165, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
@@ -158,13 +159,6 @@ section {
     }
 }
 
-.hero-icon {
-    font-size: 72px;
-    margin-bottom: 24px;
-    display: inline-block;
-    filter: drop-shadow(0 0 30px rgba(255, 217, 61, 0.4));
-}
-
 .hero h1 {
     font-size: clamp(40px, 8vw, 64px);
     font-weight: 900;
@@ -174,7 +168,7 @@ section {
 }
 
 .hero h1 .highlight {
-    background: var(--gradient-gold);
+    background: var(--gradient-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -248,7 +242,7 @@ section {
 }
 
 .mission-quote .highlight {
-    background: var(--gradient-gold);
+    background: var(--gradient-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -355,7 +349,7 @@ section {
     font-size: clamp(28px, 4vw, 36px);
     font-weight: 900;
     margin-bottom: 20px;
-    color: var(--accent-gold);
+    color: var(--accent-purple);
 }
 
 .philosophy-text p {
@@ -389,71 +383,64 @@ section {
 }
 
 .feature-list li::before {
-    content: '⭐';
+    content: '🎵';
     position: absolute;
     left: 0;
     font-size: 16px;
 }
 
-/* Domains Section */
-.domains {
+/* Games Section */
+.games {
     background: var(--bg-secondary);
 }
 
-.domains-grid {
+.games-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.domain-card {
+.game-card {
     background: var(--bg-card);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 32px 20px;
+    border-radius: 24px;
+    padding: 40px 32px;
     text-align: center;
     transition: all 0.3s ease;
 }
 
-.domain-card:hover {
+.game-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.domain-card:nth-child(1) { border-color: rgba(255, 217, 61, 0.3); }
-.domain-card:nth-child(2) { border-color: rgba(0, 217, 165, 0.3); }
-.domain-card:nth-child(3) { border-color: rgba(77, 168, 255, 0.3); }
-.domain-card:nth-child(4) { border-color: rgba(255, 107, 107, 0.3); }
-.domain-card:nth-child(5) { border-color: rgba(168, 85, 247, 0.3); }
+.game-card:nth-child(1) { border-color: rgba(255, 217, 61, 0.3); }
+.game-card:nth-child(2) { border-color: rgba(0, 217, 165, 0.3); }
 
-.domain-icon {
-    font-size: 48px;
-    margin-bottom: 16px;
+.game-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
     display: block;
 }
 
-.domain-card:nth-child(1) .domain-icon { filter: drop-shadow(0 0 15px rgba(255, 217, 61, 0.5)); }
-.domain-card:nth-child(2) .domain-icon { filter: drop-shadow(0 0 15px rgba(0, 217, 165, 0.5)); }
-.domain-card:nth-child(3) .domain-icon { filter: drop-shadow(0 0 15px rgba(77, 168, 255, 0.5)); }
-.domain-card:nth-child(4) .domain-icon { filter: drop-shadow(0 0 15px rgba(255, 107, 107, 0.5)); }
-.domain-card:nth-child(5) .domain-icon { filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.5)); }
+.game-card:nth-child(1) .game-icon { filter: drop-shadow(0 0 15px rgba(255, 217, 61, 0.5)); }
+.game-card:nth-child(2) .game-icon { filter: drop-shadow(0 0 15px rgba(0, 217, 165, 0.5)); }
 
-.domain-card h3 {
-    font-size: 15px;
+.game-card h3 {
+    font-size: 20px;
     font-weight: 800;
     margin-bottom: 8px;
 }
 
-.domain-card:nth-child(1) h3 { color: var(--accent-gold); }
-.domain-card:nth-child(2) h3 { color: var(--accent-teal); }
-.domain-card:nth-child(3) h3 { color: var(--accent-blue); }
-.domain-card:nth-child(4) h3 { color: var(--accent-coral); }
-.domain-card:nth-child(5) h3 { color: var(--accent-purple); }
+.game-card:nth-child(1) h3 { color: var(--accent-gold); }
+.game-card:nth-child(2) h3 { color: var(--accent-teal); }
 
-.domain-card p {
-    font-size: 13px;
+.game-card p {
+    font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Story Section */
@@ -501,7 +488,7 @@ section {
 
 .story-highlight {
     background: var(--bg-card);
-    border-left: 4px solid var(--accent-teal);
+    border-left: 4px solid var(--accent-purple);
     padding: 24px;
     border-radius: 0 16px 16px 0;
     margin: 32px 0;
@@ -547,8 +534,8 @@ section {
 }
 
 .transform-column.after h4 {
-    color: var(--accent-gold);
-    border-color: var(--accent-gold);
+    color: var(--accent-purple);
+    border-color: var(--accent-purple);
 }
 
 .transform-item {
@@ -591,7 +578,7 @@ section {
 }
 
 .science-card:hover {
-    border-color: rgba(0, 217, 165, 0.3);
+    border-color: rgba(168, 85, 247, 0.3);
 }
 
 .science-icon {
@@ -607,9 +594,9 @@ section {
     margin-bottom: 12px;
 }
 
-.science-card:nth-child(1) h3 { color: var(--accent-gold); }
+.science-card:nth-child(1) h3 { color: var(--accent-purple); }
 .science-card:nth-child(2) h3 { color: var(--accent-teal); }
-.science-card:nth-child(3) h3 { color: var(--accent-blue); }
+.science-card:nth-child(3) h3 { color: var(--accent-gold); }
 
 .science-card p {
     font-size: 15px;
@@ -619,7 +606,7 @@ section {
 
 /* CTA Section */
 .cta-section {
-    background: var(--gradient-gold);
+    background: var(--gradient-purple);
     text-align: center;
     padding: 80px 24px;
 }
@@ -627,14 +614,14 @@ section {
 .cta-section h2 {
     font-size: clamp(32px, 6vw, 48px);
     font-weight: 900;
-    color: var(--bg-primary);
+    color: var(--text-primary);
     margin-bottom: 16px;
 }
 
 .cta-section p {
     font-size: 18px;
-    color: var(--bg-primary);
-    opacity: 0.8;
+    color: var(--text-primary);
+    opacity: 0.9;
     margin-bottom: 32px;
 }
 
@@ -666,7 +653,7 @@ section {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.cta-outline-dark {
+.cta-gold {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -677,16 +664,14 @@ section {
     font-family: 'Inter', sans-serif;
     border-radius: 50px;
     text-decoration: none;
-    background: transparent;
+    background: var(--gradient-gold);
     color: var(--bg-primary);
-    border: 2px solid var(--bg-primary);
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
-.cta-outline-dark:hover {
-    background: var(--bg-primary);
-    color: var(--accent-gold);
+.cta-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 217, 61, 0.4);
 }
 
 /* Motto Section */
@@ -725,29 +710,7 @@ footer {
 .footer-copyright {
     color: var(--text-secondary);
     font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.footer-email {
     margin-bottom: 16px;
-}
-
-.email-copy-btn {
-    background: transparent;
-    border: none;
-    color: var(--accent-teal);
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.email-copy-btn:hover {
-    background: rgba(0, 217, 165, 0.1);
-    color: var(--accent-gold);
 }
 
 .footer-links {
@@ -770,12 +733,6 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
-    .domains-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 @media (max-width: 900px) {
     .philosophy-grid,
     .story-content {
@@ -783,8 +740,9 @@ footer {
         gap: 40px;
     }
     
-    .domains-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .games-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
     }
     
     .science-grid {
@@ -805,14 +763,6 @@ footer {
         text-align: center;
         width: 100%;
     }
-    
-    .transform-column.before {
-        padding-bottom: 10px;
-    }
-    
-    .transform-column.after {
-        padding-top: 10px;
-    }
 }
 
 @media (max-width: 600px) {
@@ -822,12 +772,6 @@ footer {
     
     .hero {
         padding-top: 100px;
-    }
-    
-    .domains-grid {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-        margin: 0 auto;
     }
     
     .nav {
@@ -853,7 +797,7 @@ footer {
     }
     
     .cta-dark,
-    .cta-outline-dark {
+    .cta-gold {
         width: 100%;
         max-width: 280px;
     }
@@ -878,16 +822,16 @@ footer {
     <div class="hero-content">
         <img src="gostar_logo_transparent.png" alt="GoStar Digital" class="hero-logo">
         <h1>
-            <span class="lang-en">The <span class="highlight">Science</span> of Mental Fitness</span>
-            <span class="lang-es">La <span class="highlight">Ciencia</span> de la Aptitud Mental</span>
+            <span class="lang-en">The Story Behind <span class="highlight">Metroritmo</span></span>
+            <span class="lang-es">La Historia Detrás de <span class="highlight">Metroritmo</span></span>
         </h1>
         <p class="subtitle">
-            <span class="lang-en">Mental Fitness. Measurable Results.</span>
-            <span class="lang-es">Aptitud Mental. Resultados Medibles.</span>
+            <span class="lang-en">Rhythm-Based Cognitive Training</span>
+            <span class="lang-es">Entrenamiento Cognitivo Basado en Ritmo</span>
         </p>
         <p class="description">
-            <span class="lang-en">GoStar combines rhythm-based training, cognitive science, and performance tracking to deliver measurable improvements in mental fitness.</span>
-            <span class="lang-es">GoStar combina entrenamiento basado en ritmo, ciencia cognitiva y seguimiento de rendimiento para ofrecer mejoras medibles en aptitud mental.</span>
+            <span class="lang-en">Built by an athlete who understood that memory is the foundation of everything. Powered by the metronome that makes every session feel like music.</span>
+            <span class="lang-es">Creado por un atleta que entendió que la memoria es la base de todo. Impulsado por el metrónomo que hace que cada sesión se sienta como música.</span>
         </p>
     </div>
 </section>
@@ -896,8 +840,8 @@ footer {
 <section class="mission">
     <div class="container">
         <p class="mission-quote">
-            <span class="lang-en">"The mind is a muscle. <span class="highlight">Train it like one.</span>"</span>
-            <span class="lang-es">"La mente es un músculo. <span class="highlight">Entrénala como tal.</span>"</span>
+            <span class="lang-en">"You can hear when someone is winning. <span class="highlight">That's the product.</span>"</span>
+            <span class="lang-es">"Puedes escuchar cuando alguien está ganando. <span class="highlight">Ese es el producto.</span>"</span>
         </p>
     </div>
 </section>
@@ -931,34 +875,34 @@ footer {
             
             <div class="philosophy-text">
                 <h3>
-                    <span class="lang-en">The Rhythm Advantage</span>
-                    <span class="lang-es">La Ventaja del Ritmo</span>
+                    <span class="lang-en">The Metronome Edge</span>
+                    <span class="lang-es">La Ventaja del Metrónomo</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Every GoStar game is built on a metronome foundation. <strong>Rhythm synchronizes brain activity</strong>, creating the optimal state for memory formation and recall.</span>
-                    <span class="lang-es">Cada juego de GoStar está construido sobre una base de metrónomo. <strong>El ritmo sincroniza la actividad cerebral</strong>, creando el estado óptimo para la formación y recuperación de memoria.</span>
+                    <span class="lang-en">Every Metroritmo session is built on rhythm. <strong>The metronome isn't decoration — it's the soul.</strong> Rhythm synchronizes brain activity, creating the optimal state for memory formation.</span>
+                    <span class="lang-es">Cada sesión de Metroritmo está construida sobre el ritmo. <strong>El metrónomo no es decoración — es el alma.</strong> El ritmo sincroniza la actividad cerebral, creando el estado óptimo para la formación de memoria.</span>
                 </p>
                 <p>
-                    <span class="lang-en">Athletes know this instinctively — practice with rhythm, perform with precision. GoStar brings that same discipline to cognitive training.</span>
-                    <span class="lang-es">Los atletas lo saben instintivamente — practica con ritmo, ejecuta con precisión. GoStar lleva esa misma disciplina al entrenamiento cognitivo.</span>
+                    <span class="lang-en">Staff hears wins from across the room. Families hear engagement. Residents feel the rhythm. That's what makes this different from every other brain game.</span>
+                    <span class="lang-es">El personal escucha los triunfos desde el otro lado de la sala. Las familias escuchan participación. Los residentes sienten el ritmo. Eso es lo que lo hace diferente de cualquier otro juego cerebral.</span>
                 </p>
                 
                 <ul class="feature-list">
                     <li>
-                        <span class="lang-en">60-140 BPM adjustable tempo</span>
-                        <span class="lang-es">Tempo ajustable de 60-140 BPM</span>
+                        <span class="lang-en">Audible feedback — you hear success</span>
+                        <span class="lang-es">Retroalimentación audible — escuchas el éxito</span>
                     </li>
                     <li>
-                        <span class="lang-en">Musical tones guide attention</span>
-                        <span class="lang-es">Tonos musicales guían la atención</span>
+                        <span class="lang-en">Sessions feel like music, not homework</span>
+                        <span class="lang-es">Las sesiones se sienten como música, no como tarea</span>
                     </li>
                     <li>
-                        <span class="lang-en">Progressive difficulty scaling</span>
-                        <span class="lang-es">Escalado progresivo de dificultad</span>
+                        <span class="lang-en">Progressive difficulty that grows with you</span>
+                        <span class="lang-es">Dificultad progresiva que crece contigo</span>
                     </li>
                     <li>
-                        <span class="lang-en">4-quarter game structure</span>
-                        <span class="lang-es">Estructura de juego en 4 cuartos</span>
+                        <span class="lang-en">365 days a year of engagement</span>
+                        <span class="lang-es">365 días al año de participación</span>
                     </li>
                 </ul>
             </div>
@@ -966,82 +910,40 @@ footer {
     </div>
 </section>
 
-<!-- Cognitive Domains -->
-<section class="domains">
+<!-- Games -->
+<section class="games">
     <div class="container">
         <div class="section-header">
             <div class="section-label">
-                <span class="lang-en">Complete Training</span>
-                <span class="lang-es">Entrenamiento Completo</span>
+                <span class="lang-en">The Memory Duo</span>
+                <span class="lang-es">El Dúo de Memoria</span>
             </div>
             <h2 class="section-title">
-                <span class="lang-en">Five <span class="accent">Cognitive Domains</span></span>
-                <span class="lang-es">Cinco <span class="accent">Dominios Cognitivos</span></span>
+                <span class="lang-en">Two Games. <span class="accent">Quality Over Quantity.</span></span>
+                <span class="lang-es">Dos Juegos. <span class="accent">Calidad Sobre Cantidad.</span></span>
             </h2>
             <p class="section-subtitle">
-                <span class="lang-en">Each game targets a specific area of mental fitness.</span>
-                <span class="lang-es">Cada juego apunta a un área específica de aptitud mental.</span>
+                <span class="lang-en">Focused training beats scattered exercises. Every session, every beat, every win.</span>
+                <span class="lang-es">El entrenamiento enfocado supera los ejercicios dispersos. Cada sesión, cada ritmo, cada triunfo.</span>
             </p>
         </div>
         
-        <div class="domains-grid">
-            <div class="domain-card">
-                <span class="domain-icon">⭐</span>
-                <h3>
-                    <span class="lang-en">Sequential Recall</span>
-                    <span class="lang-es">Memoria Secuencial</span>
-                </h3>
+        <div class="games-grid">
+            <div class="game-card">
+                <span class="game-icon">⭐</span>
+                <h3>Sequence Memory</h3>
                 <p>
-                    <span class="lang-en">Remember ordered information. Critical for following instructions and routines.</span>
-                    <span class="lang-es">Recuerda información ordenada. Crítico para seguir instrucciones y rutinas.</span>
+                    <span class="lang-en">Watch the pattern. Repeat on beat. Build sequential recall through rhythm-based repetition.</span>
+                    <span class="lang-es">Observa el patrón. Repite al ritmo. Desarrolla la memoria secuencial a través de la repetición rítmica.</span>
                 </p>
             </div>
             
-            <div class="domain-card">
-                <span class="domain-icon">🛤️</span>
-                <h3>
-                    <span class="lang-en">Spatial Memory</span>
-                    <span class="lang-es">Memoria Espacial</span>
-                </h3>
+            <div class="game-card">
+                <span class="game-icon">🛤️</span>
+                <h3>Memory StarTrail</h3>
                 <p>
-                    <span class="lang-en">Navigate environments and remember locations. Essential for independence.</span>
-                    <span class="lang-es">Navega entornos y recuerda ubicaciones. Esencial para la independencia.</span>
-                </p>
-            </div>
-            
-            <div class="domain-card">
-                <span class="domain-icon">⚡</span>
-                <h3>
-                    <span class="lang-en">Processing Speed</span>
-                    <span class="lang-es">Velocidad Mental</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Think and react quickly. Important for safety and quick decisions.</span>
-                    <span class="lang-es">Piensa y reacciona rápidamente. Importante para seguridad y decisiones rápidas.</span>
-                </p>
-            </div>
-            
-            <div class="domain-card">
-                <span class="domain-icon">🛑</span>
-                <h3>
-                    <span class="lang-en">Impulse Control</span>
-                    <span class="lang-es">Control de Impulso</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Resist automatic responses. Key for thoughtful decision-making.</span>
-                    <span class="lang-es">Resiste respuestas automáticas. Clave para tomar decisiones reflexivas.</span>
-                </p>
-            </div>
-            
-            <div class="domain-card">
-                <span class="domain-icon">🔀</span>
-                <h3>
-                    <span class="lang-en">Cognitive Flexibility</span>
-                    <span class="lang-es">Flexibilidad Cognitiva</span>
-                </h3>
-                <p>
-                    <span class="lang-en">Switch between tasks smoothly. Vital for adapting to new situations.</span>
-                    <span class="lang-es">Cambia entre tareas fluidamente. Vital para adaptarse a nuevas situaciones.</span>
+                    <span class="lang-en">Follow the path. Remember the trail. Train spatial memory with metronome-guided navigation.</span>
+                    <span class="lang-es">Sigue el camino. Recuerda el sendero. Entrena la memoria espacial con navegación guiada por metrónomo.</span>
                 </p>
             </div>
         </div>
@@ -1066,8 +968,8 @@ footer {
                     <span class="lang-es">De la Cancha al Entrenamiento Cognitivo</span>
                 </h3>
                 <p>
-                    <span class="lang-en">GoStar was founded by a former professional basketball player who understood one fundamental truth: <strong>memory is the foundation of everything.</strong></span>
-                    <span class="lang-es">GoStar fue fundado por un ex jugador profesional de baloncesto que entendió una verdad fundamental: <strong>la memoria es la base de todo.</strong></span>
+                    <span class="lang-en">Metroritmo was built by a former professional basketball player who understood one fundamental truth: <strong>memory is the foundation of everything.</strong></span>
+                    <span class="lang-es">Metroritmo fue creado por un ex jugador profesional de baloncesto que entendió una verdad fundamental: <strong>la memoria es la base de todo.</strong></span>
                 </p>
                 <p>
                     <span class="lang-en">"The best players weren't always the most athletic — they were the ones who could remember, react, and execute. Every practice, every game, we trained our memory through repetition and rhythm."</span>
@@ -1076,8 +978,8 @@ footer {
                 
                 <div class="story-highlight">
                     <p>
-                        <span class="lang-en">That same discipline — the metronome of practice, the rhythm of drills, the joy of improvement — now powers GoStar's approach to cognitive wellness.</span>
-                        <span class="lang-es">Esa misma disciplina — el metrónomo de la práctica, el ritmo de los ejercicios, la alegría de la mejora — ahora impulsa el enfoque de GoStar hacia el bienestar cognitivo.</span>
+                        <span class="lang-en">That same discipline — the metronome of practice, the rhythm of drills, the joy of improvement — now powers Metroritmo.</span>
+                        <span class="lang-es">Esa misma disciplina — el metrónomo de la práctica, el ritmo de los ejercicios, la alegría de la mejora — ahora impulsa a Metroritmo.</span>
                     </p>
                 </div>
             </div>
@@ -1094,8 +996,8 @@ footer {
                 <span class="lang-es">El Cambio</span>
             </div>
             <h2 class="section-title">
-                <span class="lang-en">The GoStar <span class="accent">Mindset</span></span>
-                <span class="lang-es">La Mentalidad <span class="accent">GoStar</span></span>
+                <span class="lang-en">The Metroritmo <span class="accent">Mindset</span></span>
+                <span class="lang-es">La Mentalidad <span class="accent">Metroritmo</span></span>
             </h2>
         </div>
         
@@ -1114,12 +1016,12 @@ footer {
                     <span class="lang-es">Actividades</span>
                 </div>
                 <div class="transform-item">
-                    <span class="lang-en">Passing Time</span>
-                    <span class="lang-es">Pasar el Tiempo</span>
+                    <span class="lang-en">Silent Tapping</span>
+                    <span class="lang-es">Toques Silenciosos</span>
                 </div>
                 <div class="transform-item">
-                    <span class="lang-en">Uncertain Progress</span>
-                    <span class="lang-es">Progreso Incierto</span>
+                    <span class="lang-en">Seasonal Programs</span>
+                    <span class="lang-es">Programas de Temporada</span>
                 </div>
             </div>
             
@@ -1127,8 +1029,8 @@ footer {
             
             <div class="transform-column after">
                 <h4>
-                    <span class="lang-en">After GoStar</span>
-                    <span class="lang-es">Después de GoStar</span>
+                    <span class="lang-en">After Metroritmo</span>
+                    <span class="lang-es">Después de Metroritmo</span>
                 </h4>
                 <div class="transform-item">
                     <span class="lang-en">Athletes</span>
@@ -1139,12 +1041,12 @@ footer {
                     <span class="lang-es">Entrenamiento</span>
                 </div>
                 <div class="transform-item">
-                    <span class="lang-en">Building Streaks</span>
-                    <span class="lang-es">Construyendo Rachas</span>
+                    <span class="lang-en">Audible Wins</span>
+                    <span class="lang-es">Triunfos Audibles</span>
                 </div>
                 <div class="transform-item">
-                    <span class="lang-en">Measurable Results</span>
-                    <span class="lang-es">Resultados Medibles</span>
+                    <span class="lang-en">365 Days a Year</span>
+                    <span class="lang-es">365 Días al Año</span>
                 </div>
             </div>
         </div>
@@ -1156,12 +1058,12 @@ footer {
     <div class="container">
         <div class="section-header">
             <div class="section-label">
-                <span class="lang-en">Evidence-Based</span>
-                <span class="lang-es">Basado en Evidencia</span>
+                <span class="lang-en">Why It Works</span>
+                <span class="lang-es">Por Qué Funciona</span>
             </div>
             <h2 class="section-title">
-                <span class="lang-en">Built on <span class="accent">Science</span></span>
-                <span class="lang-es">Construido sobre <span class="accent">Ciencia</span></span>
+                <span class="lang-en">The <span class="accent">Rhythm</span> Advantage</span>
+                <span class="lang-es">La Ventaja del <span class="accent">Ritmo</span></span>
             </h2>
         </div>
         
@@ -1169,36 +1071,36 @@ footer {
             <div class="science-card">
                 <span class="science-icon">🎵</span>
                 <h3>
-                    <span class="lang-en">Rhythmic Entrainment</span>
-                    <span class="lang-es">Sincronización Rítmica</span>
+                    <span class="lang-en">Rhythm Is Feedback</span>
+                    <span class="lang-es">El Ritmo Es Retroalimentación</span>
                 </h3>
                 <p>
-                    <span class="lang-en">External rhythms synchronize neural oscillations, enhancing attention and memory encoding. The metronome isn't decoration — it's science.</span>
-                    <span class="lang-es">Los ritmos externos sincronizan las oscilaciones neuronales, mejorando la atención y la codificación de memoria. El metrónomo no es decoración — es ciencia.</span>
+                    <span class="lang-en">The beat tells the story. External rhythms synchronize neural activity, enhancing attention and memory encoding.</span>
+                    <span class="lang-es">El ritmo cuenta la historia. Los ritmos externos sincronizan la actividad neuronal, mejorando la atención y la codificación de memoria.</span>
                 </p>
             </div>
             
             <div class="science-card">
-                <span class="science-icon">📈</span>
+                <span class="science-icon">👂</span>
                 <h3>
-                    <span class="lang-en">Progressive Overload</span>
-                    <span class="lang-es">Sobrecarga Progresiva</span>
+                    <span class="lang-en">Audible Progress</span>
+                    <span class="lang-es">Progreso Audible</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Just like physical training, cognitive improvement requires gradually increasing challenge. Four difficulty levels ensure continuous growth.</span>
-                    <span class="lang-es">Como el entrenamiento físico, la mejora cognitiva requiere un desafío gradualmente creciente. Cuatro niveles de dificultad aseguran crecimiento continuo.</span>
+                    <span class="lang-en">Success you can hear. Staff knows when residents are winning. Families hear real engagement. No silent tapping.</span>
+                    <span class="lang-es">Éxito que puedes escuchar. El personal sabe cuando los residentes están ganando. Las familias escuchan participación real.</span>
                 </p>
             </div>
             
             <div class="science-card">
-                <span class="science-icon">🎯</span>
+                <span class="science-icon">💛</span>
                 <h3>
-                    <span class="lang-en">Targeted Training</span>
-                    <span class="lang-es">Entrenamiento Dirigido</span>
+                    <span class="lang-en">Residents Cherish It</span>
+                    <span class="lang-es">Los Residentes lo Valoran</span>
                 </h3>
                 <p>
-                    <span class="lang-en">Each game isolates a specific cognitive domain. This targeted approach produces more effective results than general "brain games."</span>
-                    <span class="lang-es">Cada juego aísla un dominio cognitivo específico. Este enfoque dirigido produce resultados más efectivos que los "juegos cerebrales" generales.</span>
+                    <span class="lang-en">Daily routines they look forward to. Not homework — a moment of music, achievement, and connection.</span>
+                    <span class="lang-es">Rutinas diarias que esperan con ilusión. No es tarea — es un momento de música, logro y conexión.</span>
                 </p>
             </div>
         </div>
@@ -1209,25 +1111,22 @@ footer {
 <section class="cta-section">
     <div class="container">
         <h2>
-            <span class="lang-en">Ready to Start Training?</span>
-            <span class="lang-es">¿Listo para Comenzar?</span>
+            <span class="lang-en">Ready to Train On Beat?</span>
+            <span class="lang-es">¿Listo para Entrenar a Ritmo?</span>
         </h2>
         <p>
-            <span class="lang-en">Experience mental fitness training with The Starting Five.</span>
-            <span class="lang-es">Experimenta el entrenamiento de aptitud mental con Los Cinco Titulares.</span>
+            <span class="lang-en">Start your free 7-day trial today. 10 users included.</span>
+            <span class="lang-es">Comienza tu prueba gratis de 7 días hoy. 10 usuarios incluidos.</span>
         </p>
         <div class="cta-buttons-bottom">
-            <a href="https://gostar.digital/play" class="cta-dark">
-                <span class="lang-en">👤 Player Login</span>
-                <span class="lang-es">👤 Acceso Jugador</span>
+            <a href="https://gostar.digital/play" class="cta-gold">
+                <span class="lang-en">▶ Play Now</span>
+                <span class="lang-es">▶ Jugar Ahora</span>
             </a>
-            <a href="https://gostar.digital/facility" class="cta-outline-dark">
+            <a href="https://gostar.digital/facility" class="cta-dark">
                 <span class="lang-en">🏢 Facility Login</span>
                 <span class="lang-es">🏢 Acceso Instalación</span>
             </a>
-        </div>
-        <div class="cta-buttons-bottom" style="margin-top: 16px;">
-            <button class="cta-outline-dark" onclick="copyEmail()">✉️ info@gostar.email</button>
         </div>
     </div>
 </section>
@@ -1245,9 +1144,6 @@ footer {
 <!-- Footer -->
 <footer>
     <p class="footer-copyright">© 2025 GoStar Digital LLC</p>
-    <p class="footer-email">
-        <button class="email-copy-btn" onclick="copyEmail()">📋 info@gostar.email</button>
-    </p>
     <div class="footer-links">
         <a href="index.html">
             <span class="lang-en">Home</span>
@@ -1278,17 +1174,6 @@ function setLang(lang) {
         } else {
             btns[i].classList.remove('active');
         }
-    }
-}
-
-function copyEmail() {
-    var email = 'info@gostar.email';
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(email).then(function() {
-            alert(currentLang === 'es' ? '✅ Correo copiado: ' + email : '✅ Email copied: ' + email);
-        });
-    } else {
-        prompt(currentLang === 'es' ? 'Copia este correo:' : 'Copy this email:', email);
     }
 }
 
