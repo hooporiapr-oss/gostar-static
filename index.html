@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoStar Digital - Mental Fitness. Measurable Results.</title>
+<title>GoStar Digital - Metroritmo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@
     --accent-purple: #A855F7;
     --gradient-gold: linear-gradient(135deg, #FFD93D 0%, #FF9F1C 100%);
     --gradient-teal: linear-gradient(135deg, #00D9A5 0%, #00B386 100%);
+    --gradient-purple: linear-gradient(135deg, #A855F7 0%, #00D9A5 100%);
 }
 
 html { scroll-behavior: smooth; }
@@ -103,7 +104,7 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse at 20% 20%, rgba(255, 217, 61, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 20%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 80%, rgba(0, 217, 165, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
@@ -113,13 +114,6 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     z-index: 1;
     max-width: 1000px;
     width: 100%;
-}
-
-.logo-icon {
-    font-size: 80px;
-    margin-bottom: 24px;
-    display: inline-block;
-    filter: drop-shadow(0 0 30px rgba(255, 217, 61, 0.4));
 }
 
 .hero-logo {
@@ -136,31 +130,23 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     }
 }
 
-.brand {
-    font-size: clamp(52px, 12vw, 80px);
+.product-name {
+    font-size: clamp(40px, 10vw, 64px);
     font-weight: 900;
-    letter-spacing: -3px;
+    letter-spacing: -2px;
     margin-bottom: 16px;
-    line-height: 1;
-}
-
-.brand-go {
-    color: var(--text-primary);
-}
-
-.brand-star {
-    background: var(--gradient-gold);
+    background: var(--gradient-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .tagline {
-    font-size: clamp(24px, 5vw, 36px);
-    font-weight: 800;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700;
     color: var(--accent-teal);
     margin-bottom: 20px;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .subtitle {
@@ -242,9 +228,6 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     border: 2px solid rgba(255,255,255,0.15);
     pointer-events: auto;
     cursor: pointer;
-    display: inline-flex;
-    position: relative;
-    z-index: 10;
 }
 
 .cta-contact:hover {
@@ -252,13 +235,11 @@ body[data-lang="es"] h2.lang-es, body[data-lang="es"] p.lang-es { display: block
     color: var(--accent-gold);
 }
 
-/* Ensure all links are clickable */
 a {
     pointer-events: auto;
     cursor: pointer;
 }
 
-/* Footer Links */
 footer a {
     pointer-events: auto;
     cursor: pointer;
@@ -284,7 +265,7 @@ footer a {
 .stat-value {
     font-size: clamp(36px, 6vw, 48px);
     font-weight: 900;
-    background: var(--gradient-gold);
+    background: var(--gradient-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -302,7 +283,7 @@ footer a {
 /* Games Section */
 .games-section {
     padding: 100px 24px;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -327,46 +308,43 @@ footer a {
 
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 
 .game-card {
     background: var(--bg-card);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 24px;
-    padding: 32px 20px;
+    padding: 40px 32px;
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .game-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(255, 217, 61, 0.3);
+    border-color: rgba(168, 85, 247, 0.3);
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .game-icon {
-    font-size: 48px;
-    margin-bottom: 16px;
+    font-size: 56px;
+    margin-bottom: 20px;
     display: block;
 }
 
 .game-card:nth-child(1) .game-icon { filter: drop-shadow(0 0 15px rgba(255, 217, 61, 0.6)); }
 .game-card:nth-child(2) .game-icon { filter: drop-shadow(0 0 15px rgba(0, 217, 165, 0.6)); }
-.game-card:nth-child(3) .game-icon { filter: drop-shadow(0 0 15px rgba(77, 168, 255, 0.6)); }
-.game-card:nth-child(4) .game-icon { filter: drop-shadow(0 0 15px rgba(255, 107, 107, 0.6)); }
-.game-card:nth-child(5) .game-icon { filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6)); }
 
 .game-name {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 800;
     margin-bottom: 8px;
     color: var(--text-primary);
 }
 
 .game-skill {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -396,7 +374,7 @@ footer a {
 }
 
 .benefit-card:hover {
-    border-color: rgba(0, 217, 165, 0.3);
+    border-color: rgba(168, 85, 247, 0.3);
 }
 
 .benefit-icon {
@@ -412,60 +390,14 @@ footer a {
     color: var(--text-primary);
 }
 
-.benefit-card:nth-child(1) .benefit-title { color: var(--accent-gold); }
+.benefit-card:nth-child(1) .benefit-title { color: var(--accent-purple); }
 .benefit-card:nth-child(2) .benefit-title { color: var(--accent-teal); }
-.benefit-card:nth-child(3) .benefit-title { color: var(--accent-blue); }
+.benefit-card:nth-child(3) .benefit-title { color: var(--accent-gold); }
 
 .benefit-desc {
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.7;
-}
-
-/* Audience Section */
-.audience-section {
-    padding: 100px 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.audience-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.audience-card {
-    background: var(--bg-card);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 32px;
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    transition: all 0.3s ease;
-}
-
-.audience-card:hover {
-    border-color: rgba(255, 217, 61, 0.2);
-}
-
-.audience-icon {
-    font-size: 40px;
-    flex-shrink: 0;
-}
-
-.audience-content h4 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-}
-
-.audience-content p {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.6;
 }
 
 /* CTA Section */
@@ -542,40 +474,7 @@ footer {
 .footer-copyright {
     color: var(--text-secondary);
     font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.footer-email {
     margin-bottom: 16px;
-}
-
-.footer-email a {
-    color: var(--accent-teal);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.footer-email a:hover {
-    color: var(--accent-gold);
-}
-
-.email-copy-btn {
-    background: transparent;
-    border: none;
-    color: var(--accent-teal);
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.email-copy-btn:hover {
-    background: rgba(0, 217, 165, 0.1);
-    color: var(--accent-gold);
 }
 
 .footer-links {
@@ -598,29 +497,16 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
-    .games-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .games-grid .game-card:nth-child(4),
-    .games-grid .game-card:nth-child(5) {
-        grid-column: span 1;
-    }
-}
-
 @media (max-width: 900px) {
     .games-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
     }
     
     .benefits-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
-    }
-    
-    .audience-grid {
-        grid-template-columns: 1fr;
     }
     
     .stats-bar {
@@ -631,15 +517,6 @@ footer {
 @media (max-width: 600px) {
     .hero {
         padding: 100px 20px 50px;
-    }
-    
-    .logo-icon {
-        font-size: 60px;
-        margin-bottom: 20px;
-    }
-    
-    .brand {
-        letter-spacing: -2px;
     }
     
     .subtitle {
@@ -670,27 +547,14 @@ footer {
         font-size: 32px;
     }
     
-    .games-grid {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    
     .game-card {
-        padding: 28px 20px;
+        padding: 32px 24px;
     }
     
     .games-section,
     .benefits-section,
-    .audience-section,
     .cta-section {
         padding: 60px 20px;
-    }
-    
-    .audience-card {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
     }
     
     .lang-toggle {
@@ -717,12 +581,12 @@ footer {
 }
 
 @media (max-width: 380px) {
-    .brand {
-        font-size: 44px;
+    .product-name {
+        font-size: 36px;
     }
     
     .tagline {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .cta-btn {
@@ -747,34 +611,36 @@ footer {
     <div class="hero-content">
         <img src="gostar_logo_transparent.png" alt="GoStar Digital" class="hero-logo">
         
+        <h1 class="product-name">Metroritmo</h1>
+        
         <p class="tagline">
-            <span class="lang-en">Mental Fitness. Measurable Results.</span>
-            <span class="lang-es">Aptitud Mental. Resultados Medibles.</span>
+            <span class="lang-en">Rhythm-Based Cognitive Training</span>
+            <span class="lang-es">Entrenamiento Cognitivo Basado en Ritmo</span>
         </p>
         
         <p class="subtitle">
-            <span class="lang-en">Rhythm-powered cognitive performance training for health and wellness communities. Science-backed games that strengthen the mind.</span>
-            <span class="lang-es">Entrenamiento de rendimiento cognitivo impulsado por ritmo para comunidades de salud y bienestar. Juegos respaldados por la ciencia que fortalecen la mente.</span>
+            <span class="lang-en">The only memory training platform powered by the metronome. You can hear when someone is winning. That's the product.</span>
+            <span class="lang-es">La única plataforma de entrenamiento de memoria impulsada por el metrónomo. Puedes escuchar cuando alguien está ganando. Ese es el producto.</span>
         </p>
         
         <div class="cta-buttons">
-            <a href="https://gostar.digital/play" class="cta-btn cta-primary">
-                <span class="lang-en">👤 Player Login</span>
-                <span class="lang-es">👤 Acceso Jugador</span>
+            <a href="/play" class="cta-btn cta-primary">
+                <span class="lang-en">▶ Play Now</span>
+                <span class="lang-es">▶ Jugar Ahora</span>
             </a>
             
-            <a href="https://gostar.digital/facility" class="cta-btn cta-secondary">
+            <a href="/facility" class="cta-btn cta-secondary">
                 <span class="lang-en">🏢 Facility Login</span>
                 <span class="lang-es">🏢 Acceso Instalación</span>
             </a>
         </div>
         
         <div class="cta-buttons" style="margin-bottom: 60px;">
-            <a href="https://gostar.digital/trial" class="cta-btn cta-trial">
-                <span class="lang-en">🆓 Start Free Trial</span>
-                <span class="lang-es">🆓 Prueba Gratis</span>
+            <a href="/facility" class="cta-btn cta-trial">
+                <span class="lang-en">🆓 Free 7-Day Trial • 10 Users</span>
+                <span class="lang-es">🆓 Prueba Gratis 7 Días • 10 Usuarios</span>
             </a>
-            <a href="about.html" class="cta-btn cta-contact">
+            <a href="/about" class="cta-btn cta-contact">
                 <span class="lang-en">Learn More</span>
                 <span class="lang-es">Más Info</span>
             </a>
@@ -784,24 +650,24 @@ footer {
 
 <div class="stats-bar">
     <div class="stat">
-        <div class="stat-value">5</div>
+        <div class="stat-value">2</div>
         <div class="stat-label">
             <span class="lang-en">Training Games</span>
             <span class="lang-es">Juegos de Entrenamiento</span>
         </div>
     </div>
     <div class="stat">
-        <div class="stat-value">5</div>
+        <div class="stat-value">🎵</div>
         <div class="stat-label">
-            <span class="lang-en">Cognitive Domains</span>
-            <span class="lang-es">Dominios Cognitivos</span>
+            <span class="lang-en">Metronome Powered</span>
+            <span class="lang-es">Potenciado por Metrónomo</span>
         </div>
     </div>
     <div class="stat">
-        <div class="stat-value">100%</div>
+        <div class="stat-value">365</div>
         <div class="stat-label">
-            <span class="lang-en">Bilingual</span>
-            <span class="lang-es">Bilingüe</span>
+            <span class="lang-en">Days a Year</span>
+            <span class="lang-es">Días al Año</span>
         </div>
     </div>
 </div>
@@ -809,12 +675,12 @@ footer {
 <section class="games-section">
     <div class="section-header">
         <h2 class="section-title">
-            <span class="lang-en">The Starting Five</span>
-            <span class="lang-es">Los Cinco Titulares</span>
+            <span class="lang-en">The Memory Duo</span>
+            <span class="lang-es">El Dúo de Memoria</span>
         </h2>
         <p class="section-subtitle">
-            <span class="lang-en">Five games. Five cognitive skills. One complete training system.</span>
-            <span class="lang-es">Cinco juegos. Cinco habilidades cognitivas. Un sistema completo.</span>
+            <span class="lang-en">Two focused games. Rhythm-based training. Quality over quantity.</span>
+            <span class="lang-es">Dos juegos enfocados. Entrenamiento rítmico. Calidad sobre cantidad.</span>
         </p>
     </div>
     
@@ -823,8 +689,8 @@ footer {
             <span class="game-icon">⭐</span>
             <h3 class="game-name">Sequence Memory</h3>
             <p class="game-skill">
-                <span class="lang-en">Sequential Recall</span>
-                <span class="lang-es">Memoria Secuencial</span>
+                <span class="lang-en">Sequential Pattern Recall</span>
+                <span class="lang-es">Memoria de Patrones Secuenciales</span>
             </p>
         </div>
         
@@ -832,35 +698,8 @@ footer {
             <span class="game-icon">🛤️</span>
             <h3 class="game-name">Memory StarTrail</h3>
             <p class="game-skill">
-                <span class="lang-en">Spatial Memory</span>
-                <span class="lang-es">Memoria Espacial</span>
-            </p>
-        </div>
-        
-        <div class="game-card">
-            <span class="game-icon">⚡</span>
-            <h3 class="game-name">KwikStar</h3>
-            <p class="game-skill">
-                <span class="lang-en">Processing Speed</span>
-                <span class="lang-es">Velocidad Mental</span>
-            </p>
-        </div>
-        
-        <div class="game-card">
-            <span class="game-icon">🛑</span>
-            <h3 class="game-name">Go-No-GoStar</h3>
-            <p class="game-skill">
-                <span class="lang-en">Impulse Control</span>
-                <span class="lang-es">Control de Impulso</span>
-            </p>
-        </div>
-        
-        <div class="game-card">
-            <span class="game-icon">🔀</span>
-            <h3 class="game-name">StarStroop</h3>
-            <p class="game-skill">
-                <span class="lang-en">Cognitive Flexibility</span>
-                <span class="lang-es">Flexibilidad Cognitiva</span>
+                <span class="lang-en">Spatial Memory Training</span>
+                <span class="lang-es">Entrenamiento de Memoria Espacial</span>
             </p>
         </div>
     </div>
@@ -869,12 +708,12 @@ footer {
 <section class="benefits-section">
     <div class="section-header">
         <h2 class="section-title">
-            <span class="lang-en">Why GoStar?</span>
-            <span class="lang-es">¿Por Qué GoStar?</span>
+            <span class="lang-en">The Metronome Edge</span>
+            <span class="lang-es">La Ventaja del Metrónomo</span>
         </h2>
         <p class="section-subtitle">
-            <span class="lang-en">Built for engagement. Designed for results.</span>
-            <span class="lang-es">Diseñado para el compromiso. Creado para resultados.</span>
+            <span class="lang-en">What makes Metroritmo different from every other brain game.</span>
+            <span class="lang-es">Lo que hace a Metroritmo diferente de cualquier otro juego cerebral.</span>
         </p>
     </div>
     
@@ -882,133 +721,65 @@ footer {
         <div class="benefit-card">
             <span class="benefit-icon">🎵</span>
             <h3 class="benefit-title">
-                <span class="lang-en">Rhythm-Powered</span>
-                <span class="lang-es">Potenciado por Ritmo</span>
+                <span class="lang-en">Rhythm Is Feedback</span>
+                <span class="lang-es">El Ritmo Es Retroalimentación</span>
             </h3>
             <p class="benefit-desc">
-                <span class="lang-en">Metronome-based training synchronizes mind and body. Adjustable tempo from 60-140 BPM meets every ability level.</span>
-                <span class="lang-es">El entrenamiento basado en metrónomo sincroniza mente y cuerpo. Tempo ajustable de 60-140 BPM para cada nivel.</span>
+                <span class="lang-en">The beat tells the story. No silent tapping. Every session feels like music, not homework.</span>
+                <span class="lang-es">El ritmo cuenta la historia. Sin toques silenciosos. Cada sesión se siente como música, no como tarea.</span>
             </p>
         </div>
         
         <div class="benefit-card">
-            <span class="benefit-icon">📊</span>
+            <span class="benefit-icon">👂</span>
             <h3 class="benefit-title">
-                <span class="lang-en">Track Progress</span>
-                <span class="lang-es">Mide el Progreso</span>
+                <span class="lang-en">Audible Progress</span>
+                <span class="lang-es">Progreso Audible</span>
             </h3>
             <p class="benefit-desc">
-                <span class="lang-en">Quarter-by-quarter scoring, daily streaks, and personal bests. Data that shows improvement over time.</span>
-                <span class="lang-es">Puntuación por cuartos, rachas diarias y récords personales. Datos que muestran mejora a lo largo del tiempo.</span>
+                <span class="lang-en">Staff hears wins from across the room. Families hear engagement. Success you can listen to.</span>
+                <span class="lang-es">El personal escucha los triunfos desde el otro lado de la sala. Las familias escuchan participación.</span>
             </p>
         </div>
         
         <div class="benefit-card">
-            <span class="benefit-icon">🌐</span>
+            <span class="benefit-icon">💛</span>
             <h3 class="benefit-title">
-                <span class="lang-en">Fully Bilingual</span>
-                <span class="lang-es">Completamente Bilingüe</span>
+                <span class="lang-en">Residents Cherish It</span>
+                <span class="lang-es">Los Residentes lo Valoran</span>
             </h3>
             <p class="benefit-desc">
-                <span class="lang-en">Seamless English and Spanish throughout. Built for diverse communities where language should never be a barrier.</span>
-                <span class="lang-es">Inglés y español integrados en todo. Creado para comunidades diversas donde el idioma nunca debe ser una barrera.</span>
+                <span class="lang-en">Daily routines they look forward to. 365 days a year of engagement, not seasonal programs.</span>
+                <span class="lang-es">Rutinas diarias que esperan con ilusión. 365 días al año de participación, no programas de temporada.</span>
             </p>
-        </div>
-    </div>
-</section>
-
-<section class="audience-section">
-    <div class="section-header">
-        <h2 class="section-title">
-            <span class="lang-en">Built For</span>
-            <span class="lang-es">Creado Para</span>
-        </h2>
-    </div>
-    
-    <div class="audience-grid">
-        <div class="audience-card">
-            <span class="audience-icon">🏢</span>
-            <div class="audience-content">
-                <h4>
-                    <span class="lang-en">Senior Living Communities</span>
-                    <span class="lang-es">Comunidades de Vida Asistida</span>
-                </h4>
-                <p>
-                    <span class="lang-en">Transform daily activities into engaging mental fitness sessions. Give residents something to look forward to.</span>
-                    <span class="lang-es">Transforma las actividades diarias en sesiones de aptitud mental. Da a los residentes algo que esperar con ilusión.</span>
-                </p>
-            </div>
-        </div>
-        
-        <div class="audience-card">
-            <span class="audience-icon">🏥</span>
-            <div class="audience-content">
-                <h4>
-                    <span class="lang-en">Rehabilitation Centers</span>
-                    <span class="lang-es">Centros de Rehabilitación</span>
-                </h4>
-                <p>
-                    <span class="lang-en">Support cognitive recovery with structured, measurable training. Track progress with real data.</span>
-                    <span class="lang-es">Apoya la recuperación cognitiva con entrenamiento estructurado y medible. Rastrea el progreso con datos reales.</span>
-                </p>
-            </div>
-        </div>
-        
-        <div class="audience-card">
-            <span class="audience-icon">🧠</span>
-            <div class="audience-content">
-                <h4>
-                    <span class="lang-en">Memory Care Communities</span>
-                    <span class="lang-es">Comunidades de Cuidado de Memoria</span>
-                </h4>
-                <p>
-                    <span class="lang-en">Gentle, rhythm-based activities designed for cognitive engagement at every stage.</span>
-                    <span class="lang-es">Actividades suaves basadas en ritmo diseñadas para el compromiso cognitivo en cada etapa.</span>
-                </p>
-            </div>
-        </div>
-        
-        <div class="audience-card">
-            <span class="audience-icon">💪</span>
-            <div class="audience-content">
-                <h4>
-                    <span class="lang-en">Wellness Centers</span>
-                    <span class="lang-es">Centros de Bienestar</span>
-                </h4>
-                <p>
-                    <span class="lang-en">Add cognitive training to your wellness offerings. Mental fitness is the new frontier.</span>
-                    <span class="lang-es">Añade entrenamiento cognitivo a tus servicios de bienestar. La aptitud mental es la nueva frontera.</span>
-                </p>
-            </div>
         </div>
     </div>
 </section>
 
 <section class="cta-section">
     <h2 class="section-title">
-        <span class="lang-en">Ready to Train?</span>
-        <span class="lang-es">¿Listo para Entrenar?</span>
+        <span class="lang-en">Ready to Train On Beat?</span>
+        <span class="lang-es">¿Listo para Entrenar a Ritmo?</span>
     </h2>
     <p class="section-subtitle">
-        <span class="lang-en">Start building mental fitness today.</span>
-        <span class="lang-es">Comienza a construir aptitud mental hoy.</span>
+        <span class="lang-en">Start your free 7-day trial today. 10 users included.</span>
+        <span class="lang-es">Comienza tu prueba gratis de 7 días hoy. 10 usuarios incluidos.</span>
     </p>
     <div class="cta-buttons">
-        <a href="https://gostar.digital/play" class="cta-btn cta-primary">
-            <span class="lang-en">👤 Player Login</span>
-            <span class="lang-es">👤 Acceso Jugador</span>
+        <a href="/play" class="cta-btn cta-primary">
+            <span class="lang-en">▶ Play Now</span>
+            <span class="lang-es">▶ Jugar Ahora</span>
         </a>
-        <a href="https://gostar.digital/facility" class="cta-btn cta-secondary">
+        <a href="/facility" class="cta-btn cta-secondary">
             <span class="lang-en">🏢 Facility Login</span>
             <span class="lang-es">🏢 Acceso Instalación</span>
         </a>
     </div>
     <div class="cta-buttons" style="margin-top: 16px; margin-bottom: 0;">
-        <a href="https://gostar.digital/trial" class="cta-btn cta-trial">
-            <span class="lang-en">🆓 Start Free 7-Day Trial</span>
-            <span class="lang-es">🆓 Prueba Gratis 7 Días</span>
+        <a href="/facility" class="cta-btn cta-trial">
+            <span class="lang-en">🆓 Start Free Trial</span>
+            <span class="lang-es">🆓 Comenzar Prueba Gratis</span>
         </a>
-        <button class="cta-btn cta-contact" onclick="copyEmail()">✉️ info@gostar.email</button>
     </div>
 </section>
 
@@ -1023,19 +794,16 @@ footer {
 
 <footer>
     <p class="footer-copyright">© 2025 GoStar Digital LLC</p>
-    <p class="footer-email">
-        <button class="email-copy-btn" onclick="copyEmail()">📋 info@gostar.email</button>
-    </p>
     <div class="footer-links">
-        <a href="about.html">
+        <a href="/about">
             <span class="lang-en">About</span>
             <span class="lang-es">Acerca</span>
         </a>
-        <a href="privacy.html">
+        <a href="/privacy">
             <span class="lang-en">Privacy</span>
             <span class="lang-es">Privacidad</span>
         </a>
-        <a href="terms.html">
+        <a href="/terms">
             <span class="lang-en">Terms</span>
             <span class="lang-es">Términos</span>
         </a>
@@ -1056,17 +824,6 @@ function setLang(lang) {
         } else {
             btns[i].classList.remove('active');
         }
-    }
-}
-
-function copyEmail() {
-    var email = 'info@gostar.email';
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(email).then(function() {
-            alert(currentLang === 'es' ? '✅ Correo copiado: ' + email : '✅ Email copied: ' + email);
-        });
-    } else {
-        prompt(currentLang === 'es' ? 'Copia este correo:' : 'Copy this email:', email);
     }
 }
 
